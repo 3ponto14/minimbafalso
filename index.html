@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mini MBA Falso — O Festival de Educação · Verão 2026</title>
+<title>O Festival · Verão 2026</title>
 
 <!-- Open Graph / redes sociais -->
 <meta property="og:type" content="website">
@@ -2363,6 +2363,11 @@ footer {
   .countdown-inner { gap: 1rem; }
   .countdown-block { min-width: 60px; padding: 0 1.2rem; }
   .countdown-num { font-size: clamp(2.8rem, 14vw, 4rem) !important; }
+  .cd-bg-text { font-size: clamp(3.5rem, 20vw, 8rem); }
+  .cd-date-badge { font-size: 0.68rem; }
+
+  /* FAB */
+  #fab-cta { white-space: nowrap; }
 
   /* Footer */
   footer { padding: 2.5rem 1.2rem 1.5rem; }
@@ -2435,7 +2440,33 @@ footer {
 /*
    DIAGONAL TRANSITIONS entre secções (apenas desktop)
  */
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 1023px) {
+  .section-problem {
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2.5vw), 0 100%);
+    margin-bottom: -2.5vw;
+    position: relative;
+    z-index: 2;
+  }
+  .section-modules {
+    clip-path: polygon(0 2.5vw, 100% 0, 100% calc(100% - 2.5vw), 0 100%);
+    margin-top: -2.5vw;
+    margin-bottom: -2.5vw;
+    padding-top: calc(5.5rem + 2.5vw) !important;
+    padding-bottom: calc(5.5rem + 2.5vw) !important;
+    position: relative;
+    z-index: 1;
+  }
+  .section-audience {
+    clip-path: polygon(0 2.5vw, 100% 0, 100% calc(100% - 2.5vw), 0 100%);
+    margin-top: -2.5vw;
+    margin-bottom: -2.5vw;
+    padding-top: calc(5.5rem + 2.5vw) !important;
+    padding-bottom: calc(5.5rem + 2.5vw) !important;
+    position: relative;
+    z-index: 0;
+  }
+}
+@media (min-width: 1024px) {
   .section-problem {
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2.5vw), 0 100%);
     margin-bottom: -2.5vw;
