@@ -135,15 +135,15 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 0.9rem 3rem;
-  background: rgba(90,20,0,0.88);
+  background: rgba(200,140,0,0.92);
   backdrop-filter: blur(24px) saturate(1.8);
   -webkit-backdrop-filter: blur(24px) saturate(1.8);
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
   transition: background 0.3s, padding 0.3s;
 }
 
 nav.scrolled {
-  background: rgba(80,18,0,0.97);
+  background: rgba(180,120,0,0.98);
   padding: 0.7rem 3rem;
 }
 
@@ -165,11 +165,11 @@ nav.scrolled {
   font-size: 0.72rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(255,245,230,0.55);
+  color: rgba(61,21,0,0.75);
   text-decoration: none;
   transition: color 0.2s;
 }
-.nav-links a:hover { color: rgba(255,245,230,0.95); }
+.nav-links a:hover { color: rgba(61,21,0,1); }
 
 .nav-contacts {
   display: flex;
@@ -181,14 +181,14 @@ nav.scrolled {
   font-weight: 500;
   font-size: 0.7rem;
   letter-spacing: 0.08em;
-  color: rgba(255,245,230,0.4);
+  color: rgba(61,21,0,0.6);
   text-decoration: none;
   display: flex;
   align-items: center;
   gap: 0.4rem;
   transition: color 0.2s;
 }
-.nav-contact-link:hover { color: rgba(255,245,230,0.85); }
+.nav-contact-link:hover { color: rgba(61,21,0,1); }
 .nav-contact-link svg { width: 13px; height: 13px; opacity: 0.7; }
 
 .nav-logo {
@@ -282,46 +282,91 @@ nav.scrolled {
   to   { transform: translateX(0); }
 }
 
-.sunburst {
+/* Hero sunburst — raios de sol festivaleiros */
+.hero-sunburst {
   position: absolute;
   top: 50%; left: 50%;
-  transform: translate(-50%,-50%);
-  width: 140vw; height: 140vw;
+  transform: translate(-50%, -50%);
+  width: 200vw; height: 200vw;
   background: conic-gradient(
     from 0deg,
-    rgba(255,140,0,0.1) 0deg 6deg, transparent 6deg 12deg,
-    rgba(255,100,0,0.08) 12deg 18deg, transparent 18deg 24deg,
-    rgba(255,140,0,0.08) 24deg 30deg, transparent 30deg 36deg,
-    rgba(255,100,0,0.08) 36deg 42deg, transparent 42deg 48deg,
-    rgba(255,140,0,0.08) 48deg 54deg, transparent 54deg 60deg,
-    rgba(255,100,0,0.08) 60deg 66deg, transparent 66deg 72deg,
-    rgba(255,140,0,0.08) 72deg 78deg, transparent 78deg 84deg,
-    rgba(255,100,0,0.08) 84deg 90deg, transparent 90deg 96deg,
-    rgba(255,140,0,0.08) 96deg 102deg, transparent 102deg 108deg,
-    rgba(255,100,0,0.08) 108deg 114deg, transparent 114deg 120deg,
-    rgba(255,140,0,0.08) 120deg 126deg, transparent 126deg 132deg,
-    rgba(255,100,0,0.08) 132deg 138deg, transparent 138deg 144deg,
-    rgba(255,140,0,0.08) 144deg 150deg, transparent 150deg 156deg,
-    rgba(255,100,0,0.08) 156deg 162deg, transparent 162deg 168deg,
-    rgba(255,140,0,0.08) 168deg 174deg, transparent 174deg 180deg,
-    rgba(255,100,0,0.08) 180deg 186deg, transparent 186deg 192deg,
-    rgba(255,140,0,0.08) 192deg 198deg, transparent 198deg 204deg,
-    rgba(255,100,0,0.08) 204deg 210deg, transparent 210deg 216deg,
-    rgba(255,140,0,0.08) 216deg 222deg, transparent 222deg 228deg,
-    rgba(255,100,0,0.08) 228deg 234deg, transparent 234deg 240deg,
-    rgba(255,140,0,0.08) 240deg 246deg, transparent 246deg 252deg,
-    rgba(255,100,0,0.08) 252deg 258deg, transparent 258deg 264deg,
-    rgba(255,140,0,0.08) 264deg 270deg, transparent 270deg 276deg,
-    rgba(255,100,0,0.08) 276deg 282deg, transparent 282deg 288deg,
-    rgba(255,140,0,0.08) 288deg 294deg, transparent 294deg 300deg,
-    rgba(255,100,0,0.08) 300deg 306deg, transparent 306deg 312deg,
-    rgba(255,140,0,0.08) 312deg 318deg, transparent 318deg 324deg,
-    rgba(255,100,0,0.08) 324deg 330deg, transparent 330deg 336deg,
-    rgba(255,140,0,0.08) 336deg 342deg, transparent 342deg 348deg,
-    rgba(255,100,0,0.08) 348deg 354deg, transparent 354deg 360deg
+    rgba(255,180,0,0.18) 0deg 4deg,   transparent 4deg 10deg,
+    rgba(255,140,0,0.14) 10deg 13deg, transparent 13deg 20deg,
+    rgba(255,200,50,0.16) 20deg 23deg, transparent 23deg 30deg,
+    rgba(255,160,0,0.12) 30deg 33deg, transparent 33deg 42deg,
+    rgba(255,180,0,0.18) 42deg 45deg, transparent 45deg 52deg,
+    rgba(255,120,0,0.13) 52deg 55deg, transparent 55deg 64deg,
+    rgba(255,200,0,0.16) 64deg 68deg, transparent 68deg 75deg,
+    rgba(255,150,0,0.12) 75deg 78deg, transparent 78deg 88deg,
+    rgba(255,180,0,0.18) 88deg 92deg, transparent 92deg 100deg,
+    rgba(255,140,0,0.14) 100deg 103deg, transparent 103deg 112deg,
+    rgba(255,200,50,0.15) 112deg 116deg, transparent 116deg 124deg,
+    rgba(255,160,0,0.12) 124deg 127deg, transparent 127deg 136deg,
+    rgba(255,180,0,0.17) 136deg 140deg, transparent 140deg 148deg,
+    rgba(255,120,0,0.13) 148deg 151deg, transparent 151deg 160deg,
+    rgba(255,200,0,0.16) 160deg 164deg, transparent 164deg 172deg,
+    rgba(255,150,0,0.12) 172deg 175deg, transparent 175deg 184deg,
+    rgba(255,180,0,0.18) 184deg 188deg, transparent 188deg 196deg,
+    rgba(255,140,0,0.14) 196deg 199deg, transparent 199deg 208deg,
+    rgba(255,200,50,0.15) 208deg 212deg, transparent 212deg 220deg,
+    rgba(255,160,0,0.12) 220deg 223deg, transparent 223deg 232deg,
+    rgba(255,180,0,0.17) 232deg 236deg, transparent 236deg 244deg,
+    rgba(255,120,0,0.13) 244deg 247deg, transparent 247deg 256deg,
+    rgba(255,200,0,0.16) 256deg 260deg, transparent 260deg 268deg,
+    rgba(255,150,0,0.12) 268deg 271deg, transparent 271deg 280deg,
+    rgba(255,180,0,0.18) 280deg 284deg, transparent 284deg 292deg,
+    rgba(255,140,0,0.14) 292deg 295deg, transparent 295deg 304deg,
+    rgba(255,200,50,0.15) 304deg 308deg, transparent 308deg 316deg,
+    rgba(255,160,0,0.12) 316deg 319deg, transparent 319deg 328deg,
+    rgba(255,180,0,0.17) 328deg 332deg, transparent 332deg 340deg,
+    rgba(255,120,0,0.13) 340deg 343deg, transparent 343deg 352deg,
+    rgba(255,200,0,0.16) 352deg 356deg, transparent 356deg 360deg
   );
-  animation: spinSlow 80s linear infinite;
+  animation: sunburstSpin 40s linear infinite;
   pointer-events: none;
+  z-index: 0;
+}
+@keyframes sunburstSpin {
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Spotlights tipo holofote de festival */
+.hero-spotlight {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 50%;
+  filter: blur(60px);
+  z-index: 0;
+}
+.hero-spotlight--1 {
+  width: 50vw; height: 70vh;
+  top: -10%; left: 10%;
+  background: radial-gradient(ellipse at 50% 0%, rgba(255,160,0,0.35) 0%, transparent 70%);
+  animation: spotFloat1 7s ease-in-out infinite;
+}
+.hero-spotlight--2 {
+  width: 40vw; height: 60vh;
+  top: -5%; right: 5%;
+  background: radial-gradient(ellipse at 50% 0%, rgba(255,80,0,0.25) 0%, transparent 70%);
+  animation: spotFloat2 9s ease-in-out infinite;
+}
+.hero-spotlight--3 {
+  width: 30vw; height: 50vh;
+  bottom: 0%; left: 40%;
+  background: radial-gradient(ellipse at 50% 100%, rgba(255,200,0,0.2) 0%, transparent 70%);
+  animation: spotFloat3 11s ease-in-out infinite;
+}
+@keyframes spotFloat1 {
+  0%, 100% { transform: translateY(0) rotate(-5deg); opacity: 0.8; }
+  50% { transform: translateY(20px) rotate(5deg); opacity: 1; }
+}
+@keyframes spotFloat2 {
+  0%, 100% { transform: translateY(0) rotate(8deg); opacity: 0.7; }
+  50% { transform: translateY(-25px) rotate(-4deg); opacity: 1; }
+}
+@keyframes spotFloat3 {
+  0%, 100% { transform: translateY(0); opacity: 0.6; }
+  50% { transform: translateY(-15px); opacity: 0.9; }
 }
 @keyframes spinSlow { to { transform: translate(-50%,-50%) rotate(360deg); } }
 
@@ -561,7 +606,7 @@ nav.scrolled {
    MARQUEE
  */
 .marquee-wrap {
-  background: #7A1A00;
+  background: #E8A800;
   overflow: hidden;
   padding: 1rem 0;
 }
@@ -580,10 +625,10 @@ nav.scrolled {
   font-size: 0.75rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(255,240,224,1);
+  color: rgba(61,21,0,0.9);
   white-space: nowrap;
 }
-.marquee-item .star { color: rgba(255,200,120,0.8); font-size: 0.55rem; }
+.marquee-item .star { color: rgba(61,21,0,0.5); font-size: 0.55rem; }
 @keyframes marquee {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
@@ -591,8 +636,8 @@ nav.scrolled {
 
 /* Second reverse marquee band */
 .marquee-wrap--reverse {
-  background: #5C1200;
-  border-top: 1px solid rgba(255,255,255,0.08);
+  background: #C98800;
+  border-top: 1px solid rgba(0,0,0,0.08);
 }
 .marquee-track--reverse {
   animation: marqueeReverse 40s linear infinite;
@@ -602,9 +647,9 @@ nav.scrolled {
   to   { transform: translateX(0); }
 }
 .marquee-item--dark {
-  color: rgba(255,245,230,1);
+  color: rgba(61,21,0,0.9);
 }
-.marquee-item--dark .star { color: rgba(255,200,120,0.8); font-size: 0.55rem; }
+.marquee-item--dark .star { color: rgba(61,21,0,0.5); font-size: 0.55rem; }
 
 /* 
    PROBLEM
@@ -2295,16 +2340,16 @@ footer {
 .section-cta .cta-eyebrow::before,
 .section-cta .cta-eyebrow::after { background: rgba(255,213,62,0.4) !important; }
 
-/* Nav logo white on orange */
-.nav-logo { color: #fff !important; }
-.nav-logo .x { color: #FFD53E !important; }
+/* Nav logo on mostarda */
+.nav-logo { color: #3D1500 !important; }
+.nav-logo .x { color: rgba(61,21,0,0.5) !important; }
 .nav-pill {
-  background: #FFD53E !important;
-  color: #1A1A2E !important;
+  background: #3D1500 !important;
+  color: #FFB830 !important;
 }
 .nav-pill:hover {
-  background: #fff !important;
-  color: #E4201B !important;
+  background: #1A0800 !important;
+  color: #FFD53E !important;
 }
 
 /* Hero text stays white */
@@ -2731,32 +2776,10 @@ footer {
   <div class="deco-circle deco-c1"></div>
   <div class="deco-circle deco-c2"></div>
 
-  <div class="hero-marquee-bg" aria-hidden="true">
-    <div class="hero-marquee-track">
-      <span>O FESTIVAL QUE FALTAVA</span>
-      <span>O FESTIVAL QUE FALTAVA</span>
-      <span>O FESTIVAL QUE FALTAVA</span>
-      <span>O FESTIVAL QUE FALTAVA</span>
-      <span>O FESTIVAL QUE FALTAVA</span>
-      <span>O FESTIVAL QUE FALTAVA</span>
-    </div>
-    <div class="hero-marquee-track hero-marquee-track--2">
-      <span>EM PORTUGAL</span>
-      <span>EM PORTUGAL</span>
-      <span>EM PORTUGAL</span>
-      <span>EM PORTUGAL</span>
-      <span>EM PORTUGAL</span>
-      <span>EM PORTUGAL</span>
-    </div>
-    <div class="hero-marquee-track">
-      <span>O FESTIVAL QUE FALTAVA</span>
-      <span>O FESTIVAL QUE FALTAVA</span>
-      <span>O FESTIVAL QUE FALTAVA</span>
-      <span>O FESTIVAL QUE FALTAVA</span>
-      <span>O FESTIVAL QUE FALTAVA</span>
-      <span>O FESTIVAL QUE FALTAVA</span>
-    </div>
-  </div>
+  <div class="hero-sunburst" aria-hidden="true"></div>
+  <div class="hero-spotlight hero-spotlight--1" aria-hidden="true"></div>
+  <div class="hero-spotlight hero-spotlight--2" aria-hidden="true"></div>
+  <div class="hero-spotlight hero-spotlight--3" aria-hidden="true"></div>
 
   <div class="hero-content">
     <div class="hero-badge">
