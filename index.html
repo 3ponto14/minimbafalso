@@ -227,7 +227,11 @@ nav.scrolled {
  */
 .hero {
   min-height: 100vh;
-  background: #8B1A00;
+  background:
+    radial-gradient(ellipse 70% 80% at 20% 50%, rgba(255,87,34,0.55) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 70% at 80% 30%, rgba(255,140,0,0.4) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 60% at 60% 90%, rgba(200,30,0,0.5) 0%, transparent 50%),
+    linear-gradient(135deg, #6B0E00 0%, #B52200 35%, #E84A00 70%, #C83200 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -257,14 +261,14 @@ nav.scrolled {
   font-size: clamp(4rem, 10vw, 9rem);
   font-weight: 900;
   text-transform: uppercase;
-  color: rgba(255,240,224,0.07);
+  color: rgba(255,240,224,0.13);
   letter-spacing: 0.02em;
   line-height: 1;
   animation: marqueeLeft 18s linear infinite;
 }
 .hero-marquee-track--2 {
   animation: marqueeRight 22s linear infinite;
-  color: rgba(255,240,224,0.05);
+  color: rgba(255,160,60,0.12);
 }
 .hero-marquee-track span {
   padding-right: 3rem;
@@ -285,36 +289,36 @@ nav.scrolled {
   width: 140vw; height: 140vw;
   background: conic-gradient(
     from 0deg,
-    rgba(200,80,240,0.08) 0deg 6deg, transparent 6deg 12deg,
-    rgba(200,80,240,0.06) 12deg 18deg, transparent 18deg 24deg,
-    rgba(200,80,240,0.06) 24deg 30deg, transparent 30deg 36deg,
-    rgba(200,80,240,0.06) 36deg 42deg, transparent 42deg 48deg,
-    rgba(200,80,240,0.06) 48deg 54deg, transparent 54deg 60deg,
-    rgba(200,80,240,0.06) 60deg 66deg, transparent 66deg 72deg,
-    rgba(200,80,240,0.06) 72deg 78deg, transparent 78deg 84deg,
-    rgba(200,80,240,0.06) 84deg 90deg, transparent 90deg 96deg,
-    rgba(200,80,240,0.06) 96deg 102deg, transparent 102deg 108deg,
-    rgba(200,80,240,0.06) 108deg 114deg, transparent 114deg 120deg,
-    rgba(200,80,240,0.06) 120deg 126deg, transparent 126deg 132deg,
-    rgba(200,80,240,0.06) 132deg 138deg, transparent 138deg 144deg,
-    rgba(200,80,240,0.06) 144deg 150deg, transparent 150deg 156deg,
-    rgba(200,80,240,0.06) 156deg 162deg, transparent 162deg 168deg,
-    rgba(200,80,240,0.06) 168deg 174deg, transparent 174deg 180deg,
-    rgba(200,80,240,0.06) 180deg 186deg, transparent 186deg 192deg,
-    rgba(200,80,240,0.06) 192deg 198deg, transparent 198deg 204deg,
-    rgba(200,80,240,0.06) 204deg 210deg, transparent 210deg 216deg,
-    rgba(200,80,240,0.06) 216deg 222deg, transparent 222deg 228deg,
-    rgba(200,80,240,0.06) 228deg 234deg, transparent 234deg 240deg,
-    rgba(200,80,240,0.06) 240deg 246deg, transparent 246deg 252deg,
-    rgba(200,80,240,0.06) 252deg 258deg, transparent 258deg 264deg,
-    rgba(200,80,240,0.06) 264deg 270deg, transparent 270deg 276deg,
-    rgba(200,80,240,0.06) 276deg 282deg, transparent 282deg 288deg,
-    rgba(200,80,240,0.06) 288deg 294deg, transparent 294deg 300deg,
-    rgba(200,80,240,0.06) 300deg 306deg, transparent 306deg 312deg,
-    rgba(200,80,240,0.06) 312deg 318deg, transparent 318deg 324deg,
-    rgba(200,80,240,0.06) 324deg 330deg, transparent 330deg 336deg,
-    rgba(200,80,240,0.06) 336deg 342deg, transparent 342deg 348deg,
-    rgba(200,80,240,0.06) 348deg 354deg, transparent 354deg 360deg
+    rgba(255,140,0,0.1) 0deg 6deg, transparent 6deg 12deg,
+    rgba(255,100,0,0.08) 12deg 18deg, transparent 18deg 24deg,
+    rgba(255,140,0,0.08) 24deg 30deg, transparent 30deg 36deg,
+    rgba(255,100,0,0.08) 36deg 42deg, transparent 42deg 48deg,
+    rgba(255,140,0,0.08) 48deg 54deg, transparent 54deg 60deg,
+    rgba(255,100,0,0.08) 60deg 66deg, transparent 66deg 72deg,
+    rgba(255,140,0,0.08) 72deg 78deg, transparent 78deg 84deg,
+    rgba(255,100,0,0.08) 84deg 90deg, transparent 90deg 96deg,
+    rgba(255,140,0,0.08) 96deg 102deg, transparent 102deg 108deg,
+    rgba(255,100,0,0.08) 108deg 114deg, transparent 114deg 120deg,
+    rgba(255,140,0,0.08) 120deg 126deg, transparent 126deg 132deg,
+    rgba(255,100,0,0.08) 132deg 138deg, transparent 138deg 144deg,
+    rgba(255,140,0,0.08) 144deg 150deg, transparent 150deg 156deg,
+    rgba(255,100,0,0.08) 156deg 162deg, transparent 162deg 168deg,
+    rgba(255,140,0,0.08) 168deg 174deg, transparent 174deg 180deg,
+    rgba(255,100,0,0.08) 180deg 186deg, transparent 186deg 192deg,
+    rgba(255,140,0,0.08) 192deg 198deg, transparent 198deg 204deg,
+    rgba(255,100,0,0.08) 204deg 210deg, transparent 210deg 216deg,
+    rgba(255,140,0,0.08) 216deg 222deg, transparent 222deg 228deg,
+    rgba(255,100,0,0.08) 228deg 234deg, transparent 234deg 240deg,
+    rgba(255,140,0,0.08) 240deg 246deg, transparent 246deg 252deg,
+    rgba(255,100,0,0.08) 252deg 258deg, transparent 258deg 264deg,
+    rgba(255,140,0,0.08) 264deg 270deg, transparent 270deg 276deg,
+    rgba(255,100,0,0.08) 276deg 282deg, transparent 282deg 288deg,
+    rgba(255,140,0,0.08) 288deg 294deg, transparent 294deg 300deg,
+    rgba(255,100,0,0.08) 300deg 306deg, transparent 306deg 312deg,
+    rgba(255,140,0,0.08) 312deg 318deg, transparent 318deg 324deg,
+    rgba(255,100,0,0.08) 324deg 330deg, transparent 330deg 336deg,
+    rgba(255,140,0,0.08) 336deg 342deg, transparent 342deg 348deg,
+    rgba(255,100,0,0.08) 348deg 354deg, transparent 354deg 360deg
   );
   animation: spinSlow 80s linear infinite;
   pointer-events: none;
@@ -329,20 +333,20 @@ nav.scrolled {
 }
 /* Círculos decorativos */
 .deco-c1 {
-  width: 420px; height: 420px;
-  top: -120px; left: -140px;
-  background: radial-gradient(circle at 40% 40%, #FF5722 0%, #8B1A00 100%);
-  opacity: 0.4;
-  filter: blur(4px);
+  width: 520px; height: 520px;
+  top: -160px; left: -160px;
+  background: radial-gradient(circle at 40% 40%, #FF8C00 0%, #FF3300 50%, transparent 80%);
+  opacity: 0.55;
+  filter: blur(6px);
   animation-delay: 0s;
   border: none;
 }
 .deco-c2 {
-  width: 260px; height: 260px;
-  bottom: 40px; right: -80px;
-  background: radial-gradient(circle at 40% 35%, #FF5722 0%, #8B1A00 100%);
-  opacity: 0.25;
-  filter: blur(5px);
+  width: 360px; height: 360px;
+  bottom: 20px; right: -100px;
+  background: radial-gradient(circle at 40% 35%, #FFB300 0%, #FF5500 50%, transparent 80%);
+  opacity: 0.4;
+  filter: blur(8px);
   animation-delay: -3s;
   border: none;
 }
@@ -2421,13 +2425,13 @@ footer {
   line-height: 0.9 !important;
 }
 .hero-title .cta-solid-word {
-  color: #FF5722 !important;
-  text-shadow: none !important;
+  color: #FFE8CC !important;
+  text-shadow: 3px 4px 0px rgba(100,10,0,0.4) !important;
 }
 .hero-title .cta-neon-word {
-  color: #FFE8CC !important;
+  color: #FF6B00 !important;
   -webkit-text-stroke: 0 !important;
-  text-shadow: none !important;
+  text-shadow: 0 0 30px rgba(255,120,0,0.6), 3px 4px 0px rgba(100,10,0,0.4) !important;
   filter: none !important;
 }
 .hero-title .hero-keyword {
