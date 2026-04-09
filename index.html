@@ -228,10 +228,9 @@ nav.scrolled {
 .hero {
   min-height: 100vh;
   background:
-    radial-gradient(ellipse 70% 80% at 20% 50%, rgba(255,87,34,0.55) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 70% at 80% 30%, rgba(255,140,0,0.4) 0%, transparent 55%),
-    radial-gradient(ellipse 50% 60% at 60% 90%, rgba(200,30,0,0.5) 0%, transparent 50%),
-    linear-gradient(135deg, #6B0E00 0%, #B52200 35%, #E84A00 70%, #C83200 100%);
+    radial-gradient(ellipse 55% 65% at 50% 40%, rgba(255,170,40,0.45) 0%, transparent 55%),
+    radial-gradient(ellipse 80% 90% at 50% 50%, rgba(220,80,0,0.3) 0%, transparent 70%),
+    linear-gradient(160deg, #9A2200 0%, #C84000 30%, #D95A00 55%, #B83000 80%, #7A1500 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -283,90 +282,92 @@ nav.scrolled {
 }
 
 /* Hero sunburst — raios de sol festivaleiros */
+/* Hero — raios subtis tipo sol/holofote, mascarados no centro */
 .hero-sunburst {
   position: absolute;
-  top: 50%; left: 50%;
+  top: 38%; left: 50%;
   transform: translate(-50%, -50%);
-  width: 200vw; height: 200vw;
+  width: 190vw; height: 190vw;
   background: conic-gradient(
     from 0deg,
-    rgba(255,180,0,0.18) 0deg 4deg,   transparent 4deg 10deg,
-    rgba(255,140,0,0.14) 10deg 13deg, transparent 13deg 20deg,
-    rgba(255,200,50,0.16) 20deg 23deg, transparent 23deg 30deg,
-    rgba(255,160,0,0.12) 30deg 33deg, transparent 33deg 42deg,
-    rgba(255,180,0,0.18) 42deg 45deg, transparent 45deg 52deg,
-    rgba(255,120,0,0.13) 52deg 55deg, transparent 55deg 64deg,
-    rgba(255,200,0,0.16) 64deg 68deg, transparent 68deg 75deg,
-    rgba(255,150,0,0.12) 75deg 78deg, transparent 78deg 88deg,
-    rgba(255,180,0,0.18) 88deg 92deg, transparent 92deg 100deg,
-    rgba(255,140,0,0.14) 100deg 103deg, transparent 103deg 112deg,
-    rgba(255,200,50,0.15) 112deg 116deg, transparent 116deg 124deg,
-    rgba(255,160,0,0.12) 124deg 127deg, transparent 127deg 136deg,
-    rgba(255,180,0,0.17) 136deg 140deg, transparent 140deg 148deg,
-    rgba(255,120,0,0.13) 148deg 151deg, transparent 151deg 160deg,
-    rgba(255,200,0,0.16) 160deg 164deg, transparent 164deg 172deg,
-    rgba(255,150,0,0.12) 172deg 175deg, transparent 175deg 184deg,
-    rgba(255,180,0,0.18) 184deg 188deg, transparent 188deg 196deg,
-    rgba(255,140,0,0.14) 196deg 199deg, transparent 199deg 208deg,
-    rgba(255,200,50,0.15) 208deg 212deg, transparent 212deg 220deg,
-    rgba(255,160,0,0.12) 220deg 223deg, transparent 223deg 232deg,
-    rgba(255,180,0,0.17) 232deg 236deg, transparent 236deg 244deg,
-    rgba(255,120,0,0.13) 244deg 247deg, transparent 247deg 256deg,
-    rgba(255,200,0,0.16) 256deg 260deg, transparent 260deg 268deg,
-    rgba(255,150,0,0.12) 268deg 271deg, transparent 271deg 280deg,
-    rgba(255,180,0,0.18) 280deg 284deg, transparent 284deg 292deg,
-    rgba(255,140,0,0.14) 292deg 295deg, transparent 295deg 304deg,
-    rgba(255,200,50,0.15) 304deg 308deg, transparent 308deg 316deg,
-    rgba(255,160,0,0.12) 316deg 319deg, transparent 319deg 328deg,
-    rgba(255,180,0,0.17) 328deg 332deg, transparent 332deg 340deg,
-    rgba(255,120,0,0.13) 340deg 343deg, transparent 343deg 352deg,
-    rgba(255,200,0,0.16) 352deg 356deg, transparent 356deg 360deg
+    rgba(255,210,80,0.07) 0deg 3deg,   transparent 3deg 9deg,
+    rgba(255,180,40,0.05) 9deg 11deg,  transparent 11deg 18deg,
+    rgba(255,210,80,0.06) 18deg 20deg, transparent 20deg 28deg,
+    rgba(255,180,40,0.05) 28deg 30deg, transparent 30deg 39deg,
+    rgba(255,210,80,0.07) 39deg 42deg, transparent 42deg 50deg,
+    rgba(255,180,40,0.05) 50deg 52deg, transparent 52deg 61deg,
+    rgba(255,210,80,0.06) 61deg 64deg, transparent 64deg 73deg,
+    rgba(255,180,40,0.05) 73deg 75deg, transparent 75deg 84deg,
+    rgba(255,210,80,0.07) 84deg 87deg, transparent 87deg 96deg,
+    rgba(255,180,40,0.05) 96deg 98deg, transparent 98deg 107deg,
+    rgba(255,210,80,0.06) 107deg 110deg, transparent 110deg 119deg,
+    rgba(255,180,40,0.05) 119deg 121deg, transparent 121deg 130deg,
+    rgba(255,210,80,0.07) 130deg 133deg, transparent 133deg 142deg,
+    rgba(255,180,40,0.05) 142deg 144deg, transparent 144deg 153deg,
+    rgba(255,210,80,0.06) 153deg 156deg, transparent 156deg 165deg,
+    rgba(255,180,40,0.05) 165deg 167deg, transparent 167deg 176deg,
+    rgba(255,210,80,0.07) 176deg 179deg, transparent 179deg 188deg,
+    rgba(255,180,40,0.05) 188deg 190deg, transparent 190deg 199deg,
+    rgba(255,210,80,0.06) 199deg 202deg, transparent 202deg 211deg,
+    rgba(255,180,40,0.05) 211deg 213deg, transparent 213deg 222deg,
+    rgba(255,210,80,0.07) 222deg 225deg, transparent 225deg 234deg,
+    rgba(255,180,40,0.05) 234deg 236deg, transparent 236deg 245deg,
+    rgba(255,210,80,0.06) 245deg 248deg, transparent 248deg 257deg,
+    rgba(255,180,40,0.05) 257deg 259deg, transparent 259deg 268deg,
+    rgba(255,210,80,0.07) 268deg 271deg, transparent 271deg 280deg,
+    rgba(255,180,40,0.05) 280deg 282deg, transparent 282deg 291deg,
+    rgba(255,210,80,0.06) 291deg 294deg, transparent 294deg 303deg,
+    rgba(255,180,40,0.05) 303deg 305deg, transparent 305deg 314deg,
+    rgba(255,210,80,0.07) 314deg 317deg, transparent 317deg 326deg,
+    rgba(255,180,40,0.05) 326deg 328deg, transparent 328deg 337deg,
+    rgba(255,210,80,0.06) 337deg 340deg, transparent 340deg 349deg,
+    rgba(255,180,40,0.05) 349deg 351deg, transparent 351deg 360deg
   );
-  animation: sunburstSpin 40s linear infinite;
+  animation: sunburstSpin 60s linear infinite;
   pointer-events: none;
   z-index: 0;
+  mask-image: radial-gradient(ellipse 65% 65% at 50% 50%, black 20%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse 65% 65% at 50% 50%, black 20%, transparent 70%);
 }
 @keyframes sunburstSpin {
   to { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
-/* Spotlights tipo holofote de festival */
+/* Luz central difusa — holofote atmosférico */
 .hero-spotlight {
   position: absolute;
   pointer-events: none;
-  border-radius: 50%;
-  filter: blur(60px);
   z-index: 0;
 }
 .hero-spotlight--1 {
-  width: 50vw; height: 70vh;
-  top: -10%; left: 10%;
-  background: radial-gradient(ellipse at 50% 0%, rgba(255,160,0,0.35) 0%, transparent 70%);
-  animation: spotFloat1 7s ease-in-out infinite;
+  width: 80vw; height: 80vw;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -58%);
+  background: radial-gradient(ellipse at 50% 50%, rgba(255,200,70,0.2) 0%, rgba(255,130,0,0.06) 45%, transparent 68%);
+  filter: blur(25px);
+  animation: glowPulse 6s ease-in-out infinite;
 }
 .hero-spotlight--2 {
-  width: 40vw; height: 60vh;
-  top: -5%; right: 5%;
-  background: radial-gradient(ellipse at 50% 0%, rgba(255,80,0,0.25) 0%, transparent 70%);
-  animation: spotFloat2 9s ease-in-out infinite;
+  width: 45vw; height: 55vh;
+  top: 0; left: 10%;
+  background: radial-gradient(ellipse at 50% 0%, rgba(255,150,40,0.12) 0%, transparent 65%);
+  filter: blur(55px);
+  animation: spotDrift 9s ease-in-out infinite;
 }
 .hero-spotlight--3 {
-  width: 30vw; height: 50vh;
-  bottom: 0%; left: 40%;
-  background: radial-gradient(ellipse at 50% 100%, rgba(255,200,0,0.2) 0%, transparent 70%);
-  animation: spotFloat3 11s ease-in-out infinite;
+  width: 38vw; height: 50vh;
+  top: 0; right: 8%;
+  background: radial-gradient(ellipse at 50% 0%, rgba(190,50,0,0.15) 0%, transparent 65%);
+  filter: blur(55px);
+  animation: spotDrift 11s ease-in-out infinite reverse;
 }
-@keyframes spotFloat1 {
-  0%, 100% { transform: translateY(0) rotate(-5deg); opacity: 0.8; }
-  50% { transform: translateY(20px) rotate(5deg); opacity: 1; }
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.85; transform: translate(-50%, -58%) scale(1); }
+  50% { opacity: 1; transform: translate(-50%, -58%) scale(1.07); }
 }
-@keyframes spotFloat2 {
-  0%, 100% { transform: translateY(0) rotate(8deg); opacity: 0.7; }
-  50% { transform: translateY(-25px) rotate(-4deg); opacity: 1; }
-}
-@keyframes spotFloat3 {
-  0%, 100% { transform: translateY(0); opacity: 0.6; }
-  50% { transform: translateY(-15px); opacity: 0.9; }
+@keyframes spotDrift {
+  0%, 100% { transform: translateX(0); opacity: 0.75; }
+  50% { transform: translateX(25px); opacity: 1; }
 }
 @keyframes spinSlow { to { transform: translate(-50%,-50%) rotate(360deg); } }
 
