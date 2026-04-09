@@ -20,9 +20,8 @@
 }
 @font-face {
   font-family: 'Heading Now';
-  src: url('Heading Now.woff') format('woff'),
-       url('Heading Now.otf') format('opentype');
-  font-weight: normal;
+  src: url('HeadingNowTrial-58Heavy.ttf') format('truetype');
+  font-weight: 900;
   font-style: normal;
 }
 @font-face {
@@ -2349,30 +2348,46 @@ footer {
    POSTER TYPOGRAPHY — TAN Nimbus + MADE Infinity
 ════════════════════════════════════════ */
 
-/* Hero title — MADE Infinity for the phrase, TAN Nimbus for keywords */
+/* Hero title — MADE Infinity block style */
 .hero-title {
   font-family: 'MADE Infinity', 'Syne', sans-serif !important;
   font-style: normal !important;
-  font-weight: 400 !important;
-  letter-spacing: 0.15em !important;
-  color: rgba(255,240,224,0.7) !important;
+  font-weight: 900 !important;
+  letter-spacing: -0.01em !important;
+  color: var(--cream) !important;
   text-shadow: none !important;
   -webkit-text-stroke: 0 !important;
+  line-height: 0.9 !important;
+}
+.hero-title .cta-solid-word {
+  color: var(--cream) !important;
+  text-shadow: none !important;
+}
+.hero-title .cta-neon-word {
+  color: #ffe44d !important;
+  text-shadow:
+    0 0 7px #ffe44d,
+    0 0 20px rgba(255,213,62,0.9),
+    0 0 40px rgba(255,213,62,0.7),
+    0 0 80px rgba(255,213,62,0.5),
+    0 0 120px rgba(255,213,62,0.35),
+    0 0 200px rgba(255,213,62,0.2),
+    0 0 300px rgba(255,180,0,0.1) !important;
 }
 .hero-title .hero-keyword {
-  font-family: 'Heading Now', 'TAN Nimbus', 'Playfair Display', serif !important;
+  font-family: 'Heading Now', serif !important;
   font-style: normal !important;
   font-weight: 900 !important;
-  letter-spacing: -0.02em !important;
+  letter-spacing: -0.03em !important;
+  text-transform: none !important;
   color: var(--cream) !important;
-  text-shadow:
-    0 0 60px rgba(255,233,0,0.3),
-    0 4px 0 rgba(200,120,0,0.25) !important;
+  text-shadow: none !important;
 }
 .hero-title .hero-keyword--outline {
   -webkit-text-stroke: 2.5px var(--yellow) !important;
   color: transparent !important;
   text-shadow: none !important;
+  font-weight: 900 !important;
 }
 
 /* Section big titles — TAN Nimbus */
@@ -2574,9 +2589,9 @@ footer {
     </div>
 
     <h1 class="hero-title">
-      o festival onde
-      <span class="hero-keyword">Vibras</span>
-      <span class="hero-keyword hero-keyword--outline">a Sério.</span>
+      <span class="cta-solid-word">O FESTIVAL</span>
+      <span class="cta-solid-word">QUE FALTAVA</span>
+      <span class="cta-neon-word">EM PORTUGAL.</span>
     </h1>
 
     <div class="hero-meta">
@@ -2597,10 +2612,6 @@ footer {
         <span class="meta-lbl">Dias</span>
       </div>
     </div>
-
-    <p class="hero-sub-line">
-      O festival com a melhor lineup do teu futuro.
-    </p>
 
     <button class="btn-dark" onclick="openForm()" style="margin:0 auto;display:block;font-size:1rem;padding:1rem 2.5rem;">Quero o meu bilhete →</button>
     <span class="form-note" style="display:block;text-align:center;margin-top:0.8rem;">Vagas limitadas. Garante o teu lugar.</span>
@@ -2921,11 +2932,10 @@ footer {
   <div class="cta-inner">
     <div class="eyebrow cta-eyebrow reveal">Lista de espera</div>
     <h2 class="cta-title reveal">
-      <span class="cta-solid-word">SENTE.</span>
-      <span class="cta-solid-word">VIVE.</span>
-      <span class="cta-neon-word">VOLTA.</span>
+      <span class="cta-solid-word">O FESTIVAL</span>
+      <span class="cta-solid-word">QUE FALTAVA</span>
+      <span class="cta-neon-word">EM PORTUGAL.</span>
     </h2>
-    <p class="cta-sub reveal" style="font-size:1.1rem;opacity:0.85;margin-bottom:0.5rem;">O festival que faltava em Portugal.</p>
     <p class="cta-sub reveal">Entra na lista de espera e sê dos primeiros a garantir o bilhete — preço early bird para os mais rápidos.</p>
     <button class="btn-dark reveal" onclick="openForm()" style="margin:0 auto;display:block;font-size:1rem;padding:1rem 2.5rem;">Quero o meu bilhete →</button>
     <p class="cta-note" style="margin-top:0.8rem">Sem spam. Podes sair quando quiseres.</p>
