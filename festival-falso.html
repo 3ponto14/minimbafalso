@@ -15,21 +15,24 @@
    TOKENS
  */
 :root {
-  --burnt:  #E8471A;   /* Burnt Orange — primary brand */
-  --lust:   #C93010;   /* Lust — fire accent */
-  --copper: #61413C;   /* Copper — dark warm */
-  --lagoon: #0E6873;   /* Blue Lagoon — teal */
-  --yellow: #FFD53E;   /* Festival Yellow — pop! */
-  --pearl:  #E8471A;   /* Warm orange base — main bg */
+  /* 3 cores base */
+  --bg:     #8B1A00;   /* Fundo — vermelho escuro */
+  --accent: #FF5722;   /* Laranja vibrante — títulos */
+  --cream:  #FFE8CC;   /* Cream — texto secundário */
 
-  /* Aliases for compat */
-  --sun:    #E8471A;
-  --orange: #E8471A;
-  --fire:   #C93010;
-  --teal:   #0E6873;
-  --teal-light: #3AACBA;
-  --dark:   #C93010;   /* Darker orange for alt sections */
-  --cream:  #FFE8CC;
+  /* Aliases para compatibilidade */
+  --burnt:  #FF5722;
+  --lust:   #8B1A00;
+  --copper: #8B1A00;
+  --lagoon: #8B1A00;
+  --yellow: #FFE8CC;
+  --pearl:  #8B1A00;
+  --sun:    #FF5722;
+  --orange: #FF5722;
+  --fire:   #8B1A00;
+  --teal:   #8B1A00;
+  --teal-light: #FFE8CC;
+  --dark:   #6B1200;
   --white:  #FFE8CC;
 
   --ease-out-expo: cubic-bezier(0.16,1,0.3,1);
@@ -41,11 +44,10 @@ html { scroll-behavior: smooth; }
 
 body {
   font-family: 'Bricolage Grotesque', sans-serif;
-  background: var(--pearl);
-  color: var(--cream);
+  background: #8B1A00;
+  color: #FFE8CC;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
-  background: var(--pearl);
 }
 
 /*  GRAIN  */
@@ -225,7 +227,7 @@ nav.scrolled {
  */
 .hero {
   min-height: 100vh;
-  background: linear-gradient(160deg, #7A1800 0%, #A82400 35%, #C93010 65%, #8C1A00 100%);
+  background: #8B1A00;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -325,32 +327,23 @@ nav.scrolled {
   pointer-events: none;
   animation: floatCircle 8s ease-in-out infinite;
 }
-/* Avatar circle — como o do Instagram */
+/* Círculos decorativos */
 .deco-c1 {
   width: 420px; height: 420px;
   top: -120px; left: -140px;
-  background: radial-gradient(circle at 40% 40%, #FF7A35 0%, #E8471A 40%, #C93010 75%, #8C1A05 100%);
-  opacity: 0.55;
-  filter: blur(2px);
+  background: radial-gradient(circle at 40% 40%, #FF5722 0%, #8B1A00 100%);
+  opacity: 0.4;
+  filter: blur(4px);
   animation-delay: 0s;
   border: none;
 }
 .deco-c2 {
   width: 260px; height: 260px;
   bottom: 40px; right: -80px;
-  background: radial-gradient(circle at 40% 35%, #FF9A55 0%, #E8471A 50%, #C93010 100%);
-  opacity: 0.35;
-  filter: blur(3px);
-  animation-delay: -3s;
-  border: none;
-}
-.deco-c3 {
-  width: 140px; height: 140px;
-  top: 30%; right: 8%;
-  background: radial-gradient(circle at 40% 35%, #FFD53E 0%, #E8471A 60%, #C93010 100%);
+  background: radial-gradient(circle at 40% 35%, #FF5722 0%, #8B1A00 100%);
   opacity: 0.25;
-  filter: blur(2px);
-  animation-delay: -6s;
+  filter: blur(5px);
+  animation-delay: -3s;
   border: none;
 }
 
@@ -2366,7 +2359,7 @@ footer {
   right: -3%;
 }
 
-/* CTA solid words — laranja brilhante como no Instagram */
+/* CTA solid words */
 .cta-solid-word {
   font-family: 'Anton', sans-serif;
   font-weight: 900;
@@ -2374,12 +2367,12 @@ footer {
   line-height: 0.9;
   letter-spacing: -0.01em;
   text-transform: uppercase;
-  color: #FF6B2B;
-  text-shadow: 2px 3px 0px rgba(100,20,0,0.4);
+  color: #FF5722;
+  text-shadow: none;
   display: block;
 }
 
-/* CTA segunda linha — cream como no Instagram */
+/* CTA segunda linha — cream */
 .cta-neon-word {
   font-family: 'Anton', sans-serif;
   font-weight: 900;
@@ -2389,7 +2382,7 @@ footer {
   text-transform: uppercase;
   display: block;
   color: #FFE8CC;
-  text-shadow: 1px 2px 0px rgba(100,20,0,0.3);
+  text-shadow: none;
   -webkit-text-stroke: 0;
 }
 @keyframes neonPulse {
@@ -2430,13 +2423,13 @@ footer {
   line-height: 0.9 !important;
 }
 .hero-title .cta-solid-word {
-  color: #FF6B2B !important;
-  text-shadow: 2px 3px 0px rgba(100,20,0,0.4) !important;
+  color: #FF5722 !important;
+  text-shadow: none !important;
 }
 .hero-title .cta-neon-word {
   color: #FFE8CC !important;
   -webkit-text-stroke: 0 !important;
-  text-shadow: 1px 2px 0px rgba(100,20,0,0.3) !important;
+  text-shadow: none !important;
   filter: none !important;
 }
 .hero-title .hero-keyword {
