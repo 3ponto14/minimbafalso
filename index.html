@@ -2496,11 +2496,32 @@ footer {
   color: #FFE8CC !important;
   text-shadow: 3px 4px 0px rgba(100,10,0,0.4) !important;
 }
-.hero-title .cta-neon-word {
+.hero-title .cta-neon-word,
+.cta-title .cta-neon-word {
   color: #FF6B00 !important;
   -webkit-text-stroke: 0 !important;
   text-shadow: 0 0 30px rgba(255,120,0,0.6), 3px 4px 0px rgba(100,10,0,0.4) !important;
   filter: none !important;
+  animation: orangePulse 2.5s ease-in-out infinite alternate !important;
+}
+@keyframes orangePulse {
+  0% {
+    color: #FF6B00;
+    text-shadow:
+      0 0 8px rgba(255,120,0,0.9),
+      0 0 25px rgba(255,100,0,0.7),
+      0 0 50px rgba(255,80,0,0.5),
+      3px 4px 0px rgba(100,10,0,0.4);
+  }
+  100% {
+    color: #FF8C00;
+    text-shadow:
+      0 0 12px rgba(255,160,0,1),
+      0 0 40px rgba(255,120,0,0.85),
+      0 0 80px rgba(255,100,0,0.6),
+      0 0 140px rgba(255,80,0,0.35),
+      3px 4px 0px rgba(100,10,0,0.4);
+  }
 }
 .hero-title .hero-keyword {
   font-family: 'Anton', sans-serif !important;
