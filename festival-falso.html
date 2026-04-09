@@ -5,76 +5,32 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Festival 2026 — O Festival do Verão</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800;1,900&family=Syne:wght@400;500;600;700;800&family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet">
 <style>
 /*
    CUSTOM FONTS
  */
-@font-face {
-  font-family: 'TAN Nimbus';
-  src: url('TAN-Nimbus 2/TAN-NIMBUS.woff2') format('woff2'),
-       url('TAN-Nimbus 2/TAN-NIMBUS.woff') format('woff'),
-       url('TAN-Nimbus 2/TAN-NIMBUS.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Heading Now';
-  src: url('HeadingNowTrial-58Heavy.ttf') format('truetype');
-  font-weight: 900;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'MADE Infinity';
-  src: url('made_infinity/MADEINFINITYPersonalUse-Regular.otf') format('opentype');
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'MADE Infinity';
-  src: url('made_infinity/MADEINFINITYPersonalUse-Medium.otf') format('opentype');
-  font-weight: 500;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'MADE Infinity';
-  src: url('made_infinity/MADEINFINITYPersonalUse-Black.otf') format('opentype');
-  font-weight: 900;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'MADE Infinity Outline';
-  src: url('made_infinity/MADEINFINITYOutlinePersonalUse-Black.otf') format('opentype');
-  font-weight: 900;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'MADE Infinity Outline';
-  src: url('made_infinity/MADEINFINITYOutlinePersonalUse-Regular.otf') format('opentype');
-  font-weight: 400;
-  font-style: normal;
-}
 
 /*
    TOKENS
  */
 :root {
-  --burnt:  #FE7E3C;   /* Burnt Orange — primary brand */
-  --lust:   #E4201B;   /* Lust — fire accent */
+  --burnt:  #E8471A;   /* Burnt Orange — primary brand */
+  --lust:   #C93010;   /* Lust — fire accent */
   --copper: #61413C;   /* Copper — dark warm */
   --lagoon: #0E6873;   /* Blue Lagoon — teal */
   --yellow: #FFD53E;   /* Festival Yellow — pop! */
-  --pearl:  #FF8C42;   /* Warm orange base — main bg */
+  --pearl:  #E8471A;   /* Warm orange base — main bg */
 
   /* Aliases for compat */
-  --sun:    #FE7E3C;
-  --orange: #FE7E3C;
-  --fire:   #E4201B;
+  --sun:    #E8471A;
+  --orange: #E8471A;
+  --fire:   #C93010;
   --teal:   #0E6873;
   --teal-light: #3AACBA;
-  --dark:   #E8622A;   /* Darker orange for alt sections */
-  --cream:  #FFF5E6;
-  --white:  #FFFAE8;
+  --dark:   #C93010;   /* Darker orange for alt sections */
+  --cream:  #FFE8CC;
+  --white:  #FFE8CC;
 
   --ease-out-expo: cubic-bezier(0.16,1,0.3,1);
   --ease-spring:   cubic-bezier(0.34,1.56,0.64,1);
@@ -269,11 +225,7 @@ nav.scrolled {
  */
 .hero {
   min-height: 100vh;
-  background:
-    radial-gradient(ellipse 80% 60% at 50% -10%, rgba(254,126,60,0.45) 0%, transparent 70%),
-    radial-gradient(ellipse 50% 40% at 80% 80%, rgba(14,104,115,0.15) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 50% at 20% 60%, rgba(228,32,27,0.12) 0%, transparent 55%),
-    linear-gradient(180deg, #C86010 0%, #B05008 60%, #A04508 100%);
+  background: linear-gradient(160deg, #7A1800 0%, #A82400 35%, #C93010 65%, #8C1A00 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -282,6 +234,46 @@ nav.scrolled {
   position: relative;
   overflow: hidden;
   text-align: center;
+}
+
+/* Hero background marquee text */
+.hero-marquee-bg {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+.hero-marquee-track {
+  display: flex;
+  white-space: nowrap;
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(4rem, 10vw, 9rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  color: rgba(255,240,224,0.07);
+  letter-spacing: 0.02em;
+  line-height: 1;
+  animation: marqueeLeft 18s linear infinite;
+}
+.hero-marquee-track--2 {
+  animation: marqueeRight 22s linear infinite;
+  color: rgba(255,240,224,0.05);
+}
+.hero-marquee-track span {
+  padding-right: 3rem;
+}
+@keyframes marqueeLeft {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes marqueeRight {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
 }
 
 .sunburst {
@@ -330,13 +322,37 @@ nav.scrolled {
 .deco-circle {
   position: absolute;
   border-radius: 50%;
-  border: 1px solid rgba(200,80,240,0.15);
   pointer-events: none;
   animation: floatCircle 8s ease-in-out infinite;
 }
-.deco-c1 { width: 340px; height: 340px; top: -90px; left: -90px; animation-delay: 0s; border-color: rgba(255,45,135,0.12); }
-.deco-c2 { width: 210px; height: 210px; bottom: 60px; right: -50px; animation-delay: -3s; border-color: rgba(0,201,255,0.18); }
-.deco-c3 { width: 130px; height: 130px; top: 30%; right: 8%; border-color: rgba(255,233,0,0.1); animation-delay: -6s; }
+/* Avatar circle — como o do Instagram */
+.deco-c1 {
+  width: 420px; height: 420px;
+  top: -120px; left: -140px;
+  background: radial-gradient(circle at 40% 40%, #FF7A35 0%, #E8471A 40%, #C93010 75%, #8C1A05 100%);
+  opacity: 0.55;
+  filter: blur(2px);
+  animation-delay: 0s;
+  border: none;
+}
+.deco-c2 {
+  width: 260px; height: 260px;
+  bottom: 40px; right: -80px;
+  background: radial-gradient(circle at 40% 35%, #FF9A55 0%, #E8471A 50%, #C93010 100%);
+  opacity: 0.35;
+  filter: blur(3px);
+  animation-delay: -3s;
+  border: none;
+}
+.deco-c3 {
+  width: 140px; height: 140px;
+  top: 30%; right: 8%;
+  background: radial-gradient(circle at 40% 35%, #FFD53E 0%, #E8471A 60%, #C93010 100%);
+  opacity: 0.25;
+  filter: blur(2px);
+  animation-delay: -6s;
+  border: none;
+}
 
 @keyframes floatCircle {
   0%, 100% { transform: translateY(0); }
@@ -372,7 +388,7 @@ nav.scrolled {
 }
 
 .hero-title {
-  font-family: 'MADE Infinity', 'Syne', sans-serif;
+  font-family: 'Anton', sans-serif;
   font-weight: 400;
   font-size: clamp(1.2rem, 2.8vw, 1.8rem);
   line-height: 1.5;
@@ -385,7 +401,7 @@ nav.scrolled {
 }
 .hero-title .hero-keyword {
   display: block;
-  font-family: 'Heading Now', 'TAN Nimbus', 'Playfair Display', serif;
+  font-family: 'Anton', sans-serif;
   font-weight: 900;
   font-size: clamp(4rem, 10vw, 8rem);
   line-height: 0.95;
@@ -413,7 +429,7 @@ nav.scrolled {
 }
 
 .hero-sub-line {
-  font-family: 'Heading Now', 'TAN Nimbus', serif !important;
+  font-family: 'Anton', sans-serif !important;
   font-style: normal;
   font-weight: 300;
   font-size: clamp(1rem, 2.2vw, 1.3rem);
@@ -456,7 +472,7 @@ nav.scrolled {
 }
 
 .meta-num {
-  font-family: 'MADE Infinity', 'Syne', sans-serif;
+  font-family: 'Anton', sans-serif;
   font-weight: 900;
   font-size: 0.85rem;
   letter-spacing: 0.01em;
@@ -505,8 +521,9 @@ nav.scrolled {
 }
 
 .btn-dark {
-  background: var(--burnt);
-  color: var(--pearl);
+  background: transparent;
+  border: none !important;
+  color: #ffffff;
   border: none;
   padding: 1.05rem 1.5rem;
   font-family: 'Bricolage Grotesque', sans-serif;
@@ -518,10 +535,10 @@ nav.scrolled {
   border-radius: 8px;
 }
 .btn-dark:hover {
-  background: var(--lust);
-  color: var(--white);
+  background: #ffffff;
+  color: #7A1800;
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(228,32,27,0.4);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
 }
 
 .form-note {
@@ -612,7 +629,7 @@ nav.scrolled {
   position: absolute;
   right: -1rem; top: 50%;
   transform: translateY(-50%) rotate(90deg);
-  font-family: 'Heading Now', 'TAN Nimbus', 'Playfair Display', serif;
+  font-family: 'Anton', sans-serif;
   font-weight: 900;
   font-size: 8rem;
   color: rgba(254,126,60,0.04);
@@ -650,7 +667,7 @@ nav.scrolled {
 }
 
 .big-title {
-  font-family: 'Heading Now', 'TAN Nimbus', 'Playfair Display', serif;
+  font-family: 'Anton', sans-serif;
   font-weight: 900;
   font-size: clamp(2.5rem, 4vw, 4rem);
   line-height: 1.0;
@@ -660,7 +677,7 @@ nav.scrolled {
   margin-bottom: 1.8rem;
 }
 .big-title em {
-  font-family: 'MADE Infinity', 'Syne', sans-serif;
+  font-family: 'Anton', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 0.72em;
@@ -705,7 +722,7 @@ nav.scrolled {
 .data-card:hover::before { transform: scaleY(1); }
 
 .data-num {
-  font-family: 'Heading Now', 'TAN Nimbus', 'Playfair Display', serif;
+  font-family: 'Anton', sans-serif;
   font-weight: 900;
   font-size: 3.2rem;
   letter-spacing: -0.04em;
@@ -747,7 +764,7 @@ nav.scrolled {
   font-weight: 400;
   font-style: normal;
   color: rgba(255,240,224,0.38);
-  font-family: 'MADE Infinity', 'Syne', sans-serif;
+  font-family: 'Anton', sans-serif;
   max-width: 440px;
   margin: 0.8rem auto 0;
   line-height: 1.75;
@@ -773,7 +790,7 @@ nav.scrolled {
 .group-dot--green { background: #4ADE80; color: rgba(74,222,128,0.5); }
 .group-dot--blue  { background: #60A5FA; color: rgba(96,165,250,0.5); }
 .group-name {
-  font-family: 'Heading Now', 'TAN Nimbus', 'Playfair Display', serif;
+  font-family: 'Anton', sans-serif;
   font-weight: 900;
   font-style: italic;
   font-size: clamp(1.8rem, 3.5vw, 2.8rem);
@@ -802,7 +819,7 @@ nav.scrolled {
 
 /* Mod title (subtitle inside card) */
 .mod-title {
-  font-family: 'MADE Infinity', 'Syne', sans-serif;
+  font-family: 'Anton', sans-serif;
   font-weight: 600;
   font-size: 0.68rem;
   color: var(--burnt);
@@ -852,7 +869,7 @@ nav.scrolled {
   position: absolute;
   bottom: 1rem;
   right: 1rem;
-  font-family: 'Heading Now', 'TAN Nimbus', serif;
+  font-family: 'Anton', sans-serif;
   font-size: 4.5rem;
   font-weight: 900;
   line-height: 1;
@@ -937,7 +954,7 @@ nav.scrolled {
 }
 
 .mod-title {
-  font-family: 'MADE Infinity', 'Syne', sans-serif;
+  font-family: 'Anton', sans-serif;
   font-weight: 600;
   font-size: 1.05rem;
   color: var(--pearl);
@@ -996,7 +1013,7 @@ nav.scrolled {
 }
 
 .aud-grade {
-  font-family: 'Heading Now', 'TAN Nimbus', 'Playfair Display', serif;
+  font-family: 'Anton', sans-serif;
   font-weight: 900;
   font-size: 5.5rem;
   color: rgba(254,126,60,0.08);
@@ -1056,7 +1073,7 @@ nav.scrolled {
 
 .fl-header { margin-bottom: 4rem; }
 .fl-eyebrow {
-  font-family: 'MADE Infinity', 'Syne', sans-serif;
+  font-family: 'Anton', sans-serif;
   font-weight: 700;
   font-size: 0.65rem;
   letter-spacing: 0.25em;
@@ -1065,7 +1082,7 @@ nav.scrolled {
   margin-bottom: 1rem;
 }
 .fl-title {
-  font-family: 'Heading Now', 'TAN Nimbus', 'Playfair Display', serif;
+  font-family: 'Anton', sans-serif;
   font-weight: 900;
   font-size: clamp(4rem, 12vw, 10rem);
   line-height: 0.9;
@@ -1079,7 +1096,7 @@ nav.scrolled {
 
 /* week label */
 .fl-week-label {
-  font-family: 'MADE Infinity', 'Syne', sans-serif;
+  font-family: 'Anton', sans-serif;
   font-weight: 800;
   font-size: 0.62rem;
   letter-spacing: 0.25em;
@@ -1102,7 +1119,7 @@ nav.scrolled {
 
 /* tiers — hierarquia por tamanho como NOS Alive */
 .fl-tier {
-  font-family: 'MADE Infinity', 'Syne', sans-serif;
+  font-family: 'Anton', sans-serif;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -1126,7 +1143,7 @@ nav.scrolled {
 }
 
 .fl-daily {
-  font-family: 'MADE Infinity', 'Syne', sans-serif;
+  font-family: 'Anton', sans-serif;
   font-weight: 700;
   font-size: 0.6rem;
   letter-spacing: 0.2em;
@@ -1143,7 +1160,7 @@ nav.scrolled {
 }
 
 .fl-footer-line {
-  font-family: 'MADE Infinity', 'Syne', sans-serif;
+  font-family: 'Anton', sans-serif;
   font-weight: 700;
   font-size: 0.6rem;
   letter-spacing: 0.22em;
@@ -1170,7 +1187,7 @@ nav.scrolled {
 .fl-day-row--daily { opacity: 0.6; }
 
 .fl-day-date {
-  font-family: 'MADE Infinity', 'Syne', sans-serif;
+  font-family: 'Anton', sans-serif;
   font-weight: 800;
   font-size: 0.58rem;
   letter-spacing: 0.15em;
@@ -1192,7 +1209,7 @@ nav.scrolled {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'MADE Infinity', 'Syne', sans-serif;
+  font-family: 'Anton', sans-serif;
   font-weight: 800;
   font-size: 0.65rem;
   color: #fff;
@@ -1216,7 +1233,7 @@ nav.scrolled {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'MADE Infinity', 'Syne', sans-serif;
+  font-family: 'Anton', sans-serif;
   font-weight: 800;
   font-size: 0.55rem;
   color: #fff;
@@ -1227,7 +1244,7 @@ nav.scrolled {
 
 .fl-artist-info { min-width: 0; }
 .fl-artist-name {
-  font-family: 'MADE Infinity', 'Syne', sans-serif;
+  font-family: 'Anton', sans-serif;
   font-weight: 800;
   font-size: 0.78rem;
   letter-spacing: 0.05em;
@@ -1281,7 +1298,7 @@ nav.scrolled {
   gap: 0.8rem;
 }
 .fl-tabs-label {
-  font-family: 'MADE Infinity', 'Syne', sans-serif;
+  font-family: 'Anton', sans-serif;
   font-weight: 700;
   font-size: 0.72rem;
   letter-spacing: 0.15em;
@@ -1301,7 +1318,7 @@ nav.scrolled {
   gap: 0.4rem;
 }
 .fl-tab {
-  font-family: 'MADE Infinity', 'Syne', sans-serif;
+  font-family: 'Anton', sans-serif;
   font-weight: 700;
   font-size: 0.68rem;
   letter-spacing: 0.1em;
@@ -1380,7 +1397,7 @@ nav.scrolled {
 }
 .countdown-block:last-child { border-right: none; }
 .countdown-num {
-  font-family: 'MADE Infinity Outline', 'Syne', sans-serif;
+  font-family: 'Anton', sans-serif;
   font-weight: 900;
   font-size: clamp(3.5rem, 8vw, 7rem);
   letter-spacing: -0.05em;
@@ -1425,7 +1442,7 @@ nav.scrolled {
   position: absolute;
   left: 50%; top: 50%;
   transform: translate(-50%,-50%);
-  font-family: 'Heading Now', 'TAN Nimbus', 'Playfair Display', serif;
+  font-family: 'Anton', sans-serif;
   font-weight: 900;
   font-size: 28rem;
   color: rgba(254,126,60,0.04);
@@ -1457,7 +1474,7 @@ nav.scrolled {
 }
 
 .cta-title {
-  font-family: 'Heading Now', 'TAN Nimbus', 'Playfair Display', serif;
+  font-family: 'Anton', sans-serif;
   font-weight: 900;
   font-size: clamp(3.5rem, 9vw, 7.5rem);
   line-height: 0.9;
@@ -1472,7 +1489,7 @@ nav.scrolled {
 }
 
 .cta-sub {
-  font-family: 'MADE Infinity', 'Syne', sans-serif;
+  font-family: 'Anton', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 1rem;
@@ -1528,7 +1545,7 @@ footer {
 }
 
 .footer-logo {
-  font-family: 'Heading Now', 'TAN Nimbus', 'Playfair Display', serif;
+  font-family: 'Anton', sans-serif;
   font-weight: 700;
   font-size: 1rem;
   letter-spacing: 0.02em;
@@ -1600,7 +1617,7 @@ footer {
   position: absolute;
   left: 50%; top: 50%;
   transform: translate(-50%, -50%);
-  font-family: 'Heading Now', 'TAN Nimbus', 'Playfair Display', serif;
+  font-family: 'Anton', sans-serif;
   font-weight: 900;
   font-size: 28vw;
   color: rgba(255,255,255,0.02);
@@ -1638,7 +1655,7 @@ footer {
 }
 
 .wb-title {
-  font-family: 'Heading Now', 'TAN Nimbus', 'Playfair Display', serif;
+  font-family: 'Anton', sans-serif;
   font-weight: 900;
   font-size: clamp(2.5rem, 5vw, 4.5rem);
   letter-spacing: -0.04em;
@@ -1651,13 +1668,13 @@ footer {
   color: var(--burnt);
   font-style: normal;
   font-weight: 400;
-  font-family: 'Heading Now', 'TAN Nimbus', 'Playfair Display', serif;
+  font-family: 'Anton', sans-serif;
   font-size: 0.85em;
   letter-spacing: 0.02em;
 }
 
 .wb-subtitle {
-  font-family: 'MADE Infinity', 'Syne', sans-serif;
+  font-family: 'Anton', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 1rem;
@@ -1809,7 +1826,7 @@ footer {
 }
 
 .wb-name {
-  font-family: 'Heading Now', 'TAN Nimbus', 'Playfair Display', serif;
+  font-family: 'Anton', sans-serif;
   font-weight: 900;
   font-size: clamp(1.6rem, 4vw, 2.8rem);
   letter-spacing: -0.03em;
@@ -1896,7 +1913,7 @@ footer {
 
 .wb-panel-desc {
   grid-column: 1 / -1;
-  font-family: 'MADE Infinity', 'Syne', sans-serif;
+  font-family: 'Anton', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 1rem;
@@ -1937,7 +1954,7 @@ footer {
   gap: 0.6rem;
 }
 .wb-panel-price {
-  font-family: 'Heading Now', 'TAN Nimbus', 'Playfair Display', serif;
+  font-family: 'Anton', sans-serif;
   font-weight: 900;
   font-size: 0.72rem;
   letter-spacing: 0.08em;
@@ -2038,17 +2055,76 @@ footer {
   .speakers-grid { grid-template-columns: 1fr; }
   .speakers-grid-3 { grid-template-columns: 1fr 1fr; }
   footer { flex-direction: column; gap: 1.2rem; text-align: center; padding: 2rem; }
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 260px 260px;
+  }
+  .gallery-item--tall { grid-row: span 2; }
+  .gallery-item--wide { grid-column: span 2; }
 }
 
 @media (max-width: 600px) {
-  .hero-title { font-size: 3.6rem; }
-  .modules-grid { grid-template-columns: 1fr; }
+  /* Nav */
+  nav { padding: 1rem 1.2rem; }
+  .nav-links { display: none; }
+
+  /* Hero */
+  .hero { padding: 7rem 1.5rem 4rem; text-align: center; }
+  .hero-title { font-size: clamp(2.8rem, 14vw, 4rem) !important; line-height: 0.88 !important; }
+  .cta-solid-word { font-size: clamp(2.8rem, 14vw, 4rem) !important; }
+  .cta-neon-word { font-size: clamp(2.8rem, 14vw, 4rem) !important; }
+  .hero-meta { flex-direction: column; gap: 0.8rem; align-items: center; }
+  .hero-badge { font-size: 0.7rem; }
+  .hero-signature { font-size: 0.6rem; }
+  .hero-marquee-bg { display: none; }
+
+  /* Sections */
+  .section-problem, .section-modules, .section-audience,
+  .section-lineup, .section-cta, .section-wristbands,
+  .section-countdown, .section-speakers { padding: 4rem 1.2rem; }
+  .big-title { font-size: clamp(2rem, 10vw, 3rem) !important; }
+
+  /* Cards / modules */
+  .modules-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .mod-card { min-height: 200px; }
+
+  /* Lineup */
+  .fl-title { font-size: clamp(3.5rem, 18vw, 6rem) !important; }
+  .fl-tier--1 { font-size: clamp(1.1rem, 5vw, 1.4rem); }
+  .fl-tier--2 { font-size: clamp(0.85rem, 4vw, 1rem); }
+  .lineup-bottom { flex-direction: column; gap: 0.4rem; text-align: center; }
+
+  /* Speakers */
   .speakers-grid-3 { grid-template-columns: 1fr; }
+
+  /* Bilhetes */
+  .wb-panels { flex-direction: column; }
+  .wb-panel { width: 100%; }
   .cta-form { flex-direction: column; border-radius: 10px; }
   .cta-form .btn-dark { border-radius: 0 0 10px 10px; }
-  .hero-meta { gap: 0.4rem; }
-  .cta-title { font-size: 3.2rem; }
-  .lineup-bottom { flex-direction: column; gap: 0.4rem; text-align: center; }
+
+  /* CTA */
+  .cta-title { font-size: clamp(2.5rem, 12vw, 3.5rem) !important; }
+
+  /* Galeria */
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 260px 260px 260px 260px;
+  }
+  .gallery-item--tall { grid-row: span 1; }
+  .gallery-item--wide { grid-column: span 1; }
+  .gallery-text { font-size: 1.5rem; }
+
+  /* Countdown */
+  .countdown-inner { gap: 1rem; }
+  .countdown-block { min-width: 60px; }
+  .countdown-num { font-size: 2.8rem !important; }
+
+  /* Footer */
+  footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.2rem; font-size: 0.8rem; }
+
+  /* Deco circles — esconder no mobile */
+  .deco-c1, .deco-c2 { display: none; }
 }
 
 /* 
@@ -2098,18 +2174,18 @@ footer {
 .wb-name,
 .countdown-num,
 .meta-num {
-  font-family: 'MADE Infinity', 'Syne', sans-serif !important;
+  font-family: 'Anton', sans-serif !important;
   letter-spacing: 0.02em;
 }
 .data-num,
 .tbd-qs {
-  font-family: 'Heading Now', 'TAN Nimbus', 'Playfair Display', serif !important;
+  font-family: 'Anton', sans-serif !important;
   letter-spacing: 0.02em;
 }
 
 /* Footer logo */
 .footer-logo {
-  font-family: 'MADE Infinity', 'Syne', sans-serif !important;
+  font-family: 'Anton', sans-serif !important;
   font-weight: 500;
   letter-spacing: 0.06em;
 }
@@ -2247,7 +2323,7 @@ footer {
    MADE INFINITY OUTLINE — decorative giant text
 ════════════════════════════════════════ */
 .outline-word {
-  font-family: 'MADE Infinity Outline', sans-serif;
+  font-family: 'Anton', sans-serif;
   font-weight: 900;
   font-size: clamp(4rem, 12vw, 10rem);
   line-height: 0.85;
@@ -2263,7 +2339,7 @@ footer {
 .section-countdown .outline-deco,
 .section-wristbands .outline-deco {
   position: absolute;
-  font-family: 'MADE Infinity Outline', sans-serif;
+  font-family: 'Anton', sans-serif;
   font-weight: 900;
   text-transform: uppercase;
   line-height: 0.85;
@@ -2290,37 +2366,31 @@ footer {
   right: -3%;
 }
 
-/* CTA solid words (preenchido) */
+/* CTA solid words — laranja brilhante como no Instagram */
 .cta-solid-word {
-  font-family: 'MADE Infinity', sans-serif;
+  font-family: 'Anton', sans-serif;
   font-weight: 900;
   font-size: clamp(3rem, 9vw, 7rem);
   line-height: 0.9;
   letter-spacing: -0.01em;
   text-transform: uppercase;
-  color: var(--cream);
+  color: #FF6B2B;
+  text-shadow: 2px 3px 0px rgba(100,20,0,0.4);
   display: block;
 }
 
-/* CTA neon outline word */
+/* CTA segunda linha — cream como no Instagram */
 .cta-neon-word {
-  font-family: 'MADE Infinity Outline', sans-serif;
+  font-family: 'Anton', sans-serif;
   font-weight: 900;
   font-size: clamp(3rem, 9vw, 7rem);
   line-height: 0.9;
   letter-spacing: -0.01em;
   text-transform: uppercase;
   display: block;
-  color: #ffe44d;
-  text-shadow:
-    0 0 7px #ffe44d,
-    0 0 20px rgba(255,213,62,0.9),
-    0 0 40px rgba(255,213,62,0.7),
-    0 0 80px rgba(255,213,62,0.5),
-    0 0 120px rgba(255,213,62,0.35),
-    0 0 200px rgba(255,213,62,0.2),
-    0 0 300px rgba(255,180,0,0.1);
-  animation: neonPulse 2s ease-in-out infinite alternate;
+  color: #FFE8CC;
+  text-shadow: 1px 2px 0px rgba(100,20,0,0.3);
+  -webkit-text-stroke: 0;
 }
 @keyframes neonPulse {
   0%   {
@@ -2350,7 +2420,7 @@ footer {
 
 /* Hero title — MADE Infinity block style */
 .hero-title {
-  font-family: 'MADE Infinity', 'Syne', sans-serif !important;
+  font-family: 'Anton', sans-serif !important;
   font-style: normal !important;
   font-weight: 900 !important;
   letter-spacing: -0.01em !important;
@@ -2360,22 +2430,17 @@ footer {
   line-height: 0.9 !important;
 }
 .hero-title .cta-solid-word {
-  color: var(--cream) !important;
-  text-shadow: none !important;
+  color: #FF6B2B !important;
+  text-shadow: 2px 3px 0px rgba(100,20,0,0.4) !important;
 }
 .hero-title .cta-neon-word {
-  color: #ffe44d !important;
-  text-shadow:
-    0 0 7px #ffe44d,
-    0 0 20px rgba(255,213,62,0.9),
-    0 0 40px rgba(255,213,62,0.7),
-    0 0 80px rgba(255,213,62,0.5),
-    0 0 120px rgba(255,213,62,0.35),
-    0 0 200px rgba(255,213,62,0.2),
-    0 0 300px rgba(255,180,0,0.1) !important;
+  color: #FFE8CC !important;
+  -webkit-text-stroke: 0 !important;
+  text-shadow: 1px 2px 0px rgba(100,20,0,0.3) !important;
+  filter: none !important;
 }
 .hero-title .hero-keyword {
-  font-family: 'Heading Now', serif !important;
+  font-family: 'Anton', sans-serif !important;
   font-style: normal !important;
   font-weight: 900 !important;
   letter-spacing: -0.03em !important;
@@ -2392,7 +2457,7 @@ footer {
 
 /* Section big titles — TAN Nimbus */
 .big-title {
-  font-family: 'Heading Now', 'TAN Nimbus', 'Playfair Display', serif !important;
+  font-family: 'Anton', sans-serif !important;
   font-weight: 900 !important;
   letter-spacing: -0.01em !important;
   line-height: 0.9 !important;
@@ -2400,13 +2465,13 @@ footer {
 
 /* Lineup title — TAN Nimbus */
 .fl-title {
-  font-family: 'Heading Now', 'TAN Nimbus', 'Playfair Display', serif !important;
+  font-family: 'Anton', sans-serif !important;
   font-weight: 900 !important;
 }
 
 /* CTA title — TAN Nimbus */
 .cta-title {
-  font-family: 'Heading Now', 'TAN Nimbus', 'Playfair Display', serif !important;
+  font-family: 'Anton', sans-serif !important;
   font-weight: 900 !important;
   letter-spacing: -0.02em !important;
   line-height: 0.88 !important;
@@ -2419,7 +2484,7 @@ footer {
 /* Speaker/Headliner names — TAN Nimbus */
 .hl-name,
 .speaker-name {
-  font-family: 'Heading Now', 'TAN Nimbus', 'Playfair Display', serif !important;
+  font-family: 'Anton', sans-serif !important;
   font-weight: 900 !important;
   letter-spacing: 0.01em !important;
 }
@@ -2427,14 +2492,14 @@ footer {
 /* Wristband titles — TAN Nimbus */
 .wb-name,
 .wb-title {
-  font-family: 'Heading Now', 'TAN Nimbus', 'Playfair Display', serif !important;
+  font-family: 'Anton', sans-serif !important;
   font-weight: 900 !important;
   letter-spacing: 0.01em !important;
 }
 
 /* Countdown — MADE Infinity Outline neon */
 .countdown-num {
-  font-family: 'MADE Infinity Outline', sans-serif !important;
+  font-family: 'Anton', sans-serif !important;
   font-weight: 900 !important;
   letter-spacing: -0.02em !important;
   color: #ffe44d !important;
@@ -2450,21 +2515,21 @@ footer {
 
 /* Meta numbers — MADE Infinity pill style */
 .meta-num {
-  font-family: 'MADE Infinity', 'Syne', sans-serif !important;
+  font-family: 'Anton', sans-serif !important;
   font-weight: 900 !important;
   color: var(--yellow) !important;
 }
 
 /* Data numbers — TAN Nimbus (decorative) */
 .data-num {
-  font-family: 'Heading Now', 'TAN Nimbus', 'Playfair Display', serif !important;
+  font-family: 'Anton', sans-serif !important;
   font-weight: 900 !important;
   letter-spacing: 0.01em !important;
 }
 
 /* Nav logo — MADE Infinity (clean) */
 .nav-logo {
-  font-family: 'MADE Infinity', 'Syne', sans-serif !important;
+  font-family: 'Anton', sans-serif !important;
   font-weight: 500 !important;
   font-size: 1.1rem !important;
   letter-spacing: 0.08em !important;
@@ -2476,7 +2541,7 @@ footer {
 .lineup-eyebrow,
 .hero-badge,
 .cta-eyebrow {
-  font-family: 'MADE Infinity', 'Syne', sans-serif !important;
+  font-family: 'Anton', sans-serif !important;
   font-weight: 500 !important;
   letter-spacing: 0.15em !important;
 }
@@ -2551,6 +2616,100 @@ footer {
   line-height: 1;
 }
 
+/* ════════════════════════════════════════
+   GALERIA — estilo Instagram
+════════════════════════════════════════ */
+.section-gallery {
+  background: #7A1800;
+  padding: 0;
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 320px 320px;
+  gap: 4px;
+}
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+}
+.gallery-item--tall {
+  grid-row: span 2;
+}
+.gallery-item--wide {
+  grid-column: span 2;
+}
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+.gallery-item:hover img {
+  transform: scale(1.04);
+}
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(232,71,26,0.65) 0%, rgba(140,26,0,0.75) 100%);
+  mix-blend-mode: multiply;
+}
+.gallery-text {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(1.6rem, 3.5vw, 2.8rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #FF6B2B;
+  text-shadow: 2px 3px 0px rgba(80,10,0,0.5);
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+}
+.gallery-text--sm {
+  color: #FFE8CC;
+  font-size: clamp(1.2rem, 2vw, 1.8rem);
+  text-shadow: 1px 2px 0px rgba(80,10,0,0.4);
+}
+.gallery-text--sm span {
+  display: block;
+  font-size: 0.55em;
+  letter-spacing: 0.08em;
+  opacity: 0.75;
+  margin-top: 0.3em;
+}
+.gallery-highlight {
+  color: #FFE8CC;
+}
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+  .gallery-item--tall { grid-row: span 1; }
+  .gallery-item--wide { grid-column: span 2; }
+}
+
+/* "PORTUGAL" highlight — cream dentro do laranja */
+.word-highlight {
+  color: #FFE8CC;
+  -webkit-text-stroke: 0;
+  opacity: 1;
+}
+
+/* Assinatura "SÓ QUE NÃO" */
+.hero-signature {
+  font-family: 'Anton', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,232,204,0.5);
+  margin: 1.2rem 0 0;
+  font-weight: 400;
+}
+
 </style>
 </head>
 <body>
@@ -2573,14 +2732,35 @@ footer {
 
 <!-- HERO -->
 <section class="hero">
-  <div class="sunburst"></div>
-  <div class="spotlight spotlight-1"></div>
-  <div class="spotlight spotlight-2"></div>
-  <div class="spotlight spotlight-3"></div>
-  <div class="spotlight spotlight-4"></div>
   <div class="deco-circle deco-c1"></div>
   <div class="deco-circle deco-c2"></div>
-  <div class="deco-circle deco-c3"></div>
+
+  <div class="hero-marquee-bg" aria-hidden="true">
+    <div class="hero-marquee-track">
+      <span>O FESTIVAL QUE FALTAVA</span>
+      <span>O FESTIVAL QUE FALTAVA</span>
+      <span>O FESTIVAL QUE FALTAVA</span>
+      <span>O FESTIVAL QUE FALTAVA</span>
+      <span>O FESTIVAL QUE FALTAVA</span>
+      <span>O FESTIVAL QUE FALTAVA</span>
+    </div>
+    <div class="hero-marquee-track hero-marquee-track--2">
+      <span>EM PORTUGAL</span>
+      <span>EM PORTUGAL</span>
+      <span>EM PORTUGAL</span>
+      <span>EM PORTUGAL</span>
+      <span>EM PORTUGAL</span>
+      <span>EM PORTUGAL</span>
+    </div>
+    <div class="hero-marquee-track">
+      <span>O FESTIVAL QUE FALTAVA</span>
+      <span>O FESTIVAL QUE FALTAVA</span>
+      <span>O FESTIVAL QUE FALTAVA</span>
+      <span>O FESTIVAL QUE FALTAVA</span>
+      <span>O FESTIVAL QUE FALTAVA</span>
+      <span>O FESTIVAL QUE FALTAVA</span>
+    </div>
+  </div>
 
   <div class="hero-content">
     <div class="hero-badge">
@@ -2591,8 +2771,10 @@ footer {
     <h1 class="hero-title">
       <span class="cta-solid-word">O FESTIVAL</span>
       <span class="cta-solid-word">QUE FALTAVA</span>
-      <span class="cta-neon-word">EM PORTUGAL.</span>
+      <span class="cta-neon-word">EM <span class="word-highlight">PORTUGAL.</span></span>
     </h1>
+
+    <p class="hero-signature">SÓ QUE NÃO — ESTE FESTIVAL VAI SER DIFERENTE.</p>
 
     <div class="hero-meta">
       <div class="meta-item">
@@ -2927,14 +3109,39 @@ footer {
 
 </section>
 
+<!-- GALERIA -->
+<section class="section-gallery">
+  <div class="gallery-grid">
+    <div class="gallery-item gallery-item--tall">
+      <img src="https://images.unsplash.com/photo-1493676304819-0d7a8d026dcf?w=800&q=80" alt="Festival" loading="lazy">
+      <div class="gallery-overlay"></div>
+      <div class="gallery-text">NÃO TE VAI<br>CUSTAR TANTO</div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=800&q=80" alt="Festival" loading="lazy">
+      <div class="gallery-overlay"></div>
+      <div class="gallery-text">LINE-UP<br>SURPREENDENTE</div>
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&q=80" alt="Festival" loading="lazy">
+      <div class="gallery-overlay"></div>
+      <div class="gallery-text gallery-text--sm">SÓ QUE NÃO.<br><span>ESTE FESTIVAL VAI SER DIFERENTE.</span></div>
+    </div>
+    <div class="gallery-item gallery-item--wide">
+      <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?w=1200&q=80" alt="Festival" loading="lazy">
+      <div class="gallery-overlay"></div>
+      <div class="gallery-text">ESTÁ A CHEGAR<br>A <span class="gallery-highlight">PORTUGAL</span></div>
+    </div>
+  </div>
+</section>
+
 <!-- CTA -->
 <section class="section-cta" id="lista">
   <div class="cta-inner">
-    <div class="eyebrow cta-eyebrow reveal">Lista de espera</div>
     <h2 class="cta-title reveal">
-      <span class="cta-solid-word">O FESTIVAL</span>
-      <span class="cta-solid-word">QUE FALTAVA</span>
-      <span class="cta-neon-word">EM PORTUGAL.</span>
+      <span class="cta-solid-word">O FESTIVAL COM</span>
+      <span class="cta-solid-word">A MELHOR LINEUP</span>
+      <span class="cta-neon-word">DO TEU FUTURO.</span>
     </h2>
     <p class="cta-sub reveal">Entra na lista de espera e sê dos primeiros a garantir o bilhete — preço early bird para os mais rápidos.</p>
     <button class="btn-dark reveal" onclick="openForm()" style="margin:0 auto;display:block;font-size:1rem;padding:1rem 2.5rem;">Quero o meu bilhete →</button>
