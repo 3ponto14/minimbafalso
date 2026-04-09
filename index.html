@@ -36,25 +36,15 @@
    TOKENS
  */
 :root {
-  /* 3 cores base */
-  --bg:     #8B1A00;   /* Fundo — vermelho escuro */
-  --accent: #FF5722;   /* Laranja vibrante — títulos */
-  --cream:  #FFE8CC;   /* Cream — texto secundário */
-
-  /* Aliases para compatibilidade */
-  --burnt:  #FF5722;
-  --lust:   #8B1A00;
-  --copper: #8B1A00;
-  --lagoon: #8B1A00;
-  --yellow: #FFE8CC;
-  --pearl:  #8B1A00;
-  --sun:    #FF5722;
-  --orange: #FF5722;
-  --fire:   #8B1A00;
-  --teal:   #8B1A00;
+  --cream:      #FFE8CC;
+  --burnt:      #FF5722;
+  --lust:       #8B1A00;
+  --lagoon:     #8B1A00;
+  --yellow:     #FFE8CC;
+  --pearl:      #8B1A00;
   --teal-light: #FFE8CC;
-  --dark:   #6B1200;
-  --white:  #FFE8CC;
+  --dark:       #6B1200;
+  --white:      #FFE8CC;
 
   --ease-out-expo: cubic-bezier(0.16,1,0.3,1);
   --ease-spring:   cubic-bezier(0.34,1.56,0.64,1);
@@ -236,12 +226,6 @@ nav.scrolled {
   cursor: pointer;
   text-decoration: none;
   transition: background 0.25s, transform 0.2s var(--ease-spring), box-shadow 0.25s;
-}
-.nav-pill:hover {
-  background: var(--lust);
-  color: var(--white);
-  transform: scale(1.05);
-  box-shadow: 0 4px 20px rgba(228,32,27,0.5);
 }
 
 /* 
@@ -587,9 +571,8 @@ nav.scrolled {
 
 .btn-dark {
   background: transparent;
-  border: none !important;
-  color: #ffffff;
   border: none;
+  color: #ffffff;
   padding: 1.05rem 1.5rem;
   font-family: 'Bricolage Grotesque', sans-serif;
   font-weight: 700;
@@ -835,52 +818,6 @@ nav.scrolled {
   line-height: 1.75;
 }
 
-/* Group headers for Básico / Secundário */
-.group-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.8rem;
-  max-width: 1280px;
-  margin: 0 auto 2.5rem;
-  flex-wrap: wrap;
-}
-.group-dot {
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  flex-shrink: 0;
-  box-shadow: 0 0 12px currentColor;
-}
-.group-dot--green { background: #4ADE80; color: rgba(74,222,128,0.5); }
-.group-dot--blue  { background: #60A5FA; color: rgba(96,165,250,0.5); }
-.group-name {
-  font-family: 'Anton', sans-serif;
-  font-weight: 900;
-  font-style: italic;
-  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-  color: var(--cream);
-  letter-spacing: -0.02em;
-  line-height: 1;
-}
-.group-tag {
-  font-family: 'Bricolage Grotesque', sans-serif;
-  font-weight: 600;
-  font-size: 0.65rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: rgba(255,245,230,0.35);
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.1);
-  padding: 0.35rem 1rem;
-  border-radius: 100px;
-}
-.group-divider {
-  max-width: 1280px;
-  margin: 5rem auto;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
-}
 
 /* Mod title (subtitle inside card) */
 .mod-title {
@@ -1371,62 +1308,6 @@ nav.scrolled {
   text-align: right;
 }
 
-/* TABS */
-.fl-tabs-section {
-  margin-top: 3rem;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.fl-tabs-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 1.2rem;
-  flex-wrap: wrap;
-  gap: 0.8rem;
-}
-.fl-tabs-label {
-  font-family: 'Anton', sans-serif;
-  font-weight: 700;
-  font-size: 0.72rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--yellow);
-  border: 1px solid rgba(255,213,62,0.35);
-  padding: 0.5em 1.2em;
-  border-radius: 6px;
-  transition: background 0.2s, border-color 0.2s;
-}
-.fl-tabs-header:hover .fl-tabs-label {
-  background: rgba(255,213,62,0.1);
-  border-color: rgba(255,213,62,0.6);
-}
-.fl-tabs-nav {
-  display: flex;
-  gap: 0.4rem;
-}
-.fl-tab {
-  font-family: 'Anton', sans-serif;
-  font-weight: 700;
-  font-size: 0.68rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  padding: 0.45em 1.1em;
-  border-radius: 6px;
-  border: 1px solid rgba(255,255,255,0.15);
-  background: transparent;
-  color: rgba(255,255,255,0.4);
-  cursor: pointer;
-  transition: all 0.2s;
-}
-.fl-tab.active {
-  background: var(--burnt);
-  border-color: var(--burnt);
-  color: #fff;
-}
-.fl-tab-panel { display: none; }
-.fl-tab-panel.active { display: block; }
 
 @media (max-width: 680px) {
   .section-lineup { padding: 5rem 1.5rem; }
@@ -2623,12 +2504,6 @@ footer {
   box-shadow: 0 8px 32px rgba(255,80,0,0.5);
 }
 
-/* Nav pill glow on hover */
-.nav-pill:hover {
-  background: #FFD53E;
-  color: #1A1A2E;
-  box-shadow: 0 4px 20px rgba(255,213,62,0.5);
-}
 
 /* Countdown unit labels brighter */
 .countdown-unit { color: rgba(255,255,255,0.7); }
@@ -2967,55 +2842,6 @@ footer {
   font-family: 'Bricolage Grotesque', sans-serif !important;
 }
 
-/* FORM MODAL */
-.form-modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.7);
-  z-index: 10000;
-  align-items: center;
-  justify-content: center;
-  padding: 1.5rem;
-  backdrop-filter: blur(4px);
-}
-.form-modal.open {
-  display: flex;
-}
-.form-modal-box {
-  position: relative;
-  width: 100%;
-  max-width: 600px;
-  height: 85vh;
-  max-height: 720px;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 24px 80px rgba(0,0,0,0.5);
-}
-.form-modal-box iframe {
-  display: block;
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-.form-modal-close {
-  position: absolute;
-  top: 0.75rem;
-  right: 0.75rem;
-  z-index: 2;
-  background: var(--burnt);
-  color: #fff;
-  border: none;
-  border-radius: 50%;
-  width: 2rem;
-  height: 2rem;
-  font-size: 0.85rem;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 1;
-}
 
 /* ════════════════════════════════════════
    GALERIA — estilo Instagram
@@ -3557,14 +3383,6 @@ footer {
   </div>
 </section>
 
-<!-- FORM MODAL -->
-<div class="form-modal" id="formModal" onclick="closeFormOutside(event)">
-  <div class="form-modal-box">
-    <button class="form-modal-close" onclick="closeForm()">✕</button>
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdBnTY4Uzy8NPFa6zmn96lEhOd92YxMWikNx1-gOn1TVmYw8A/viewform?embedded=true" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0">A carregar…</iframe>
-  </div>
-</div>
-
 <!-- FOOTER -->
 <footer>
   <div class="footer-big-title">O<br>FESTIVAL</div>
@@ -3593,38 +3411,6 @@ footer {
 </footer>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-/*  Form modal  */
-function openForm() {
-  document.getElementById('formModal').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-function closeForm() {
-  document.getElementById('formModal').classList.remove('open');
-  document.body.style.overflow = '';
-}
-function closeFormOutside(e) {
-  if (e.target === document.getElementById('formModal')) closeForm();
-}
-
-/*  Lineup tabs  */
-var tabsOpen = false;
-function toggleTabs() {
-  tabsOpen = !tabsOpen;
-  const nav = document.getElementById('fl-tabs-nav');
-  const toggle = document.getElementById('fl-tabs-toggle');
-  const defaultPanel = document.getElementById('tab-semA');
-  nav.style.display = tabsOpen ? 'flex' : 'none';
-  toggle.textContent = tabsOpen ? 'Fechar programa ↑' : 'Ver programa por dia ↓';
-  if (tabsOpen) defaultPanel.style.display = 'block';
-  else document.querySelectorAll('.fl-tab-panel').forEach(p => p.style.display = 'none');
-}
-function switchTab(e, id) {
-  document.querySelectorAll('.fl-tab').forEach(t => t.classList.remove('active'));
-  document.querySelectorAll('.fl-tab-panel').forEach(p => p.style.display = 'none');
-  e.currentTarget.classList.add('active');
-  document.getElementById('tab-' + id).style.display = 'block';
-}
-
 /*  Wristband toggle  */
 function toggleWb(el) {
   const isOpen = el.classList.contains('open');
