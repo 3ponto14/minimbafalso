@@ -2672,6 +2672,8 @@ footer {
 .gallery-highlight {
   color: #FFE8CC;
 }
+.gallery-item--mobile-hide { display: none; }
+
 @media (max-width: 768px) {
   .gallery-grid {
     grid-template-columns: 1fr 1fr;
@@ -2679,6 +2681,7 @@ footer {
   }
   .gallery-item--tall { grid-row: span 1; }
   .gallery-item--wide { grid-column: span 2; }
+  .gallery-item--mobile-hide { display: block; }
 }
 
 /* "PORTUGAL" highlight — cream dentro do laranja */
@@ -3042,6 +3045,10 @@ footer {
       <img src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&q=80" alt="Festival" loading="lazy">
       <div class="gallery-overlay"></div>
       <div class="gallery-text gallery-text--sm">SÓ QUE NÃO.<br><span>ESTE FESTIVAL VAI SER DIFERENTE.</span></div>
+    </div>
+    <div class="gallery-item gallery-item--mobile-hide">
+      <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800&q=80" alt="Festival" loading="lazy">
+      <div class="gallery-overlay"></div>
     </div>
     <div class="gallery-item gallery-item--wide">
       <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?w=1200&q=80" alt="Festival" loading="lazy">
