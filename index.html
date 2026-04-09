@@ -135,15 +135,15 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 0.9rem 3rem;
-  background: rgba(200,140,0,0.92);
-  backdrop-filter: blur(24px) saturate(1.8);
-  -webkit-backdrop-filter: blur(24px) saturate(1.8);
-  border-bottom: 1px solid rgba(0,0,0,0.1);
+  background: rgba(12,5,0,0.75);
+  backdrop-filter: blur(20px) saturate(1.5);
+  -webkit-backdrop-filter: blur(20px) saturate(1.5);
+  border-bottom: 1px solid rgba(255,120,0,0.15);
   transition: background 0.3s, padding 0.3s;
 }
 
 nav.scrolled {
-  background: rgba(180,120,0,0.98);
+  background: rgba(12,5,0,0.95);
   padding: 0.7rem 3rem;
 }
 
@@ -165,11 +165,11 @@ nav.scrolled {
   font-size: 0.72rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(61,21,0,0.75);
+  color: rgba(255,220,180,0.65);
   text-decoration: none;
   transition: color 0.2s;
 }
-.nav-links a:hover { color: rgba(61,21,0,1); }
+.nav-links a:hover { color: rgba(255,220,180,1); }
 
 .nav-contacts {
   display: flex;
@@ -181,14 +181,14 @@ nav.scrolled {
   font-weight: 500;
   font-size: 0.7rem;
   letter-spacing: 0.08em;
-  color: rgba(61,21,0,0.6);
+  color: rgba(255,200,140,0.5);
   text-decoration: none;
   display: flex;
   align-items: center;
   gap: 0.4rem;
   transition: color 0.2s;
 }
-.nav-contact-link:hover { color: rgba(61,21,0,1); }
+.nav-contact-link:hover { color: rgba(255,200,140,0.9); }
 .nav-contact-link svg { width: 13px; height: 13px; opacity: 0.7; }
 
 .nav-logo {
@@ -607,7 +607,7 @@ nav.scrolled {
    MARQUEE
  */
 .marquee-wrap {
-  background: #E8A800;
+  background: #0F0700;
   overflow: hidden;
   padding: 1rem 0;
 }
@@ -626,10 +626,10 @@ nav.scrolled {
   font-size: 0.75rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(61,21,0,0.9);
+  color: rgba(255,200,120,0.8);
   white-space: nowrap;
 }
-.marquee-item .star { color: rgba(61,21,0,0.5); font-size: 0.55rem; }
+.marquee-item .star { color: rgba(255,140,40,0.6); font-size: 0.55rem; }
 @keyframes marquee {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
@@ -637,8 +637,8 @@ nav.scrolled {
 
 /* Second reverse marquee band */
 .marquee-wrap--reverse {
-  background: #C98800;
-  border-top: 1px solid rgba(0,0,0,0.08);
+  background: #FF5500;
+  border-top: none;
 }
 .marquee-track--reverse {
   animation: marqueeReverse 40s linear infinite;
@@ -648,9 +648,9 @@ nav.scrolled {
   to   { transform: translateX(0); }
 }
 .marquee-item--dark {
-  color: rgba(61,21,0,0.9);
+  color: rgba(255,240,220,0.95);
 }
-.marquee-item--dark .star { color: rgba(61,21,0,0.5); font-size: 0.55rem; }
+.marquee-item--dark .star { color: rgba(255,220,180,0.6); font-size: 0.55rem; }
 
 /* 
    PROBLEM
@@ -2274,11 +2274,11 @@ footer {
 
 /* Festival glow on buttons */
 .btn-dark {
-  background: linear-gradient(135deg, var(--burnt) 0%, var(--lust) 100%);
+  background: linear-gradient(135deg, #FF6200 0%, #E84000 100%);
 }
 .btn-dark:hover {
-  background: linear-gradient(135deg, var(--lust) 0%, #C01510 100%);
-  box-shadow: 0 8px 24px rgba(228,32,27,0.4);
+  background: linear-gradient(135deg, #FF7700 0%, #FF5000 100%);
+  box-shadow: 0 8px 32px rgba(255,80,0,0.5);
 }
 
 /* Nav pill glow on hover */
@@ -2341,16 +2341,16 @@ footer {
 .section-cta .cta-eyebrow::before,
 .section-cta .cta-eyebrow::after { background: rgba(255,213,62,0.4) !important; }
 
-/* Nav logo on mostarda */
-.nav-logo { color: #3D1500 !important; }
-.nav-logo .x { color: rgba(61,21,0,0.5) !important; }
+/* Nav logo on dark transparent */
+.nav-logo { color: #FFE8CC !important; }
+.nav-logo .x { color: rgba(255,160,60,0.7) !important; }
 .nav-pill {
-  background: #3D1500 !important;
-  color: #FFB830 !important;
+  background: #FF5500 !important;
+  color: #fff !important;
 }
 .nav-pill:hover {
-  background: #1A0800 !important;
-  color: #FFD53E !important;
+  background: #FF7700 !important;
+  color: #fff !important;
 }
 
 /* Hero text stays white */
