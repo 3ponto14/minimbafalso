@@ -135,15 +135,15 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 0.9rem 3rem;
-  background: rgba(10,8,6,0.88);
+  background: rgba(90,20,0,0.88);
   backdrop-filter: blur(24px) saturate(1.8);
   -webkit-backdrop-filter: blur(24px) saturate(1.8);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
   transition: background 0.3s, padding 0.3s;
 }
 
 nav.scrolled {
-  background: rgba(10,8,6,0.97);
+  background: rgba(80,18,0,0.97);
   padding: 0.7rem 3rem;
 }
 
@@ -561,7 +561,7 @@ nav.scrolled {
    MARQUEE
  */
 .marquee-wrap {
-  background: #0F0C0A;
+  background: #7A1A00;
   overflow: hidden;
   padding: 1rem 0;
 }
@@ -580,10 +580,10 @@ nav.scrolled {
   font-size: 0.75rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(255,240,224,0.9);
+  color: rgba(255,240,224,1);
   white-space: nowrap;
 }
-.marquee-item .star { color: rgba(255,255,255,0.5); font-size: 0.55rem; }
+.marquee-item .star { color: rgba(255,200,120,0.8); font-size: 0.55rem; }
 @keyframes marquee {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
@@ -591,8 +591,8 @@ nav.scrolled {
 
 /* Second reverse marquee band */
 .marquee-wrap--reverse {
-  background: #1A1612;
-  border-top: 1px solid rgba(255,255,255,0.05);
+  background: #5C1200;
+  border-top: 1px solid rgba(255,255,255,0.08);
 }
 .marquee-track--reverse {
   animation: marqueeReverse 40s linear infinite;
@@ -602,9 +602,9 @@ nav.scrolled {
   to   { transform: translateX(0); }
 }
 .marquee-item--dark {
-  color: rgba(255,245,230,0.85);
+  color: rgba(255,245,230,1);
 }
-.marquee-item--dark .star { color: rgba(255,255,255,0.4); font-size: 0.55rem; }
+.marquee-item--dark .star { color: rgba(255,200,120,0.8); font-size: 0.55rem; }
 
 /* 
    PROBLEM
