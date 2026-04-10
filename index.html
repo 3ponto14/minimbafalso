@@ -683,17 +683,6 @@
   /* lança confetes imediatamente */
   launch();
 
-  /* tenta som — só funciona se o browser permitir */
-  var audio = new Audio('https://assets.mixkit.co/active_storage/sfx/2074/2074-preview.mp3');
-  audio.volume = 0.4;
-  audio.play().catch(function(){
-    /* browser bloqueou autoplay — ao primeiro clique tenta outra vez */
-    document.addEventListener('click', function tryPlay(){
-      audio.play();
-      document.removeEventListener('click', tryPlay);
-    });
-  });
-
   /* fecha após 3 segundos */
   setTimeout(function(){
     document.getElementById('welcome-screen').classList.add('hide');
