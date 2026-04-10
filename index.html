@@ -1421,17 +1421,13 @@ window.addEventListener('scroll', () => {
     isMoving = true;
     clearTimeout(moveTimer);
     moveTimer = setTimeout(() => { isMoving = false; }, 100);
-    for (let i = 0; i < 4; i++) {
-      particles.push({
-        x: mx + (Math.random() - 0.5) * 10,
-        y: my + (Math.random() - 0.5) * 10,
-        vx: (Math.random() - 0.5) * 1.5,
-        vy: -Math.random() * 2.5 - 0.5,
-        life: 1,
-        size: Math.random() * 7 + 3,
-        hue: Math.random() * 30 + 10  // 10–40 → amarelo a laranja
-      });
-    }
+    particles.push({
+      x: mx, y: my,
+      vx: (Math.random() - 0.5) * 1,
+      vy: (Math.random() - 0.5) * 1,
+      life: 1,
+      size: Math.random() * 3 + 2
+    });
   }, { passive: true });
 
   function loop() {
@@ -1444,14 +1440,9 @@ window.addEventListener('scroll', () => {
       p.life -= 0.035;
       p.size *= 0.97;
       if (p.life <= 0) { particles.splice(i, 1); continue; }
-      const alpha = p.life;
-      const grad = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.size);
-      grad.addColorStop(0, `hsla(${p.hue + 20}, 100%, 90%, ${alpha})`);
-      grad.addColorStop(0.4, `hsla(${p.hue}, 100%, 60%, ${alpha * 0.8})`);
-      grad.addColorStop(1, `hsla(${p.hue - 10}, 100%, 40%, 0)`);
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-      ctx.fillStyle = grad;
+      ctx.fillStyle = `rgba(255,232,204,${p.life * 0.6})`;
       ctx.fill();
     }
     requestAnimationFrame(loop);
