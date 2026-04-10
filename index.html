@@ -569,8 +569,91 @@
   border-color:var(--burnt);
   color:var(--burnt);
 }
+
+/* ── WELCOME SCREEN ─────────────────────────────── */
+#welcome-screen{
+  position:fixed;
+  inset:0;
+  z-index:99999;
+  background:#6B1200;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:1.5rem;
+  transition:opacity 0.8s ease, visibility 0.8s ease;
+}
+#welcome-screen.hide{
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+}
+.welcome-eyebrow{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-size:0.7rem;
+  font-weight:700;
+  letter-spacing:0.25em;
+  text-transform:uppercase;
+  color:var(--burnt);
+  opacity:0;
+  animation:fadeUp 0.6s ease 0.3s forwards;
+}
+.welcome-title{
+  font-family:'Anton',sans-serif;
+  font-size:clamp(4rem,14vw,10rem);
+  font-weight:900;
+  line-height:0.88;
+  text-transform:uppercase;
+  color:var(--cream);
+  text-align:center;
+  opacity:0;
+  animation:fadeUp 0.6s ease 0.5s forwards;
+}
+.welcome-title em{
+  font-style:normal;
+  color:var(--burnt);
+  display:block;
+}
+.welcome-sub{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-size:0.85rem;
+  color:rgba(255,232,204,0.5);
+  letter-spacing:0.1em;
+  opacity:0;
+  animation:fadeUp 0.6s ease 0.7s forwards;
+}
+.welcome-bar{
+  width:40px;
+  height:2px;
+  background:var(--burnt);
+  border-radius:2px;
+  opacity:0;
+  animation:fadeUp 0.6s ease 0.9s forwards, growBar 1.8s ease 1s forwards;
+}
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(16px);}
+  to{opacity:1;transform:translateY(0);}
+}
+@keyframes growBar{
+  from{width:40px;}
+  to{width:160px;}
+}
 </style></head>
 <body>
+
+<!-- Welcome Screen -->
+<div id="welcome-screen">
+  <div class="welcome-eyebrow">Verão 2026 · Portugal</div>
+  <div class="welcome-title">BEM-VINDO<br>A<br><em>O FESTIVAL.</em></div>
+  <div class="welcome-sub">O festival que faltava.</div>
+  <div class="welcome-bar"></div>
+</div>
+
+<script>
+  setTimeout(function(){
+    document.getElementById('welcome-screen').classList.add('hide');
+  }, 2800);
+</script>
 
 <!-- Scroll progress bar -->
 <div id="scroll-progress"></div>
