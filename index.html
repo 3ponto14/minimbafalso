@@ -698,6 +698,13 @@
 
 <script>
 (function(){
+  /* se já viu nesta sessão, esconde imediatamente */
+  if(sessionStorage.getItem('welcomed')){
+    document.getElementById('welcome-screen').style.display='none';
+    return;
+  }
+  sessionStorage.setItem('welcomed','1');
+
   var canvas = document.getElementById('confetti-canvas');
   var ctx = canvas.getContext('2d');
   var W, H, particles = [], running = false;
@@ -710,7 +717,7 @@
     this.x = Math.random()*W;
     this.y = -20;
     this.r = Math.random()*8+4;
-    this.d = Math.random()*2+1;
+    this.d = Math.random()*3+1;
     this.color = colors[Math.floor(Math.random()*colors.length)];
     this.angle = Math.random()*360;
     this.spin = (Math.random()-0.5)*0.2;
@@ -719,9 +726,9 @@
 
   function launch(){
     running = true;
-    for(var i=0;i<220;i++) particles.push(new Particle());
+    for(var i=0;i<180;i++) particles.push(new Particle());
     loop();
-    setTimeout(function(){ running = false; }, 3500);
+    setTimeout(function(){ running = false; }, 1500);
   }
 
   function loop(){
@@ -739,13 +746,12 @@
     if(particles.length > 0 || running) requestAnimationFrame(loop);
   }
 
-  /* lança confetes imediatamente */
   launch();
 
-  /* fecha após 3 segundos */
+  /* fecha após 1.8 segundos */
   setTimeout(function(){
     document.getElementById('welcome-screen').classList.add('hide');
-  }, 3000);
+  }, 1800);
 })();
 </script>
 
