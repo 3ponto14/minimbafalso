@@ -374,8 +374,10 @@
 .hero-title .cta-neon-word{
   animation:none!important;
 }
-.hero-em{
-  animation:none!important;
+@keyframes noAnim{0%,100%{opacity:1;}}
+.hero-title .cta-neon-word{
+  animation:noAnim 1s linear infinite!important;
+  color:#FF6B00!important;
 }
 .word-highlight{
   text-shadow:4px 4px 0px rgba(140,30,0,0.7)!important;
@@ -434,18 +436,30 @@
 /* feed vídeos */
 .ig-feed{
   display:flex;
-  justify-content:center;
+  flex-direction:column;
   align-items:center;
-  padding:0 0 2rem;
+  height:820px;
+  overflow-y:scroll;
+  scroll-snap-type:y mandatory;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+  gap:0;
 }
+.ig-feed::-webkit-scrollbar{display:none;}
 .ig-post{
+  flex:0 0 820px;
+  width:100%;
+  height:820px;
+  scroll-snap-align:start;
   display:flex;
   align-items:center;
   justify-content:center;
+  box-sizing:border-box;
 }
 @media(max-width:600px){
   .section-instagram{padding-bottom:2rem;}
-  .ig-feed{padding:0 0 1.5rem;}
+  .ig-feed{height:600px;}
+  .ig-post{flex:0 0 600px;height:600px;}
 }
 /* moldura telemóvel */
 .phone-frame{
@@ -877,6 +891,17 @@
         <div class="phone-btn-vol-down"></div>
         <div class="phone-screen">
           <iframe src="https://www.tiktok.com/embed/v2/7626345340639218977?lang=pt" frameborder="0" allowfullscreen allow="encrypted-media"></iframe>
+        </div>
+      </div>
+    </div>
+    <div class="ig-post">
+      <div class="phone-frame">
+        <div class="phone-island"></div>
+        <div class="phone-btn-power"></div>
+        <div class="phone-btn-vol-up"></div>
+        <div class="phone-btn-vol-down"></div>
+        <div class="phone-screen">
+          <iframe src="https://www.tiktok.com/embed/v2/7627130785501367584?lang=pt" frameborder="0" allowfullscreen allow="encrypted-media"></iframe>
         </div>
       </div>
     </div>
