@@ -306,6 +306,80 @@
   .mod-card{flex:0 0 78vw!important;min-width:78vw!important;min-height:280px!important;}
   .mod-title{font-size:1.35rem!important;}
 }
+/* ── MODS HEADER REDESIGN ───────────────────────── */
+.mods-header{margin-bottom:3.5rem;}
+.mods-header-inner{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:3rem;
+  align-items:end;
+  max-width:1100px;
+  margin:0 auto;
+}
+.mods-eyebrow{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-size:0.7rem;
+  font-weight:700;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  color:var(--burnt);
+  margin-bottom:1.2rem;
+}
+.mods-title{
+  font-family:'Anton',sans-serif;
+  font-size:clamp(3.5rem,7vw,6rem);
+  font-weight:900;
+  line-height:0.92;
+  text-transform:uppercase;
+  color:var(--cream);
+  letter-spacing:-0.01em;
+}
+.mods-title em{
+  font-style:normal;
+  color:var(--burnt);
+  display:block;
+}
+.mods-right{
+  display:flex;
+  flex-direction:column;
+  gap:1.8rem;
+  padding-bottom:0.5rem;
+}
+.mods-desc{
+  font-size:1rem;
+  line-height:1.7;
+  color:rgba(255,232,204,0.65);
+  font-weight:300;
+}
+.mods-desc strong{
+  color:var(--cream);
+  font-weight:600;
+}
+.mods-coming{
+  display:inline-flex;
+  align-items:center;
+  gap:0.6rem;
+  font-size:0.72rem;
+  font-weight:700;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--burnt);
+  background:rgba(255,87,34,0.1);
+  border:1px solid rgba(255,87,34,0.25);
+  border-radius:100px;
+  padding:0.5rem 1rem;
+  width:fit-content;
+}
+.mods-dot{
+  width:6px;height:6px;
+  border-radius:50%;
+  background:var(--burnt);
+  animation:pulse 2s ease infinite;
+}
+@media(max-width:900px){
+  .mods-header-inner{grid-template-columns:1fr;gap:1.5rem;}
+  .mods-title{font-size:clamp(3rem,12vw,5rem);}
+}
 </style></head>
 <body>
 
@@ -454,14 +528,20 @@
 
 <!-- MODULES -->
 <section class="section-modules" id="modules" style="position:relative;">
-  <div class="outline-deco">PALCOS</div>
   <div class="mods-header reveal">
-    <div class="eyebrow" style="justify-content:center;color:var(--burnt)">
-      <span style="background:var(--burnt);width:22px;height:1.5px;display:inline-block"></span>
-      Os palcos
+    <div class="mods-header-inner">
+      <div class="mods-left">
+        <div class="mods-eyebrow">6 palcos · Verão 2026</div>
+        <h2 class="mods-title">O CARTAZ<br>DESTE<br><em>festival.</em></h2>
+      </div>
+      <div class="mods-right">
+        <p class="mods-desc">Cada palco tem um tema, um headliner e convidados especiais. Os artistas ainda estão a ser confirmados —<br><strong>em breve revelamos tudo.</strong></p>
+        <div class="mods-coming">
+          <span class="mods-dot"></span>
+          Anúncios em breve
+        </div>
+      </div>
     </div>
-    <h2 class="big-title" style="color:var(--cream)">O CARTAZ<br>DESTE<br><em style="color:var(--burnt)">festival.</em></h2>
-    <p class="section-desc">Cada palco tem um género, um headliner e convidados especiais. Os artistas ainda estão a ser confirmados — em breve revelamos tudo.</p>
   </div>
 
   <div class="carousel-wrapper">
