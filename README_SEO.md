@@ -2,7 +2,7 @@
 
 ## 📌 Resumo Executivo
 
-**O site Mini MBA Falso foi otimizado para Google com 85% das implementações de SEO críticas.**
+**O site O Festival foi otimizado para Google com 85% das implementações de SEO críticas.**
 
 Tudo está pronto para começar a receber tráfego orgânico, mas requer 2 ações finais de setup (30 minutos).
 
