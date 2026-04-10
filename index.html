@@ -212,21 +212,37 @@
   .modules-grid{padding:0 1.5rem 1rem!important;}
   .mod-card{flex:0 0 78vw!important;min-width:78vw!important;min-height:220px!important;scroll-snap-align:center;}
 }
+
+}
 /* ── PALCOS — REDESIGN ───────────────────────────── */
 .mod-card{
   flex:0 0 300px!important;
   min-width:300px!important;
   min-height:340px!important;
   border-radius:16px!important;
-  border:none!important;
-  background:none!important;
+  border:1px solid rgba(255,232,204,0.10)!important;
+  background:rgba(5,40,46,0.55)!important;
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
   padding:0!important;
   position:relative;
   overflow:hidden;
   cursor:default;
-  transition:transform 0.3s var(--ease-out-expo),box-shadow 0.3s!important;
+  transition:transform 0.3s var(--ease-out-expo),box-shadow 0.3s,border-color 0.3s!important;
 }
-.mod-card:hover{transform:translateY(-6px) scale(1.02)!important;box-shadow:0 24px 60px rgba(0,0,0,0.4)!important;}
+.mod-card::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(135deg,rgba(255,87,34,0.08) 0%,transparent 60%);
+  pointer-events:none;
+  z-index:0;
+}
+.mod-card:hover{
+  transform:translateY(-6px) scale(1.02)!important;
+  border-color:rgba(255,87,34,0.35)!important;
+  box-shadow:0 24px 60px rgba(0,0,0,0.35),0 0 0 1px rgba(255,87,34,0.2)!important;
+}
 .mod-card-inner{
   position:relative;
   z-index:2;
@@ -236,67 +252,59 @@
   flex-direction:column!important;
   justify-content:space-between;
 }
-/* número gigante como fundo */
 .mod-num{
   position:absolute!important;
-  bottom:-0.3em;
+  bottom:-0.15em;
   right:0.1em;
   font-size:9rem!important;
   font-family:'Anton',sans-serif;
   font-weight:900;
   line-height:1;
-  color:rgba(0,0,0,0.18)!important;
+  color:transparent!important;
+  -webkit-text-stroke:1px rgba(255,87,34,0.18);
   letter-spacing:-0.05em;
   pointer-events:none;
   z-index:1;
   text-shadow:none!important;
 }
 .mod-name{
-  font-size:0.62rem!important;
-  letter-spacing:0.2em;
+  font-size:0.6rem!important;
+  letter-spacing:0.22em;
   text-transform:uppercase;
   font-weight:700;
-  opacity:0.75;
-  margin-bottom:0.6rem;
+  color:rgba(255,232,204,0.5)!important;
+  margin-bottom:0.8rem;
 }
+/* barra accent laranja */
+.mod-accent{
+  display:block!important;
+  width:28px;
+  height:2.5px;
+  border-radius:2px;
+  background:var(--burnt);
+  margin-bottom:1rem;
+  opacity:0.8;
+}
+.mod-card:hover .mod-accent{opacity:1;}
 .mod-title{
   font-family:'Anton',sans-serif!important;
-  font-size:1.7rem!important;
+  font-size:1.6rem!important;
   font-weight:900!important;
   line-height:1.1!important;
   text-transform:uppercase;
-  color:#fff!important;
+  color:#FFE8CC!important;
   margin-bottom:auto;
   padding-bottom:1rem;
 }
 .mod-desc{
   font-size:0.8rem!important;
-  line-height:1.55;
-  opacity:0.75;
-  color:#fff!important;
+  line-height:1.6;
+  color:rgba(255,232,204,0.5)!important;
   margin-top:auto;
 }
-.mod-accent{display:none;}
-
-/* cores sólidas por palco */
-.mod-card--orange{background:linear-gradient(135deg,#FF5722 0%,#E64A00 100%)!important;}
-.mod-card--teal  {background:linear-gradient(135deg,#0097A7 0%,#006978 100%)!important;}
-.mod-card--yellow{background:linear-gradient(135deg,#F9A825 0%,#E65100 100%)!important;}
-.mod-card--red   {background:linear-gradient(135deg,#C62828 0%,#8B0000 100%)!important;}
-.mod-card--purple{background:linear-gradient(135deg,#6A1B9A 0%,#4A0072 100%)!important;}
-.mod-card--green {background:linear-gradient(135deg,#2E7D32 0%,#1B5E20 100%)!important;}
-
-/* sombra colorida no hover */
-.mod-card--orange:hover{box-shadow:0 24px 60px rgba(255,87,34,0.5)!important;}
-.mod-card--teal:hover  {box-shadow:0 24px 60px rgba(0,151,167,0.5)!important;}
-.mod-card--yellow:hover{box-shadow:0 24px 60px rgba(249,168,37,0.5)!important;}
-.mod-card--red:hover   {box-shadow:0 24px 60px rgba(198,40,40,0.5)!important;}
-.mod-card--purple:hover{box-shadow:0 24px 60px rgba(106,27,154,0.5)!important;}
-.mod-card--green:hover {box-shadow:0 24px 60px rgba(46,125,50,0.5)!important;}
-
 @media(max-width:600px){
   .mod-card{flex:0 0 78vw!important;min-width:78vw!important;min-height:280px!important;}
-  .mod-title{font-size:1.4rem!important;}
+  .mod-title{font-size:1.35rem!important;}
 }
 </style></head>
 <body>
