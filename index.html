@@ -407,12 +407,16 @@
   display:flex;
   justify-content:center;
   align-items:center;
-  padding:0 0 1rem;
+  padding:0 0 2rem;
 }
 .ig-post{
   display:flex;
   align-items:center;
   justify-content:center;
+}
+@media(max-width:600px){
+  .section-instagram{padding-bottom:2rem;}
+  .ig-feed{padding:0 0 1.5rem;}
 }
 /* moldura telemóvel */
 .phone-frame{
@@ -520,8 +524,9 @@
 .mobile-video{display:none;}
 @media(max-width:600px){
   .phone-frame{
-    width:min(300px, 78vw);
-    height:calc(min(300px, 78vw) * 19.5/9);
+    width:72vw;
+    height:82vh;
+    border-radius:36px;
   }
 }
 .ig-scroll-hint{
