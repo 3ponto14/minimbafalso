@@ -533,6 +533,17 @@
   border:none;
   display:block;
 }
+.tiktok-screen .tiktok-embed{
+  margin:0!important;
+  max-width:100%!important;
+  min-width:0!important;
+  width:100%!important;
+  height:100%!important;
+}
+.tiktok-screen iframe{
+  width:100%!important;
+  height:100%!important;
+}
 .mobile-video{display:none;}
 @media(max-width:600px){
   .phone-frame{
@@ -729,7 +740,7 @@
 <section class="section-instagram" id="instagram">
   <div class="ig-header reveal">
     <div class="ig-eyebrow">@ofestival.pt</div>
-    <h2 class="ig-title">NO<br><em>INSTAGRAM.</em></h2>
+    <h2 class="ig-title">NO<br><em>TIKTOK.</em></h2>
   </div>
   <div class="ig-feed">
     <div class="ig-post">
@@ -738,8 +749,8 @@
         <div class="phone-btn-power"></div>
         <div class="phone-btn-vol-up"></div>
         <div class="phone-btn-vol-down"></div>
-        <div class="phone-screen">
-          <iframe src="https://www.youtube.com/embed/Kv-wGaWofdM" title="O Festival — Reel 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="phone-screen tiktok-screen">
+          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@ofestival.pt/video/7626051175032376609" data-video-id="7626051175032376609"></blockquote>
         </div>
       </div>
     </div>
@@ -749,17 +760,19 @@
         <div class="phone-btn-power"></div>
         <div class="phone-btn-vol-up"></div>
         <div class="phone-btn-vol-down"></div>
-        <div class="phone-screen">
-          <iframe src="https://www.youtube.com/embed/OOskgqMQHBc" title="O Festival — Reel 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="phone-screen tiktok-screen">
+          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@ofestival.pt/video/7626345340639218977" data-video-id="7626345340639218977"></blockquote>
         </div>
       </div>
     </div>
   </div>
 
   <div class="ig-follow reveal">
-    <a href="https://www.instagram.com/ofestival.pt/" target="_blank" rel="noopener" class="ig-follow-btn">Seguir no Instagram →</a>
+    <a href="https://www.tiktok.com/@ofestival.pt" target="_blank" rel="noopener" class="ig-follow-btn">Seguir no TikTok →</a>
   </div>
 </section>
+
+<script async src="https://www.tiktok.com/embed.js"></script>
 
 <!-- MODULES -->
 <section class="section-modules" id="modules" style="position:relative;">
