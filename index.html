@@ -372,8 +372,11 @@
 /* ── INSTAGRAM SECTION ───────────────────────────── */
 .section-instagram{
   background:var(--dark);
-  padding:6rem 5rem;
+  padding:6rem 0 0;
   text-align:center;
+}
+.ig-header{
+  padding:0 2rem 3rem;
 }
 .ig-eyebrow{
   font-family:'Bricolage Grotesque',sans-serif;
@@ -392,32 +395,65 @@
   text-transform:uppercase;
   color:var(--cream);
   letter-spacing:-0.01em;
-  margin-bottom:3.5rem;
+  margin-bottom:0;
 }
 .ig-title em{
   font-style:normal;
   color:var(--burnt);
   display:block;
 }
+/* feed scroll vertical tipo Instagram */
 .ig-feed{
   display:flex;
-  gap:2rem;
-  justify-content:center;
-  align-items:flex-start;
-  flex-wrap:wrap;
-  margin-bottom:3rem;
+  flex-direction:column;
+  align-items:center;
+  height:85vh;
+  overflow-y:scroll;
+  scroll-snap-type:y mandatory;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+  gap:0;
 }
+.ig-feed::-webkit-scrollbar{display:none;}
 .ig-post{
-  flex:0 0 auto;
-  width:min(400px, 90vw);
+  flex:0 0 100%;
+  width:100%;
+  height:85vh;
+  scroll-snap-align:start;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:1.5rem 0;
+  box-sizing:border-box;
 }
 .ig-post .instagram-media{
-  border-radius:16px!important;
-  overflow:hidden;
+  border-radius:12px!important;
   margin:0!important;
-  max-width:100%!important;
+  max-width:min(400px,88vw)!important;
   min-width:0!important;
-  width:100%!important;
+  width:min(400px,88vw)!important;
+  box-shadow:0 16px 48px rgba(0,0,0,0.5)!important;
+}
+.ig-scroll-hint{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:0.4rem;
+  padding:1.5rem 0 3rem;
+  color:rgba(255,232,204,0.35);
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-size:0.65rem;
+  letter-spacing:0.15em;
+  text-transform:uppercase;
+  animation:bounceY 2s ease infinite;
+}
+.ig-scroll-hint svg{width:16px;height:16px;opacity:0.4;}
+@keyframes bounceY{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(6px);}
+}
+.ig-follow{
+  padding:2.5rem 2rem 4rem;
 }
 .ig-follow-btn{
   display:inline-block;
@@ -436,15 +472,6 @@
 .ig-follow-btn:hover{
   border-color:var(--burnt);
   color:var(--burnt);
-}
-@media(max-width:900px){
-  .section-instagram{padding:4rem 2rem;}
-  .ig-feed{gap:1.5rem;}
-}
-@media(max-width:600px){
-  .section-instagram{padding:4rem 1.5rem;}
-  .ig-feed{flex-direction:column;align-items:center;}
-  .ig-post{width:100%;}
 }
 </style></head>
 <body>
@@ -591,6 +618,30 @@
   </div>
 </div>
 
+
+<!-- INSTAGRAM -->
+<section class="section-instagram" id="instagram">
+  <div class="ig-header reveal">
+    <div class="ig-eyebrow">@ofestival.pt</div>
+    <h2 class="ig-title">NO<br><em>INSTAGRAM.</em></h2>
+  </div>
+  <div class="ig-feed">
+    <div class="ig-post">
+      <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DW1UjpuDD9i/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"></blockquote>
+    </div>
+    <div class="ig-post">
+      <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DW36YhzDCRD/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"></blockquote>
+    </div>
+  </div>
+  <div class="ig-scroll-hint">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+    scroll
+  </div>
+  <div class="ig-follow reveal">
+    <a href="https://www.instagram.com/ofestival.pt/" target="_blank" rel="noopener" class="ig-follow-btn">Seguir no Instagram →</a>
+  </div>
+</section>
+<script async src="//www.instagram.com/embed.js"></script>
 
 <!-- MODULES -->
 <section class="section-modules" id="modules" style="position:relative;">
@@ -912,26 +963,6 @@
   </div>
 
 </section>
-
-<!-- INSTAGRAM -->
-<section class="section-instagram" id="instagram">
-  <div class="ig-header reveal">
-    <div class="ig-eyebrow">@ofestival.pt</div>
-    <h2 class="ig-title">NO<br><em>INSTAGRAM.</em></h2>
-  </div>
-  <div class="ig-feed">
-    <div class="ig-post reveal">
-      <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DW1UjpuDD9i/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"></blockquote>
-    </div>
-    <div class="ig-post reveal">
-      <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DW36YhzDCRD/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"></blockquote>
-    </div>
-  </div>
-  <div class="ig-follow reveal">
-    <a href="https://www.instagram.com/ofestival.pt/" target="_blank" rel="noopener" class="ig-follow-btn">Seguir no Instagram →</a>
-  </div>
-</section>
-<script async src="//www.instagram.com/embed.js"></script>
 
 <!-- CTA -->
 <section class="section-cta" id="lista">
