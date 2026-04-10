@@ -412,17 +412,16 @@
 }
 .ig-post{
   width:100%;
-  max-width:480px;
+  max-width:340px;
   display:flex;
   justify-content:center;
 }
-.ig-post .instagram-media{
-  border-radius:12px!important;
-  margin:0 auto!important;
-  max-width:100%!important;
-  min-width:0!important;
-  width:100%!important;
-  box-shadow:0 16px 48px rgba(0,0,0,0.4)!important;
+.ig-post iframe{
+  width:100%;
+  aspect-ratio:9/16;
+  border-radius:16px;
+  box-shadow:0 16px 48px rgba(0,0,0,0.5);
+  display:block;
 }
 .ig-scroll-hint{
   display:flex;
@@ -617,10 +616,7 @@
   </div>
   <div class="ig-feed">
     <div class="ig-post">
-      <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DW1UjpuDD9i/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"></blockquote>
-    </div>
-    <div class="ig-post">
-      <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DW36YhzDCRD/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14"></blockquote>
+      <iframe src="https://www.youtube.com/embed/Kv-wGaWofdM" title="O Festival" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
   </div>
 
@@ -628,7 +624,6 @@
     <a href="https://www.instagram.com/ofestival.pt/" target="_blank" rel="noopener" class="ig-follow-btn">Seguir no Instagram →</a>
   </div>
 </section>
-<script async src="//www.instagram.com/embed.js"></script>
 
 <!-- MODULES -->
 <section class="section-modules" id="modules" style="position:relative;">
