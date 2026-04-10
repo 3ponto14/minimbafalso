@@ -397,6 +397,61 @@
   border-right:none!important;
 }
 
+/* ── FOOTER NOVO ────────────────────────────────── */
+.footer-new{
+  background:#0A3A4A;
+  padding:4rem 5rem 2.5rem;
+}
+.footer-new-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  margin-bottom:3rem;
+  gap:2rem;
+}
+.footer-new-brand{
+  font-family:'Anton',sans-serif;
+  font-size:clamp(3rem,6vw,5rem);
+  font-weight:900;
+  line-height:0.88;
+  color:var(--cream);
+  letter-spacing:-0.02em;
+}
+.footer-new-links{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  gap:0.8rem;
+}
+.footer-new-links a{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-size:0.9rem;
+  font-weight:500;
+  color:rgba(255,232,204,0.5);
+  text-decoration:none;
+  letter-spacing:0.05em;
+  transition:color 0.2s;
+}
+.footer-new-links a:hover{color:var(--cream);}
+.footer-new-bottom{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-top:1px solid rgba(255,232,204,0.1);
+  padding-top:1.5rem;
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-size:0.7rem;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:rgba(255,232,204,0.25);
+}
+@media(max-width:600px){
+  .footer-new{padding:3rem 1.5rem 2rem;}
+  .footer-new-top{flex-direction:column;}
+  .footer-new-links{align-items:flex-start;}
+  .footer-new-bottom{flex-direction:column;gap:0.5rem;text-align:center;}
+}
+
 /* ── LINEUP DESKTOP ─────────────────────────────── */
 @media(min-width:900px){
   .section-lineup{padding-left:5rem!important;padding-right:5rem!important;}
@@ -1269,28 +1324,20 @@
 </section>
 
 <!-- FOOTER -->
-<footer>
-  <div class="footer-big-title">O<br>FESTIVAL</div>
-
-  <div class="footer-body">
-    <div class="footer-col">
-      <div class="footer-col-label">Segue-nos</div>
-      <a href="https://www.instagram.com/ofestival.pt/" target="_blank" rel="noopener" class="footer-link">Instagram</a>
-      <a href="https://www.tiktok.com/@ofestival.pt" target="_blank" rel="noopener" class="footer-link">TikTok</a>
-    </div>
-    <div class="footer-col">
-      <div class="footer-col-label">Navegação</div>
-      <a href="#lineup" class="footer-link">Line-up</a>
-      <a href="#bilhetes" class="footer-link">Bilhetes</a>
-      <a href="#lista" class="footer-link">Lista de espera</a>
-    </div>
-    <div class="footer-col footer-col--cta">
-      <p class="footer-cta-text">Verão 2026 · Portugal<br>O festival que faltava.</p>
+<footer class="footer-new">
+  <div class="footer-new-top">
+    <div class="footer-new-brand">O<br>FESTIVAL.</div>
+    <div class="footer-new-links">
+      <a href="https://www.instagram.com/ofestival.pt/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.tiktok.com/@ofestival.pt" target="_blank" rel="noopener">TikTok</a>
+      <a href="#lineup">Line-up</a>
+      <a href="#bilhetes">Bilhetes</a>
+      <a href="#lista">Lista de espera</a>
     </div>
   </div>
-
-  <div class="footer-bottom">
-    <span class="footer-copy">© 2026 Festival · Todos os direitos reservados</span>
+  <div class="footer-new-bottom">
+    <span>© 2026 O Festival · Todos os direitos reservados</span>
+    <span>Verão 2026 · Portugal</span>
   </div>
 </footer>
 
