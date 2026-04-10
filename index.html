@@ -426,14 +426,63 @@
   padding:2rem 1rem;
   box-sizing:border-box;
 }
-.ig-post iframe{
+/* moldura telemóvel */
+.phone-frame{
+  position:relative;
+  width:270px;
+  height:calc(270px * 19.5/9);
+  background:#111;
+  border-radius:44px;
+  box-shadow:
+    0 0 0 2px #333,
+    0 0 0 6px #1a1a1a,
+    0 0 0 8px #2a2a2a,
+    0 30px 80px rgba(0,0,0,0.7);
+  flex-shrink:0;
+}
+/* notch */
+.phone-frame::before{
+  content:'';
+  position:absolute;
+  top:14px;
+  left:50%;
+  transform:translateX(-50%);
+  width:90px;
+  height:26px;
+  background:#111;
+  border-radius:20px;
+  z-index:10;
+}
+/* botão lateral */
+.phone-frame::after{
+  content:'';
+  position:absolute;
+  right:-10px;
+  top:100px;
+  width:4px;
+  height:60px;
+  background:#2a2a2a;
+  border-radius:2px;
+}
+.phone-screen{
+  position:absolute;
+  inset:0;
+  border-radius:44px;
+  overflow:hidden;
+}
+.phone-screen iframe{
+  width:100%;
   height:100%;
-  max-height:calc(90vh - 4rem);
-  aspect-ratio:9/16;
-  width:auto;
-  border-radius:16px;
-  box-shadow:0 16px 48px rgba(0,0,0,0.5);
+  border:none;
   display:block;
+  border-radius:44px;
+}
+.mobile-video{display:none;}
+@media(max-width:600px){
+  .phone-frame{
+    width:220px;
+    height:calc(220px * 19.5/9);
+  }
 }
 .ig-scroll-hint{
   display:flex;
@@ -628,10 +677,20 @@
   </div>
   <div class="ig-feed">
     <div class="ig-post">
-      <iframe src="https://www.youtube.com/embed/Kv-wGaWofdM" title="O Festival — Reel 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <div class="phone-frame">
+        <div class="phone-screen">
+          <iframe src="https://www.youtube.com/embed/Kv-wGaWofdM" title="O Festival — Reel 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+      <iframe class="mobile-video" src="https://www.youtube.com/embed/Kv-wGaWofdM" title="O Festival — Reel 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
     <div class="ig-post">
-      <iframe src="https://www.youtube.com/embed/OOskgqMQHBc" title="O Festival — Reel 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <div class="phone-frame">
+        <div class="phone-screen">
+          <iframe src="https://www.youtube.com/embed/OOskgqMQHBc" title="O Festival — Reel 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+      <iframe class="mobile-video" src="https://www.youtube.com/embed/OOskgqMQHBc" title="O Festival — Reel 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
   </div>
 
