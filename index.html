@@ -234,7 +234,7 @@
 .mod-card{
   flex:0 0 320px!important;
   min-width:320px!important;
-  scroll-snap-align:start;
+  scroll-snap-align:center;
   min-height:260px!important;
 }
 .carousel-dots{display:flex;}
@@ -245,7 +245,7 @@
 @media(max-width:600px){
   .carousel-wrapper{margin-left:-1.2rem;margin-right:-1.2rem;}
   .modules-grid{padding:0 1.5rem 1rem!important;}
-  .mod-card{flex:0 0 78vw!important;min-width:78vw!important;min-height:220px!important;}
+  .mod-card{flex:0 0 78vw!important;min-width:78vw!important;min-height:220px!important;scroll-snap-align:center;}
 }
 </style></head>
 <body>
@@ -1167,18 +1167,26 @@ document.addEventListener('DOMContentLoaded',()=>{const animElements=['.hero-sun
 
   const cards = grid.querySelectorAll('.mod-card');
 
+  const getCardCenter = (i) => {
+    const card = cards[i];
+    const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+    const gridCenter = grid.offsetWidth / 2;
+    return cardCenter - gridCenter;
+  };
+
   grid.addEventListener('scroll', () => {
-    const scrollLeft = grid.scrollLeft;
-    const cardWidth = cards[0].offsetWidth + 16; // gap
-    const index = Math.round(scrollLeft / cardWidth);
-    dots.forEach((d, i) => d.classList.toggle('active', i === index));
+    let closest = 0;
+    let minDist = Infinity;
+    cards.forEach((card, i) => {
+      const dist = Math.abs(grid.scrollLeft - getCardCenter(i));
+      if (dist < minDist) { minDist = dist; closest = i; }
+    });
+    dots.forEach((d, i) => d.classList.toggle('active', i === closest));
   }, { passive: true });
 
-  // Clicar no dot faz scroll para o card
   dots.forEach((dot, i) => {
     dot.addEventListener('click', () => {
-      const cardWidth = cards[0].offsetWidth + 16;
-      grid.scrollTo({ left: i * cardWidth, behavior: 'smooth' });
+      grid.scrollTo({ left: getCardCenter(i), behavior: 'smooth' });
     });
   });
 })();
