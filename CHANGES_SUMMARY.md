@@ -7,10 +7,10 @@
 #### ✅ Meta Tags Adicionadas
 ```html
 <!-- Melhorias no <head> -->
-<title>Mini MBA Falso — Festival de Educação | Verão 2026 Portugal</title>
-<meta name="description" content="Mini MBA Falso — O festival que ensina o que a escola se esqueceu. 5 dias, 6 palcos, educação prática. Verão 2026 em Portugal.">
+<title>O Festival — Festival de Educação | Verão 2026 Portugal</title>
+<meta name="description" content="O Festival — O festival que ensina o que a escola se esqueceu. 5 dias, 6 palcos, educação prática. Verão 2026 em Portugal.">
 <meta name="keywords" content="festival educação, MBA, workshop, aprendizagem prática, verão, Portugal, conferências">
-<meta name="author" content="Mini MBA Falso">
+<meta name="author" content="O Festival">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <meta name="language" content="Portuguese">
 <meta name="revisit-after" content="7 days">
@@ -21,7 +21,7 @@
 
 <!-- Open Graph melhorado -->
 <meta property="og:url" content="https://minimbafalso.pt">
-<meta property="og:site_name" content="Mini MBA Falso">
+<meta property="og:site_name" content="O Festival">
 <meta name="twitter:creator" content="@minimbafalso">
 
 <!-- Performance -->
@@ -47,7 +47,7 @@
 {
   "@context": "https://schema.org",
   "@type": "Event",
-  "name": "Mini MBA Falso — O Festival de Educação",
+  "name": "O Festival — O Festival de Educação",
   "description": "...",
   "url": "https://minimbafalso.pt/",
   "image": "...",
@@ -121,7 +121,7 @@ Este ficheiro (resumo de mudanças)
 
 | Aspecto | Antes | Depois |
 |---------|-------|--------|
-| **Title** | "O Festival · Verão 2026" | "Mini MBA Falso — Festival de Educação \| Verão 2026 Portugal" |
+| **Title** | "O Festival · Verão 2026" | "O Festival — Festival de Educação \| Verão 2026 Portugal" |
 | **Description** | Genérica | Otimizada com keywords |
 | **Keywords Meta** | ❌ Não tinha | ✅ 6 keywords principais |
 | **og:url** | Vazio | https://minimbafalso.pt |

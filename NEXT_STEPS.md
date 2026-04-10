@@ -13,7 +13,7 @@ Completar o setup de Google Analytics e Google Search Console para começar a re
 1. Ir a https://analytics.google.com/
 2. Clicar "Começar"
 3. Preencher:
-   - Nome da conta: `Mini MBA Falso`
+   - Nome da conta: `O Festival`
    - Nome da propriedade: `minimbafalso.pt`
    - Fuso horário: `Portugal (GMT+0)` ou `Portugal (GMT+1)`
    - Moeda: `EUR`
@@ -244,7 +244,7 @@ index.html
 ✅ Mobile-friendly confirmado
 ✅ Performance otimizado
 
-🎉 Mini MBA Falso está online no Google!
+🎉 O Festival está online no Google!
 ```
 
 ---
@@ -261,7 +261,7 @@ Se tiveres dúvidas:
 
 ## 🎯 Resultado Final
 
-Depois de completar estes passos, o site Mini MBA Falso estará:
+Depois de completar estes passos, o site O Festival estará:
 
 ✅ 100% otimizado para SEO
 ✅ Rastreando tráfego com Google Analytics
