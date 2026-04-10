@@ -29,10 +29,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet">
 <style>
 /*
-   CUSTOM FONTS
- */
-
-/*
    TOKENS
  */
 :root {
@@ -42,7 +38,7 @@
   --lagoon:     #8B1A00;
   --yellow:     #FFE8CC;
   --pearl:      #8B1A00;
-  --teal-light: #FFE8CC;
+  --teal-light: #3AACBA;
   --dark:       #6B1200;
   --white:      #FFE8CC;
 
@@ -375,7 +371,6 @@ nav.scrolled {
   0%, 100% { transform: translateX(0); opacity: 0.75; }
   50% { transform: translateX(25px); opacity: 1; }
 }
-@keyframes spinSlow { to { transform: translate(-50%,-50%) rotate(360deg); } }
 
 .deco-circle {
   position: absolute;
@@ -1095,6 +1090,8 @@ nav.scrolled {
   font-size: 0.9rem;
   color: rgba(255,255,255,0.5);
 }
+.fl-title .fire { color: #FF5500; }
+.fl-title .teal { color: #3AACBA; }
 
 /* week label */
 .fl-week-label {
@@ -2472,17 +2469,12 @@ footer {
 .mod-card:nth-child(4)::after { background: #9B3FE8; }
 .mod-card:nth-child(5)::after { background: #FF6B35; }
 .mod-card:nth-child(6)::after { background: #E4201B; }
-.mod-card:nth-child(7)::after { background: #3AACBA; }
-.mod-card:nth-child(8)::after { background: #FFD53E; }
 .mod-card:nth-child(1):hover .mod-name,
 .mod-card:nth-child(2):hover .mod-name,
 .mod-card:nth-child(3):hover .mod-name,
 .mod-card:nth-child(4):hover .mod-name,
 .mod-card:nth-child(5):hover .mod-name,
-.mod-card:nth-child(6):hover .mod-name,
-.mod-card:nth-child(7):hover .mod-name { color: var(--white); }
-.mod-card:nth-child(8):hover .mod-name { color: #1A1A2E; }
-.mod-card:nth-child(8):hover .mod-desc { color: rgba(26,26,46,0.65); }
+.mod-card:nth-child(6):hover .mod-name { color: var(--white); }
 
 /* Bold pop on data numbers */
 .data-num { color: var(--burnt); }
@@ -2577,20 +2569,6 @@ footer {
 .hero .meta-lbl { color: #fff; }
 
 
-/* ════════════════════════════════════════
-   MADE INFINITY OUTLINE — decorative giant text
-════════════════════════════════════════ */
-.outline-word {
-  font-family: 'Anton', sans-serif;
-  font-weight: 900;
-  font-size: clamp(4rem, 12vw, 10rem);
-  line-height: 0.85;
-  letter-spacing: -0.02em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.12);
-  pointer-events: none;
-  user-select: none;
-}
 
 /* Section decorative backgrounds */
 .section-modules .outline-deco,
@@ -3420,13 +3398,6 @@ function toggleWb(el) {
   if (!isOpen) el.classList.add('open');
 }
 
-/*  Form  */
-function handleForm(e, id) {
-  e.preventDefault();
-  e.target.style.display = 'none';
-  document.getElementById(id).style.display = 'block';
-}
-
 /*  Nav shrink on scroll  */
 const nav = document.getElementById('mainNav');
 window.addEventListener('scroll', () => {
@@ -3477,7 +3448,7 @@ allReveal.forEach((el, idx) => {
 })();
 
 /*  Parallax sunburst  */
-const sunburst = document.querySelector('.sunburst');
+const sunburst = document.querySelector('.hero-sunburst');
 window.addEventListener('scroll', () => {
   if (sunburst) {
     sunburst.style.transform = `translate(-50%,-50%) rotate(${window.scrollY * 0.02}deg)`;
