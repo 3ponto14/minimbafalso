@@ -405,30 +405,14 @@
 /* feed vídeos */
 .ig-feed{
   display:flex;
-  flex-direction:column;
+  justify-content:center;
   align-items:center;
-  height:560px;
-  overflow-y:scroll;
-  scroll-snap-type:y mandatory;
-  -webkit-overflow-scrolling:touch;
-  scrollbar-width:none;
-  gap:0;
+  padding:0 0 1rem;
 }
-.ig-feed::-webkit-scrollbar{display:none;}
 .ig-post{
-  flex:0 0 560px;
-  width:100%;
-  height:560px;
-  scroll-snap-align:start;
   display:flex;
   align-items:center;
   justify-content:center;
-  padding:0;
-  box-sizing:border-box;
-}
-@media(max-width:600px){
-  .ig-feed{height:480px;}
-  .ig-post{flex:0 0 480px;height:480px;}
 }
 /* moldura telemóvel */
 .phone-frame{
@@ -732,17 +716,6 @@
     <h2 class="ig-title">NO<br><em>TIKTOK.</em></h2>
   </div>
   <div class="ig-feed">
-    <div class="ig-post">
-      <div class="phone-frame">
-        <div class="phone-island"></div>
-        <div class="phone-btn-power"></div>
-        <div class="phone-btn-vol-up"></div>
-        <div class="phone-btn-vol-down"></div>
-        <div class="phone-screen">
-          <iframe src="https://www.tiktok.com/embed/7626051175032376609" frameborder="0" allowfullscreen allow="encrypted-media"></iframe>
-        </div>
-      </div>
-    </div>
     <div class="ig-post">
       <div class="phone-frame">
         <div class="phone-island"></div>
