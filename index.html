@@ -217,14 +217,19 @@
 .modules-grid{
   display:flex!important;
   flex-direction:row!important;
-  overflow-x:scroll;
+  overflow-x:auto;
   scroll-snap-type:x mandatory;
   -webkit-overflow-scrolling:touch;
   gap:1.2rem!important;
+  /* padding lateral = espaço antes do 1º card */
   padding:0 5rem 1.5rem!important;
   scrollbar-width:none;
+  /* margin negativo igual ao padding da section para ir ponta-a-ponta */
   margin-left:-5rem!important;
   margin-right:-5rem!important;
+  /* largura compensa os margins */
+  width:calc(100% + 10rem)!important;
+  box-sizing:border-box;
 }
 .modules-grid::-webkit-scrollbar{display:none;}
 .mod-card{
@@ -235,10 +240,10 @@
 }
 .carousel-dots{display:flex;}
 @media(max-width:1024px){
-  .modules-grid{padding:0 2rem 1.5rem!important;margin-left:-2rem!important;margin-right:-2rem!important;}
+  .modules-grid{padding:0 2rem 1.5rem!important;margin-left:-2rem!important;margin-right:-2rem!important;width:calc(100% + 4rem)!important;}
 }
 @media(max-width:600px){
-  .modules-grid{padding:0 1.5rem 1rem!important;margin-left:-1.2rem!important;margin-right:-1.2rem!important;}
+  .modules-grid{padding:0 1.5rem 1rem!important;margin-left:-1.2rem!important;margin-right:-1.2rem!important;width:calc(100% + 2.4rem)!important;}
   .mod-card{flex:0 0 78vw!important;min-width:78vw!important;min-height:220px!important;}
 }
 </style></head>
@@ -388,7 +393,7 @@
 
 
 <!-- MODULES -->
-<section class="section-modules" id="modules" style="position:relative;overflow:hidden;">
+<section class="section-modules" id="modules" style="position:relative;overflow:visible;">
   <div class="outline-deco">PALCOS</div>
   <div class="mods-header reveal">
     <div class="eyebrow" style="justify-content:center;color:var(--burnt)">
