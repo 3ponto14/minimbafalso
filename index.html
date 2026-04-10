@@ -213,33 +213,34 @@
 .carousel-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,232,204,0.25);transition:all 0.3s;}
 .carousel-dot.active{width:20px;border-radius:3px;background:var(--burnt);}
 
-/* ── CAROUSEL MOBILE ─────────────────────────────── */
+/* ── CAROUSEL — TODOS OS TAMANHOS ────────────────── */
+.modules-grid{
+  display:flex!important;
+  flex-direction:row!important;
+  overflow-x:scroll;
+  scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch;
+  gap:1.2rem!important;
+  padding:0 4rem 1.5rem!important;
+  scrollbar-width:none;
+  margin-left:-4rem;
+  margin-right:-4rem;
+  width:calc(100% + 8rem)!important;
+}
+.modules-grid::-webkit-scrollbar{display:none;}
+.mod-card{
+  flex:0 0 320px!important;
+  min-width:320px!important;
+  scroll-snap-align:start;
+  min-height:260px!important;
+}
+.carousel-dots{display:flex;}
+@media(max-width:1024px){
+  .modules-grid{padding:0 2rem 1.5rem!important;margin-left:-2rem;margin-right:-2rem;width:calc(100% + 4rem)!important;}
+}
 @media(max-width:600px){
-  .modules-grid{
-    display:flex!important;
-    flex-direction:row!important;
-    overflow-x:scroll;
-    scroll-snap-type:x mandatory;
-    -webkit-overflow-scrolling:touch;
-    gap:1rem!important;
-    padding:0 1.5rem 1rem!important;
-    scrollbar-width:none;
-    /* compensar o padding da section para o scroll ir de ponta a ponta */
-    margin-left:-1.2rem;
-    margin-right:-1.2rem;
-    width:calc(100% + 2.4rem)!important;
-  }
-  .modules-grid::-webkit-scrollbar{display:none;}
-  .mod-card{
-    flex:0 0 78vw!important;
-    min-width:78vw!important;
-    scroll-snap-align:center;
-    min-height:220px!important;
-  }
-  /* primeiro e último card com padding para centrar */
-  .mod-card:first-child{margin-left:calc(11vw - 1rem);}
-  .mod-card:last-child{margin-right:calc(11vw - 1rem);}
-  .carousel-dots{display:flex;}
+  .modules-grid{padding:0 1.5rem 1rem!important;margin-left:-1.2rem;margin-right:-1.2rem;width:calc(100% + 2.4rem)!important;}
+  .mod-card{flex:0 0 78vw!important;min-width:78vw!important;min-height:220px!important;}
 }
 </style></head>
 <body>
