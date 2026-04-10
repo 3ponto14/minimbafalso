@@ -391,6 +391,12 @@
   margin-bottom:0.2em!important;
 }
 
+/* ── COUNTDOWN CLEAN ────────────────────────────── */
+.cd-clean{
+  border:none!important;
+  border-right:none!important;
+}
+
 /* ── LINEUP DESKTOP ─────────────────────────────── */
 @media(min-width:900px){
   .section-lineup{padding-left:5rem!important;padding-right:5rem!important;}
@@ -1019,18 +1025,23 @@
 
 <!-- COUNTDOWN -->
 <section class="section-countdown" style="position:relative;overflow:hidden;">
+  <div class="countdown-label" style="position:relative;z-index:2;">As portas abrem em</div>
   <div class="countdown-digits">
-    <div class="countdown-block">
+    <div class="countdown-block cd-clean">
       <div class="countdown-num" id="cd-days">--</div>
+      <div class="countdown-unit">Dias</div>
     </div>
-    <div class="countdown-block">
+    <div class="countdown-block cd-clean">
       <div class="countdown-num" id="cd-hours">--</div>
+      <div class="countdown-unit">Horas</div>
     </div>
-    <div class="countdown-block">
+    <div class="countdown-block cd-clean">
       <div class="countdown-num" id="cd-mins">--</div>
+      <div class="countdown-unit">Minutos</div>
     </div>
-    <div class="countdown-block">
+    <div class="countdown-block cd-clean">
       <div class="countdown-num" id="cd-secs">--</div>
+      <div class="countdown-unit">Segundos</div>
     </div>
   </div>
 </section>
