@@ -170,6 +170,77 @@
   .gallery-item--wide{grid-column:span 2;}
   .gallery-text{font-size:1.1rem;}
 }
+
+/* ── CORES POR PALCO ─────────────────────────────── */
+.mod-accent{width:32px;height:3px;border-radius:2px;margin-bottom:1rem;}
+.mod-card--orange .mod-accent{background:#FF5722;}
+.mod-card--teal   .mod-accent{background:#3AACBA;}
+.mod-card--yellow .mod-accent{background:#FFD53E;}
+.mod-card--red    .mod-accent{background:#E4201B;}
+.mod-card--purple .mod-accent{background:#9B59B6;}
+.mod-card--green  .mod-accent{background:#27AE60;}
+
+.mod-card--orange{border-color:rgba(255,87,34,0.35)!important;background:rgba(255,87,34,0.07)!important;}
+.mod-card--teal  {border-color:rgba(58,172,186,0.35)!important;background:rgba(58,172,186,0.07)!important;}
+.mod-card--yellow{border-color:rgba(255,213,62,0.35)!important;background:rgba(255,213,62,0.07)!important;}
+.mod-card--red   {border-color:rgba(228,32,27,0.35)!important;background:rgba(228,32,27,0.07)!important;}
+.mod-card--purple{border-color:rgba(155,89,182,0.35)!important;background:rgba(155,89,182,0.07)!important;}
+.mod-card--green {border-color:rgba(39,174,96,0.35)!important;background:rgba(39,174,96,0.07)!important;}
+
+.mod-card--orange .mod-title{color:#FF7043;}
+.mod-card--teal   .mod-title{color:#4DC8D8;}
+.mod-card--yellow .mod-title{color:#FFD53E;}
+.mod-card--red    .mod-title{color:#FF4444;}
+.mod-card--purple .mod-title{color:#B87FD4;}
+.mod-card--green  .mod-title{color:#4ACA7A;}
+
+.mod-card--orange:hover{background:rgba(255,87,34,0.14)!important;border-color:rgba(255,87,34,0.6)!important;}
+.mod-card--teal:hover  {background:rgba(58,172,186,0.14)!important;border-color:rgba(58,172,186,0.6)!important;}
+.mod-card--yellow:hover{background:rgba(255,213,62,0.14)!important;border-color:rgba(255,213,62,0.6)!important;}
+.mod-card--red:hover   {background:rgba(228,32,27,0.14)!important;border-color:rgba(228,32,27,0.6)!important;}
+.mod-card--purple:hover{background:rgba(155,89,182,0.14)!important;border-color:rgba(155,89,182,0.6)!important;}
+.mod-card--green:hover {background:rgba(39,174,96,0.14)!important;border-color:rgba(39,174,96,0.6)!important;}
+
+.mod-card--orange .mod-num{color:rgba(255,87,34,0.12);}
+.mod-card--teal   .mod-num{color:rgba(58,172,186,0.12);}
+.mod-card--yellow .mod-num{color:rgba(255,213,62,0.12);}
+.mod-card--red    .mod-num{color:rgba(228,32,27,0.12);}
+.mod-card--purple .mod-num{color:rgba(155,89,182,0.12);}
+.mod-card--green  .mod-num{color:rgba(39,174,96,0.12);}
+
+/* ── CAROUSEL DOTS ───────────────────────────────── */
+.carousel-dots{display:none;justify-content:center;gap:6px;margin-top:1.5rem;}
+.carousel-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,232,204,0.25);transition:all 0.3s;}
+.carousel-dot.active{width:20px;border-radius:3px;background:var(--burnt);}
+
+/* ── CAROUSEL MOBILE ─────────────────────────────── */
+@media(max-width:600px){
+  .modules-grid{
+    display:flex!important;
+    flex-direction:row!important;
+    overflow-x:scroll;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+    gap:1rem!important;
+    padding:0 1.5rem 1rem!important;
+    scrollbar-width:none;
+    /* compensar o padding da section para o scroll ir de ponta a ponta */
+    margin-left:-1.2rem;
+    margin-right:-1.2rem;
+    width:calc(100% + 2.4rem)!important;
+  }
+  .modules-grid::-webkit-scrollbar{display:none;}
+  .mod-card{
+    flex:0 0 78vw!important;
+    min-width:78vw!important;
+    scroll-snap-align:center;
+    min-height:220px!important;
+  }
+  /* primeiro e último card com padding para centrar */
+  .mod-card:first-child{margin-left:calc(11vw - 1rem);}
+  .mod-card:last-child{margin-right:calc(11vw - 1rem);}
+  .carousel-dots{display:flex;}
+}
 </style></head>
 <body>
 
@@ -328,55 +399,70 @@
     <p class="section-desc">Cada palco tem um género, um headliner e convidados especiais. Os artistas ainda estão a ser confirmados — em breve revelamos tudo.</p>
   </div>
 
-  <div class="modules-grid">
-    <div class="mod-card reveal">
+  <div class="modules-grid" id="palcosCarousel">
+    <div class="mod-card mod-card--orange reveal">
       <div class="mod-card-inner">
+        <div class="mod-accent"></div>
         <div class="mod-name">Palco do Capital</div>
         <div class="mod-title">Headliner por confirmar</div>
         <div class="mod-desc">Os melhores investimentos da tua vida não são em bolsa. Em breve revelamos quem sobe a este palco.</div>
         <span class="mod-num">01</span>
       </div>
     </div>
-    <div class="mod-card reveal">
+    <div class="mod-card mod-card--teal reveal">
       <div class="mod-card-inner">
+        <div class="mod-accent"></div>
         <div class="mod-name">Palco da Mente</div>
         <div class="mod-title">Headliner por confirmar</div>
         <div class="mod-desc">A tua cabeça é o instrumento mais poderoso que tens. Segue-nos para não perderes o anúncio.</div>
         <span class="mod-num">02</span>
       </div>
     </div>
-    <div class="mod-card reveal">
+    <div class="mod-card mod-card--yellow reveal">
       <div class="mod-card-inner">
+        <div class="mod-accent"></div>
         <div class="mod-name">Palco do Futuro</div>
         <div class="mod-title">Headliner por confirmar</div>
         <div class="mod-desc">A vida que ninguém te ensinou começa aqui. Em breve revelamos quem sobe a este palco.</div>
         <span class="mod-num">03</span>
       </div>
     </div>
-    <div class="mod-card reveal">
+    <div class="mod-card mod-card--red reveal">
       <div class="mod-card-inner">
+        <div class="mod-accent"></div>
         <div class="mod-name">Palco da Liberdade</div>
         <div class="mod-title">Headliner por confirmar</div>
         <div class="mod-desc">Crescimento pessoal sem filtros. Segue-nos para não perderes o anúncio.</div>
         <span class="mod-num">04</span>
       </div>
     </div>
-    <div class="mod-card reveal">
+    <div class="mod-card mod-card--purple reveal">
       <div class="mod-card-inner">
+        <div class="mod-accent"></div>
         <div class="mod-name">Palco da Inteligência</div>
         <div class="mod-title">Headliner por confirmar</div>
         <div class="mod-desc">Aprende ou paga — a escolha é tua. Em breve revelamos quem sobe a este palco.</div>
         <span class="mod-num">05</span>
       </div>
     </div>
-    <div class="mod-card reveal">
+    <div class="mod-card mod-card--green reveal">
       <div class="mod-card-inner">
+        <div class="mod-accent"></div>
         <div class="mod-name">Palco das Decisões</div>
         <div class="mod-title">Headliner por confirmar</div>
         <div class="mod-desc">As decisões que tomas hoje definem quem serás amanhã. Segue-nos para não perderes o anúncio.</div>
         <span class="mod-num">06</span>
       </div>
     </div>
+  </div>
+  <!-- Dots do carrossel — só visíveis em mobile -->
+  <div class="carousel-dots" id="carouselDots" aria-hidden="true">
+    <span class="carousel-dot active"></span>
+    <span class="carousel-dot"></span>
+    <span class="carousel-dot"></span>
+    <span class="carousel-dot"></span>
+    <span class="carousel-dot"></span>
+    <span class="carousel-dot"></span>
   </div>
 </section>
 
@@ -1060,6 +1146,33 @@ document.addEventListener('DOMContentLoaded',()=>{const animElements=['.hero-sun
     }, {threshold: 0.1});
     obs.observe(footer);
   }
+})();
+</script>
+
+
+<!-- Carousel dots JS -->
+<script>
+(function(){
+  const grid = document.getElementById('palcosCarousel');
+  const dots = document.querySelectorAll('.carousel-dot');
+  if(!grid || !dots.length) return;
+
+  const cards = grid.querySelectorAll('.mod-card');
+
+  grid.addEventListener('scroll', () => {
+    const scrollLeft = grid.scrollLeft;
+    const cardWidth = cards[0].offsetWidth + 16; // gap
+    const index = Math.round(scrollLeft / cardWidth);
+    dots.forEach((d, i) => d.classList.toggle('active', i === index));
+  }, { passive: true });
+
+  // Clicar no dot faz scroll para o card
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+      const cardWidth = cards[0].offsetWidth + 16;
+      grid.scrollTo({ left: i * cardWidth, behavior: 'smooth' });
+    });
+  });
 })();
 </script>
 
