@@ -372,11 +372,11 @@
 /* ── INSTAGRAM SECTION ───────────────────────────── */
 .section-instagram{
   background:var(--dark);
-  padding:3rem 0 0;
+  padding:3rem 0 3rem;
   text-align:center;
 }
 .ig-header{
-  padding:0 2rem 1.5rem;
+  padding:0 2rem 1rem;
 }
 .ig-eyebrow{
   font-family:'Bricolage Grotesque',sans-serif;
@@ -407,7 +407,7 @@
   display:flex;
   flex-direction:column;
   align-items:center;
-  height:75vh;
+  height:560px;
   overflow-y:scroll;
   scroll-snap-type:y mandatory;
   -webkit-overflow-scrolling:touch;
@@ -416,15 +416,19 @@
 }
 .ig-feed::-webkit-scrollbar{display:none;}
 .ig-post{
-  flex:0 0 75vh;
+  flex:0 0 560px;
   width:100%;
-  height:75vh;
+  height:560px;
   scroll-snap-align:start;
   display:flex;
   align-items:center;
   justify-content:center;
-  padding:1rem;
+  padding:0;
   box-sizing:border-box;
+}
+@media(max-width:600px){
+  .ig-feed{height:480px;}
+  .ig-post{flex:0 0 480px;height:480px;}
 }
 /* moldura telemóvel */
 .phone-frame{
