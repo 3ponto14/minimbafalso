@@ -622,28 +622,6 @@
   opacity:0;
   animation:fadeUp 0.6s ease 0.7s forwards;
 }
-#welcome-enter{
-  margin-top:1rem;
-  font-family:'Bricolage Grotesque',sans-serif;
-  font-size:0.9rem;
-  font-weight:700;
-  letter-spacing:0.12em;
-  text-transform:uppercase;
-  color:#6B1200;
-  background:var(--cream);
-  border:none;
-  border-radius:100px;
-  padding:0.9rem 2.5rem;
-  cursor:pointer;
-  opacity:0;
-  animation:fadeUp 0.6s ease 1s forwards;
-  transition:transform 0.2s, background 0.2s;
-}
-#welcome-enter:hover{
-  background:var(--burnt);
-  color:var(--cream);
-  transform:scale(1.04);
-}
 @keyframes fadeUp{
   from{opacity:0;transform:translateY(16px);}
   to{opacity:1;transform:translateY(0);}
@@ -657,7 +635,6 @@
   <div class="welcome-eyebrow">Verão 2026 · Portugal</div>
   <div class="welcome-title">BEM-VINDO<br>A<br><em>O FESTIVAL.</em></div>
   <div class="welcome-sub">O festival que faltava.</div>
-  <button id="welcome-enter">Entrar →</button>
 </div>
 
 <script>
@@ -665,7 +642,7 @@
   var canvas = document.getElementById('confetti-canvas');
   var ctx = canvas.getContext('2d');
   var W, H, particles = [], running = false;
-  var colors = ['#FF5722','#FFE8CC','#FFD700','#FF8C42','#fff','#FF3D00'];
+  var colors = ['#FF5722','#FFE8CC','#FFD700','#FF8C42','#ffffff','#FF3D00','#FFC107'];
 
   function resize(){ W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
   window.addEventListener('resize', resize); resize();
@@ -678,41 +655,49 @@
     this.color = colors[Math.floor(Math.random()*colors.length)];
     this.angle = Math.random()*360;
     this.spin = (Math.random()-0.5)*0.2;
-    this.drift = (Math.random()-0.5)*1.5;
+    this.drift = (Math.random()-0.5)*2;
   }
 
   function launch(){
     running = true;
-    for(var i=0;i<180;i++) particles.push(new Particle());
+    for(var i=0;i<220;i++) particles.push(new Particle());
     loop();
-    setTimeout(function(){ running = false; }, 3000);
+    setTimeout(function(){ running = false; }, 3500);
   }
 
   function loop(){
     ctx.clearRect(0,0,W,H);
-    particles.forEach(function(p,i){
+    particles.forEach(function(p){
       p.y += p.d; p.x += p.drift; p.angle += p.spin;
       ctx.save();
       ctx.translate(p.x, p.y);
       ctx.rotate(p.angle);
       ctx.fillStyle = p.color;
-      ctx.fillRect(-p.r/2, -p.r/2, p.r, p.r*0.5);
+      ctx.fillRect(-p.r/2, -p.r/2, p.r, p.r*0.45);
       ctx.restore();
     });
     particles = particles.filter(function(p){ return p.y < H+20; });
     if(particles.length > 0 || running) requestAnimationFrame(loop);
-    else ctx.clearRect(0,0,W,H);
   }
 
-  document.getElementById('welcome-enter').addEventListener('click', function(){
-    var audio = new Audio('https://assets.mixkit.co/active_storage/sfx/2074/2074-preview.mp3');
-    audio.volume = 0.5;
-    audio.play();
-    launch();
-    setTimeout(function(){
-      document.getElementById('welcome-screen').classList.add('hide');
-    }, 2200);
+  /* lança confetes imediatamente */
+  launch();
+
+  /* tenta som — só funciona se o browser permitir */
+  var audio = new Audio('https://assets.mixkit.co/active_storage/sfx/2074/2074-preview.mp3');
+  audio.volume = 0.4;
+  audio.play().catch(function(){
+    /* browser bloqueou autoplay — ao primeiro clique tenta outra vez */
+    document.addEventListener('click', function tryPlay(){
+      audio.play();
+      document.removeEventListener('click', tryPlay);
+    });
   });
+
+  /* fecha após 3 segundos */
+  setTimeout(function(){
+    document.getElementById('welcome-screen').classList.add('hide');
+  }, 3000);
 })();
 </script>
 
