@@ -697,20 +697,6 @@ html{
   z-index:1;
 }
 
-/* Vignette bordeaux nos cantos do hero — profundidade cinemática */
-.hero::after{
-  content:'';
-  position:absolute;
-  inset:0;
-  background:radial-gradient(ellipse 90% 80% at 50% 50%, transparent 40%, rgba(90,15,0,0.55) 100%);
-  pointer-events:none;
-  z-index:1;
-}
-.hero > *{
-  position:relative;
-  z-index:2;
-}
-
 /* Separadores bordeaux subtis */
 .fl-sep{
   background:linear-gradient(90deg, transparent 0%, rgba(138,25,0,0.5) 20%, rgba(220,50,10,0.35) 50%, rgba(138,25,0,0.5) 80%, transparent 100%)!important;
