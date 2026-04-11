@@ -562,27 +562,26 @@ html{
   position:relative;
   z-index:1;
 }
-/* Traços entre números do countdown */
+/* Dois pontos (:) entre números do countdown */
 .section-countdown .countdown-block{
   position:relative;
 }
 .section-countdown .countdown-block:not(:last-child)::after{
-  content:'';
+  content:':';
   position:absolute;
-  right:-0.3rem;
-  top:35%;
-  width:1.5rem;
-  height:3px;
-  background:rgba(255,232,204,0.6);
-  border-radius:2px;
+  right:-0.55em;
+  top:0;
+  font-family:'Anton',sans-serif;
+  font-weight:900;
+  font-size:inherit;
+  line-height:1;
+  color:rgba(255,232,204,0.7);
   pointer-events:none;
+  animation:countdownBlink 1.2s ease-in-out infinite;
 }
-@media(max-width:600px){
-  .section-countdown .countdown-block:not(:last-child)::after{
-    width:0.8rem;
-    height:2px;
-    right:-0.15rem;
-  }
+@keyframes countdownBlink{
+  0%,100%{ opacity:0.85; }
+  50%{ opacity:0.35; }
 }
 
 .section-modules{
