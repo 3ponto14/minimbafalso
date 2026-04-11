@@ -858,8 +858,12 @@ html{
   }
   .section-lineup::after,
   .section-cta::after{
-    width:300vw!important;
-    height:300vw!important;
+    width:400vw!important;
+    height:400vw!important;
+    max-width:none!important;
+    max-height:none!important;
+    mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 25%,transparent 85%)!important;
+    -webkit-mask-image:radial-gradient(ellipse 80% 80% at 50% 50%,black 25%,transparent 85%)!important;
   }
 }
 
