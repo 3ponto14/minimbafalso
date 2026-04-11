@@ -562,26 +562,40 @@ html{
   position:relative;
   z-index:1;
 }
-/* Dois pontos (:) entre números do countdown */
+/* Dois pontos verticais entre blocos do countdown */
 .section-countdown .countdown-block{
   position:relative;
 }
+.section-countdown .countdown-block:not(:last-child)::before,
 .section-countdown .countdown-block:not(:last-child)::after{
-  content:':';
+  content:'';
   position:absolute;
-  right:-0.55em;
-  top:0;
-  font-family:'Anton',sans-serif;
-  font-weight:900;
-  font-size:inherit;
-  line-height:1;
-  color:rgba(255,232,204,0.7);
+  right:-0.8rem;
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:#FFE8CC;
+  box-shadow:0 0 12px rgba(255,232,204,0.6);
   pointer-events:none;
   animation:countdownBlink 1.2s ease-in-out infinite;
 }
+.section-countdown .countdown-block:not(:last-child)::before{
+  top:30%;
+}
+.section-countdown .countdown-block:not(:last-child)::after{
+  top:50%;
+}
 @keyframes countdownBlink{
-  0%,100%{ opacity:0.85; }
-  50%{ opacity:0.35; }
+  0%,100%{ opacity:0.9; }
+  50%{ opacity:0.3; }
+}
+@media(max-width:600px){
+  .section-countdown .countdown-block:not(:last-child)::before,
+  .section-countdown .countdown-block:not(:last-child)::after{
+    width:5px;
+    height:5px;
+    right:-0.4rem;
+  }
 }
 
 .section-modules{
