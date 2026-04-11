@@ -864,6 +864,23 @@ html{
   }
 }
 
+/* Lineup — efeito nos artistas em mobile (tap / animação contínua) */
+@media(max-width:900px){
+  .fl-artist{
+    transition:transform 0.25s ease, text-shadow 0.25s ease, color 0.25s ease!important;
+    animation:artistGlow 3.5s ease-in-out infinite!important;
+  }
+  .fl-artist:active{
+    transform:translateY(-2px) scale(1.04)!important;
+    color:#fff!important;
+    text-shadow:0 0 16px rgba(255,213,62,0.9), 0 0 40px rgba(255,180,0,0.6)!important;
+  }
+}
+@keyframes artistGlow{
+  0%,100%{ text-shadow:0 0 0 transparent; }
+  50%{ text-shadow:0 0 12px rgba(255,213,62,0.4), 0 0 24px rgba(255,180,0,0.2); }
+}
+
 /* Lineup — espaçamento compacto */
 .section-lineup{
   padding:5rem 2rem!important;
