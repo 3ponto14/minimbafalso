@@ -397,6 +397,42 @@
   border-right:none!important;
 }
 
+/* ── CTA SECTION — glow laranja ─────────────────── */
+.section-cta{
+  background:linear-gradient(160deg,#0A5560 0%,#0E6873 50%,#0A5560 100%)!important;
+  border-top:none!important;
+  position:relative;
+  overflow:hidden;
+}
+.section-cta::before{
+  content:''!important;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:900px;
+  height:700px;
+  background:radial-gradient(ellipse at center, rgba(255,87,34,0.95) 0%, rgba(255,87,34,0.6) 25%, rgba(255,87,34,0.25) 50%, transparent 75%)!important;
+  border-radius:50%;
+  pointer-events:none;
+  z-index:0;
+  filter:blur(30px);
+  animation:ctaGlowPulse 3s ease-in-out infinite;
+  font-size:0!important;
+  color:transparent!important;
+}
+@keyframes ctaGlowPulse{
+  0%,100%{ opacity:0.75; transform:translate(-50%,-50%) scale(1); }
+  50%{ opacity:1; transform:translate(-50%,-50%) scale(1.15); }
+}
+.section-cta .cta-inner{
+  position:relative;
+  z-index:1;
+}
+@media(max-width:600px){
+  .section-cta::before{ width:500px; height:500px; }
+}
+
 /* ── FOOTER NOVO ────────────────────────────────── */
 .footer-new{
   background:#0A5560;
