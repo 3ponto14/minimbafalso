@@ -472,6 +472,7 @@
   background:var(--dark);
   padding:3rem 0 3rem;
   text-align:center;
+  overflow:visible;
 }
 .ig-header{
   padding:0 2rem 1rem;
@@ -529,31 +530,29 @@
   .ig-post{flex:0 0 600px;height:600px;}
 }
 /* partículas orbit */
-.phone-orbit-wrap{
+.ig-feed-wrap{
   position:relative;
   display:flex;
   align-items:center;
   justify-content:center;
   overflow:visible;
 }
-.ig-post{
-  overflow:visible!important;
-}
-.ig-feed{
-  overflow-x:visible!important;
-  overflow-y:scroll!important;
-}
 .orbit-canvas{
   position:absolute;
-  inset:-80px;
-  width:calc(100% + 160px);
-  height:calc(100% + 160px);
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:700px;
+  height:700px;
   pointer-events:none;
-  z-index:0;
+  z-index:2;
+  border:none;
+  outline:none;
+  display:block;
+  background:transparent;
 }
-.phone-orbit-wrap .phone-frame{
-  position:relative;
-  z-index:1;
+@media(max-width:600px){
+  .orbit-canvas{ width:500px; height:500px; }
 }
 
 /* glow à volta do telemóvel */
