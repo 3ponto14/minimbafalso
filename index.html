@@ -513,6 +513,11 @@
   -webkit-overflow-scrolling:touch;
   scrollbar-width:none;
   gap:0;
+  background:transparent;
+  border:none;
+  outline:none;
+  position:relative;
+  z-index:2;
 }
 .ig-feed::-webkit-scrollbar{display:none;}
 .ig-post{
@@ -525,6 +530,7 @@
   justify-content:center;
   box-sizing:border-box;
   overflow:visible;
+  background:transparent;
 }
 @media(max-width:600px){
   .section-instagram{padding-bottom:2rem;}
@@ -679,9 +685,10 @@
 }
 .phone-screen{
   position:absolute;
-  inset:0;
-  border-radius:48px;
+  inset:6px;
+  border-radius:44px;
   overflow:hidden;
+  background:#000;
 }
 .phone-screen iframe{
   width:100%;
