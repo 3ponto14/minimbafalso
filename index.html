@@ -539,24 +539,24 @@
   justify-content:center;
   overflow:visible;
 }
-/* glow laranja atrás do telefone — elemento separado para não ser cortado */
+/* glow laranja atrás do telefone */
 .ig-feed-wrap::before{
   content:'';
   position:absolute;
   top:50%;
   left:50%;
   transform:translate(-50%,-50%);
-  width:300px;
-  height:400px;
-  background:radial-gradient(ellipse at center, rgba(255,87,34,0.55) 0%, rgba(255,87,34,0.2) 40%, transparent 70%);
+  width:400px;
+  height:500px;
+  background:radial-gradient(ellipse at center, rgba(255,87,34,0.45) 0%, rgba(255,87,34,0.15) 35%, transparent 65%);
   border-radius:50%;
   pointer-events:none;
-  z-index:1;
+  z-index:0;
   animation:glowPulse 3s ease-in-out infinite;
 }
 @keyframes glowPulse{
-  0%,100%{ opacity:0.7; transform:translate(-50%,-50%) scale(1); }
-  50%{ opacity:1; transform:translate(-50%,-50%) scale(1.25); }
+  0%,100%{ opacity:0.6; transform:translate(-50%,-50%) scale(1); }
+  50%{ opacity:1; transform:translate(-50%,-50%) scale(1.3); }
 }
 .orbit-canvas{
   position:absolute;
