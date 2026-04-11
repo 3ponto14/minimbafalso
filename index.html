@@ -562,6 +562,28 @@ html{
   position:relative;
   z-index:1;
 }
+/* Traços entre números do countdown */
+.section-countdown .countdown-block{
+  position:relative;
+}
+.section-countdown .countdown-block:not(:last-child)::after{
+  content:'';
+  position:absolute;
+  right:-0.3rem;
+  top:35%;
+  width:1.5rem;
+  height:3px;
+  background:rgba(255,232,204,0.6);
+  border-radius:2px;
+  pointer-events:none;
+}
+@media(max-width:600px){
+  .section-countdown .countdown-block:not(:last-child)::after{
+    width:0.8rem;
+    height:2px;
+    right:-0.15rem;
+  }
+}
 
 .section-modules{
   background:linear-gradient(160deg,#9A2200 0%,#C84000 30%,#D95A00 55%,#B83000 80%,#7A1500 100%)!important;
