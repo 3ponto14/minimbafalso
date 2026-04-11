@@ -594,10 +594,63 @@ html{
   border:1.5px solid rgba(255,255,255,0.18)!important;
   backdrop-filter:blur(10px);
   -webkit-backdrop-filter:blur(10px);
+  transform-style:preserve-3d;
+  transition:transform 0.4s var(--ease-out-expo), box-shadow 0.4s ease, border-color 0.3s, background 0.3s!important;
 }
 .section-modules .mod-card:hover{
   background:rgba(80,30,10,0.5)!important;
   border-color:rgba(255,255,255,0.32)!important;
+  transform:perspective(1000px) rotateX(6deg) rotateY(-6deg) translateY(-8px)!important;
+}
+/* glow colorido no hover — cor única por palco */
+.section-modules .mod-card:nth-child(1):hover{
+  box-shadow:0 25px 50px rgba(0,0,0,0.4), 0 0 60px rgba(254,126,60,0.55), 0 0 120px rgba(254,126,60,0.25)!important;
+}
+.section-modules .mod-card:nth-child(2):hover{
+  box-shadow:0 25px 50px rgba(0,0,0,0.4), 0 0 60px rgba(228,32,27,0.55), 0 0 120px rgba(228,32,27,0.25)!important;
+}
+.section-modules .mod-card:nth-child(3):hover{
+  box-shadow:0 25px 50px rgba(0,0,0,0.4), 0 0 60px rgba(58,172,186,0.55), 0 0 120px rgba(58,172,186,0.25)!important;
+}
+.section-modules .mod-card:nth-child(4):hover{
+  box-shadow:0 25px 50px rgba(0,0,0,0.4), 0 0 60px rgba(155,63,232,0.55), 0 0 120px rgba(155,63,232,0.25)!important;
+}
+.section-modules .mod-card:nth-child(5):hover{
+  box-shadow:0 25px 50px rgba(0,0,0,0.4), 0 0 60px rgba(255,213,62,0.55), 0 0 120px rgba(255,213,62,0.25)!important;
+}
+.section-modules .mod-card:nth-child(6):hover{
+  box-shadow:0 25px 50px rgba(0,0,0,0.4), 0 0 60px rgba(255,107,53,0.55), 0 0 120px rgba(255,107,53,0.25)!important;
+}
+/* badge "Revela em breve" */
+.section-modules .mod-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:0.5rem;
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-size:0.7rem;
+  font-weight:700;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:rgba(255,232,204,0.85);
+  padding:0.4rem 0.8rem;
+  background:rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.18);
+  border-radius:100px;
+  margin:0.6rem 0 0.8rem;
+  backdrop-filter:blur(4px);
+  -webkit-backdrop-filter:blur(4px);
+}
+.section-modules .mod-badge-dot{
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:#FFD53E;
+  box-shadow:0 0 8px rgba(255,213,62,0.8);
+  animation:badgePulse 1.8s ease-in-out infinite;
+}
+@keyframes badgePulse{
+  0%,100%{ opacity:1; transform:scale(1); }
+  50%{ opacity:0.5; transform:scale(0.85); }
 }
 
 .section-wristbands{
@@ -1414,7 +1467,7 @@ html{
       <div class="mod-card-inner">
         <div class="mod-accent"></div>
         <div class="mod-name">Palco do Capital</div>
-        <div class="mod-title">Headliner por confirmar</div>
+        <div class="mod-badge"><span class="mod-badge-dot"></span>Revela em breve</div>
         <div class="mod-desc">Os melhores investimentos da tua vida não são em bolsa. Em breve revelamos quem sobe a este palco.</div>
         <span class="mod-num">01</span>
       </div>
@@ -1423,7 +1476,7 @@ html{
       <div class="mod-card-inner">
         <div class="mod-accent"></div>
         <div class="mod-name">Palco da Mente</div>
-        <div class="mod-title">Headliner por confirmar</div>
+        <div class="mod-badge"><span class="mod-badge-dot"></span>Revela em breve</div>
         <div class="mod-desc">A tua cabeça é o instrumento mais poderoso que tens. Segue-nos para não perderes o anúncio.</div>
         <span class="mod-num">02</span>
       </div>
@@ -1432,7 +1485,7 @@ html{
       <div class="mod-card-inner">
         <div class="mod-accent"></div>
         <div class="mod-name">Palco do Futuro</div>
-        <div class="mod-title">Headliner por confirmar</div>
+        <div class="mod-badge"><span class="mod-badge-dot"></span>Revela em breve</div>
         <div class="mod-desc">A vida que ninguém te ensinou começa aqui. Em breve revelamos quem sobe a este palco.</div>
         <span class="mod-num">03</span>
       </div>
@@ -1441,7 +1494,7 @@ html{
       <div class="mod-card-inner">
         <div class="mod-accent"></div>
         <div class="mod-name">Palco da Liberdade</div>
-        <div class="mod-title">Headliner por confirmar</div>
+        <div class="mod-badge"><span class="mod-badge-dot"></span>Revela em breve</div>
         <div class="mod-desc">Crescimento pessoal sem filtros. Segue-nos para não perderes o anúncio.</div>
         <span class="mod-num">04</span>
       </div>
@@ -1450,7 +1503,7 @@ html{
       <div class="mod-card-inner">
         <div class="mod-accent"></div>
         <div class="mod-name">Palco da Inteligência</div>
-        <div class="mod-title">Headliner por confirmar</div>
+        <div class="mod-badge"><span class="mod-badge-dot"></span>Revela em breve</div>
         <div class="mod-desc">Aprende ou paga — a escolha é tua. Em breve revelamos quem sobe a este palco.</div>
         <span class="mod-num">05</span>
       </div>
@@ -1459,7 +1512,7 @@ html{
       <div class="mod-card-inner">
         <div class="mod-accent"></div>
         <div class="mod-name">Palco das Decisões</div>
-        <div class="mod-title">Headliner por confirmar</div>
+        <div class="mod-badge"><span class="mod-badge-dot"></span>Revela em breve</div>
         <div class="mod-desc">As decisões que tomas hoje definem quem serás amanhã. Segue-nos para não perderes o anúncio.</div>
         <span class="mod-num">06</span>
       </div>
