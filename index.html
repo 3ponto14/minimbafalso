@@ -1333,18 +1333,18 @@ html{
   to{opacity:1;transform:translateY(0);}
 }
 body nav#mainNav, nav#mainNav, #mainNav{
-  background:rgba(200,64,0,0.75)!important;
+  background:rgba(200,64,0,0.75);
   background-image:none!important;
   backdrop-filter:blur(12px)!important;
   -webkit-backdrop-filter:blur(12px)!important;
   border-bottom:1px solid rgba(255,200,100,0.2)!important;
+  transition:background 0.4s ease!important;
 }
 @keyframes navShimmer{
   0%{left:-100%;}
   60%,100%{left:150%;}
 }
 #mainNav.scrolled{
-  background:rgba(200,64,0,0.9)!important;
   background-image:none!important;
 }
 #mainNav::after{
@@ -1981,9 +1981,35 @@ function toggleWb(el) {
 
 /*  Nav shrink on scroll  */
 const nav = document.getElementById('mainNav');
+
+/* Nav color per section */
+const navColorMap = [
+  {sel:'.hero',              color:'rgba(200,64,0,0.75)'},
+  {sel:'.section-instagram', color:'rgba(200,64,0,0.75)'},
+  {sel:'.section-countdown', color:'rgba(26,95,95,0.75)'},
+  {sel:'.section-lineup',    color:'rgba(26,95,95,0.75)'},
+  {sel:'.section-modules',   color:'rgba(200,64,0,0.75)'},
+  {sel:'.section-gallery',   color:'rgba(26,95,95,0.75)'},
+  {sel:'.section-wristbands',color:'rgba(139,26,0,0.75)'},
+  {sel:'.section-cta',       color:'rgba(26,95,95,0.75)'},
+  {sel:'.footer-new',        color:'rgba(10,21,32,0.85)'}
+];
+const navSections = navColorMap.map(m => ({el:document.querySelector(m.sel), color:m.color})).filter(s => s.el);
+
+function updateNavColor(){
+  const y = window.scrollY + 50;
+  let current = navSections[0];
+  for(const s of navSections){
+    if(s.el.offsetTop <= y) current = s;
+  }
+  if(current) nav.style.background = current.color;
+}
+
 window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', window.scrollY > 60);
+  updateNavColor();
 }, { passive: true });
+updateNavColor();
 
 /*  Scroll reveal  */
 const revealClasses = ['.reveal', '.reveal-left', '.reveal-right'];
