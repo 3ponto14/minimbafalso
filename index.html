@@ -1393,6 +1393,33 @@ body nav#mainNav, nav#mainNav, #mainNav{
 .cta-form-mobile-btn{
   display:none;
 }
+.footer-new-contact{
+  display:flex;
+  flex-direction:column;
+  gap:0.4rem;
+  align-items:flex-end;
+}
+.footer-new-contact-label{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-size:0.7rem;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,0.5);
+}
+.footer-new-contact-email{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-size:1rem;
+  color:var(--cream);
+  text-decoration:none;
+  font-weight:600;
+  transition:color 0.2s;
+}
+.footer-new-contact-email:hover{
+  color:#FF5722;
+}
+@media (max-width:768px){
+  .footer-new-contact{align-items:flex-start;}
+}
 @media (max-width:768px){
   .cta-form-wrap{
     display:none;
