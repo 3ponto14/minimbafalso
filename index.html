@@ -1332,6 +1332,23 @@ html{
   from{opacity:0;transform:translateY(16px);}
   to{opacity:1;transform:translateY(0);}
 }
+#mainNav{
+  box-shadow:0 0 30px rgba(255,87,34,0.25), 0 0 60px rgba(255,87,34,0.12)!important;
+  border-bottom:1px solid rgba(255,87,34,0.25)!important;
+}
+#mainNav::after{
+  content:'';
+  position:absolute;
+  left:0; right:0; bottom:-1px;
+  height:1px;
+  background:linear-gradient(90deg, transparent 0%, rgba(255,87,34,0.8) 50%, transparent 100%);
+  pointer-events:none;
+  animation:navGlow 4s ease-in-out infinite;
+}
+@keyframes navGlow{
+  0%,100%{opacity:0.5;}
+  50%{opacity:1;}
+}
 </style></head>
 <body>
 
