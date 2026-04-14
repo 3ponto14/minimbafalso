@@ -1376,22 +1376,32 @@ body nav#mainNav, nav#mainNav, #mainNav{
   background:#fff;
   border-radius:20px;
   overflow:hidden;
-  box-shadow:0 20px 60px rgba(0,0,0,0.35);
+  box-shadow:0 20px 60px rgba(0,0,0,0.45), 0 0 0 2px rgba(255,180,90,0.45), 0 0 80px rgba(255,120,40,0.25);
   position:relative;
   z-index:2;
+  padding:6px;
 }
 .cta-form-wrap iframe{
   display:block;
   width:100%;
   border:none;
+  border-radius:14px;
+}
+#lista{
+  scroll-margin-top:90px;
 }
 @media (max-width:768px){
   .cta-form-wrap{
-    margin:2rem 1rem 0;
+    margin:2rem 1.25rem 0;
     border-radius:16px;
+    padding:5px;
   }
   .cta-form-wrap iframe{
     height:520px!important;
+    border-radius:11px;
+  }
+  #lista{
+    scroll-margin-top:70px;
   }
   .section-countdown::after,
   .section-gallery::after,
