@@ -157,6 +157,8 @@ html{
 }
 
 /* ── HAMBURGER ──────────────────────────────────── */
+.nav-pill--desktop{}
+@media(max-width:768px){.nav-pill--desktop{display:none!important;}}
 .nav-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:8px;min-width:44px;min-height:44px;border-radius:8px;}
 .nav-hamburger span{display:block;width:22px;height:2px;background:var(--cream);border-radius:2px;transition:transform 0.3s var(--ease-out-expo),opacity 0.2s;}
 .nav-hamburger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg);}
