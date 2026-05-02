@@ -2226,7 +2226,7 @@ body nav#mainNav, nav#mainNav, #mainNav{
 
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">Para quem é?</button>
-        <div class="faq-a">Para jovens do 7.º ao 12.º ano que querem aprender o que a escola não ensina.</div>
+        <div class="faq-a">Para jovens do 7.º ao 12.º ano que querem aprender o que a escola não ensina. Participantes com menos de 16 anos precisam de autorização expressa do pai, mãe ou tutor legal no momento da inscrição.</div>
       </div>
 
       <div class="faq-item">
@@ -2854,5 +2854,19 @@ document.querySelectorAll('.faq-q').forEach(btn => {
 });
 </script>
 
+
+<!-- Banner de Cookies -->
+<div id="cookie-banner" style="position:fixed;bottom:0;left:0;right:0;background:#0A1520;color:#FFE8CC;padding:1.2rem 2rem;z-index:99999;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;border-top:1px solid rgba(255,232,204,0.15);font-family:'Bricolage Grotesque',sans-serif;font-size:0.82rem;line-height:1.5;">
+  <p style="margin:0;max-width:700px;">Este site utiliza cookies para melhorar a experiência de utilização e para análise de tráfego. Ao continuar a navegar, aceitas a nossa <a href="/privacidade.html" style="color:#FF5722;">Política de Privacidade</a> e os nossos <a href="/termos.html" style="color:#FF5722;">Termos e Condições</a>.</p>
+  <div style="display:flex;gap:0.8rem;flex-shrink:0;">
+    <button onclick="acceptCookies()" style="background:#FF5722;color:#fff;border:none;padding:0.6rem 1.4rem;border-radius:100px;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:0.8rem;cursor:pointer;">Aceitar</button>
+    <button onclick="rejectCookies()" style="background:transparent;color:rgba(255,232,204,0.5);border:1px solid rgba(255,232,204,0.2);padding:0.6rem 1.4rem;border-radius:100px;font-family:'Bricolage Grotesque',sans-serif;font-size:0.8rem;cursor:pointer;">Recusar</button>
+  </div>
+</div>
+<script>
+function acceptCookies(){document.getElementById('cookie-banner').style.display='none';localStorage.setItem('cookies','accepted');}
+function rejectCookies(){document.getElementById('cookie-banner').style.display='none';localStorage.setItem('cookies','rejected');}
+(function(){if(localStorage.getItem('cookies')){document.getElementById('cookie-banner').style.display='none';}})();
+</script>
 </body>
 </html>
