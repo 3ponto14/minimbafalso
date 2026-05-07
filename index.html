@@ -2863,7 +2863,7 @@ function rejectCookies(){document.getElementById('cookie-banner').style.display=
 (function(){var b=document.getElementById('cookie-banner');if(localStorage.getItem('cookies')){b.style.display='none';}else{setTimeout(function(){b.style.transform='translateY(0)';},1000);}})();
 </script>
 <script>
-(function(){
+document.addEventListener('DOMContentLoaded',function(){
   var videos=document.querySelectorAll('.ig-video');
   // mute toggle
   document.querySelectorAll('.ig-mute-btn').forEach(function(btn){
@@ -2878,17 +2878,17 @@ function rejectCookies(){document.getElementById('cookie-banner').style.display=
     entries.forEach(function(e){
       var v=e.target;
       if(e.isIntersecting){
-        v.play();
+        v.play().catch(function(){});
       } else {
         v.pause();
       }
     });
-  },{threshold:0.5});
+  },{threshold:0.4});
   videos.forEach(function(v){
-    v.removeAttribute('autoplay');
+    v.pause();
     obs.observe(v);
   });
-})();
+});
 </script>
 </body>
 </html>
