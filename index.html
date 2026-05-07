@@ -2854,5 +2854,14 @@ function acceptCookies(){document.getElementById('cookie-banner').style.display=
 function rejectCookies(){document.getElementById('cookie-banner').style.display='none';localStorage.setItem('cookies','rejected');}
 (function(){var b=document.getElementById('cookie-banner');if(localStorage.getItem('cookies')){b.style.display='none';}else{setTimeout(function(){b.style.transform='translateY(0)';},1000);}})();
 </script>
+<script>
+document.querySelectorAll('.ig-mute-btn').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var video=btn.previousElementSibling;
+    video.muted=!video.muted;
+    btn.textContent=video.muted?'🔇':'🔊';
+  });
+});
+</script>
 </body>
 </html>
