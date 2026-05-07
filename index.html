@@ -2855,13 +2855,32 @@ function rejectCookies(){document.getElementById('cookie-banner').style.display=
 (function(){var b=document.getElementById('cookie-banner');if(localStorage.getItem('cookies')){b.style.display='none';}else{setTimeout(function(){b.style.transform='translateY(0)';},1000);}})();
 </script>
 <script>
-document.querySelectorAll('.ig-mute-btn').forEach(function(btn){
-  btn.addEventListener('click',function(){
-    var video=btn.previousElementSibling;
-    video.muted=!video.muted;
-    btn.textContent=video.muted?'🔇':'🔊';
+(function(){
+  var videos=document.querySelectorAll('.ig-video');
+  // mute toggle
+  document.querySelectorAll('.ig-mute-btn').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var video=btn.previousElementSibling;
+      video.muted=!video.muted;
+      btn.textContent=video.muted?'🔇':'🔊';
+    });
   });
-});
+  // play/pause on scroll
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      var v=e.target;
+      if(e.isIntersecting){
+        v.play();
+      } else {
+        v.pause();
+      }
+    });
+  },{threshold:0.5});
+  videos.forEach(function(v){
+    v.removeAttribute('autoplay');
+    obs.observe(v);
+  });
+})();
 </script>
 </body>
 </html>
