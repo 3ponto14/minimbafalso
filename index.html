@@ -1452,13 +1452,23 @@ a.wb-panel-btn:hover{
   border:none;
   display:block;
 }
-.mobile-tiktok-overlay{
-  display:block;
+.mobile-tiktok-overlay{display:none;}
+.ig-mute-btn{
   position:absolute;
-  inset:0;
+  bottom:14px;
+  right:14px;
   z-index:10;
-  border-radius:48px;
-  opacity:0;
+  background:rgba(0,0,0,0.45);
+  border:none;
+  border-radius:50%;
+  width:36px;
+  height:36px;
+  font-size:1rem;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  line-height:1;
 }
 .mobile-video{display:none;}
 @media(max-width:600px){
@@ -1801,8 +1811,8 @@ body nav#mainNav, nav#mainNav, #mainNav{
           <div class="phone-btn-vol-up"></div>
           <div class="phone-btn-vol-down"></div>
           <div class="phone-screen">
-            <video src="v1.mp4" autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;"></video>
-            <a class="mobile-tiktok-overlay" href="https://www.instagram.com/ofestival.pt/" target="_blank" rel="noopener" aria-label="Ver no Instagram"></a>
+            <video src="v1.mp4" autoplay muted loop playsinline class="ig-video" style="width:100%;height:100%;object-fit:cover;"></video>
+            <button class="ig-mute-btn" aria-label="Ligar som">🔇</button>
           </div>
         </div>
       </div>
@@ -1813,8 +1823,8 @@ body nav#mainNav, nav#mainNav, #mainNav{
           <div class="phone-btn-vol-up"></div>
           <div class="phone-btn-vol-down"></div>
           <div class="phone-screen">
-            <video src="v2.mp4" autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;"></video>
-            <a class="mobile-tiktok-overlay" href="https://www.instagram.com/ofestival.pt/" target="_blank" rel="noopener" aria-label="Ver no Instagram"></a>
+            <video src="v2.mp4" autoplay muted loop playsinline class="ig-video" style="width:100%;height:100%;object-fit:cover;"></video>
+            <button class="ig-mute-btn" aria-label="Ligar som">🔇</button>
           </div>
         </div>
       </div>
@@ -1825,8 +1835,8 @@ body nav#mainNav, nav#mainNav, #mainNav{
           <div class="phone-btn-vol-up"></div>
           <div class="phone-btn-vol-down"></div>
           <div class="phone-screen">
-            <video src="v3.mp4" autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;"></video>
-            <a class="mobile-tiktok-overlay" href="https://www.instagram.com/ofestival.pt/" target="_blank" rel="noopener" aria-label="Ver no Instagram"></a>
+            <video src="v3.mp4" autoplay muted loop playsinline class="ig-video" style="width:100%;height:100%;object-fit:cover;"></video>
+            <button class="ig-mute-btn" aria-label="Ligar som">🔇</button>
           </div>
         </div>
       </div>
