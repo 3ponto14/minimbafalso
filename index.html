@@ -1110,7 +1110,7 @@ a.wb-panel-btn:hover{
 
 /* ── PARCEIROS ──────────────────────────────────── */
 .section-parceiros-marquee{
-  overflow:hidden;
+  overflow:visible;
   background:#FF5500;
   border-top:none;
   border-bottom:none;
@@ -1118,6 +1118,8 @@ a.wb-panel-btn:hover{
 }
 .parceiros-marquee-wrap{
   overflow:hidden;
+  position:relative;
+  z-index:1;
 }
 .parceiros-marquee-track{
   display:flex;
@@ -1148,7 +1150,7 @@ a.wb-panel-btn:hover{
   flex-shrink:0;
 }
 .parceiros-marquee-logo img{
-  height:18px;
+  height:32px;
   width:auto;
   mix-blend-mode:multiply;
   transition:opacity 0.2s;
