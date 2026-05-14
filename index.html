@@ -1150,12 +1150,15 @@ a.wb-panel-btn:hover{
   display:flex;
   align-items:center;
   flex-shrink:0;
+  position:relative;
+  z-index:10;
+  cursor:pointer;
 }
 .parceiros-marquee-logo img{
   height:28px;
   width:auto;
-  mix-blend-mode:multiply;
   transition:opacity 0.2s;
+  pointer-events:none;
 }
 .parceiros-marquee-logo:hover img{
   opacity:0.75;
