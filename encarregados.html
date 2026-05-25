@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Para Encarregados de Educação — Festival da Educação</title>
+<meta name="description" content="Tudo o que precisa de saber sobre o Festival da Educação antes de inscrever o seu filho. Informação para pais e encarregados de educação.">
+<meta name="robots" content="index, follow">
+<link rel="icon" type="image/webp" href="favicon.webp">
+<link rel="apple-touch-icon" href="favicon.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,700;12..96,800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #FFE8CC;
+  --burnt: #FF5722;
+  --dark: #6B1200;
+  --lust: #8B1A00;
+}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  background: var(--cream);
+  color: var(--dark);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* NAV */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: var(--cream);
+  border-bottom: 1px solid rgba(107,18,0,0.1);
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo { height: 32px; }
+.nav-cta {
+  background: var(--burnt);
+  color: var(--cream);
+  font-weight: 800;
+  font-size: 0.85rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* HERO */
+.hero {
+  background: var(--lust);
+  color: var(--cream);
+  padding: 7rem 1.5rem 4rem;
+  text-align: center;
+}
+.hero-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-bottom: 1.2rem;
+}
+.hero h1 {
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(2.4rem, 7vw, 4.5rem);
+  line-height: 1.05;
+  margin-bottom: 1.5rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.hero-sub {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  opacity: 0.85;
+  line-height: 1.7;
+  max-width: 560px;
+  margin: 0 auto 2rem;
+}
+.hero-sub strong { opacity: 1; }
+.btn-primary {
+  display: inline-block;
+  background: var(--burnt);
+  color: var(--cream);
+  font-weight: 800;
+  font-size: 1rem;
+  padding: 1rem 2.5rem;
+  border-radius: 999px;
+  text-decoration: none;
+  letter-spacing: 0.03em;
+}
+.btn-secondary {
+  display: inline-block;
+  color: var(--cream);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  opacity: 0.7;
+  margin-top: 1rem;
+}
+.btn-secondary:hover { opacity: 1; }
+
+/* SECTIONS */
+section { padding: 4rem 1.5rem; max-width: 680px; margin: 0 auto; }
+
+.eyebrow {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--burnt);
+  margin-bottom: 0.75rem;
+}
+h2 {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 900;
+  line-height: 1.2;
+  margin-bottom: 1.2rem;
+  color: var(--dark);
+}
+.lead {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--dark);
+  opacity: 0.85;
+  margin-bottom: 2rem;
+}
+
+/* DORES */
+.dores-list { display: flex; flex-direction: column; gap: 1rem; }
+.dor-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 1.5rem 1.8rem;
+  box-shadow: 0 2px 12px rgba(107,18,0,0.07);
+}
+.dor-card h3 {
+  font-size: 1rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  color: var(--dark);
+}
+.dor-card p {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  opacity: 0.75;
+}
+
+/* COMO FUNCIONA */
+.steps { display: flex; flex-direction: column; gap: 1.2rem; margin-top: 1.5rem; }
+.step {
+  display: flex;
+  gap: 1.2rem;
+  align-items: flex-start;
+}
+.step-num {
+  background: var(--burnt);
+  color: var(--cream);
+  font-weight: 900;
+  font-size: 0.85rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+.step-text h3 { font-size: 0.95rem; font-weight: 800; margin-bottom: 0.3rem; }
+.step-text p { font-size: 0.88rem; line-height: 1.6; opacity: 0.72; }
+
+/* TEMAS */
+.temas-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.9rem;
+  margin-top: 1.5rem;
+}
+.tema-card {
+  background: var(--lust);
+  color: var(--cream);
+  border-radius: 14px;
+  padding: 1.2rem 1.4rem;
+}
+.tema-card h3 { font-size: 0.9rem; font-weight: 800; margin-bottom: 0.3rem; }
+.tema-card p { font-size: 0.8rem; line-height: 1.5; opacity: 0.75; }
+
+/* FAQ */
+.faq-list { display: flex; flex-direction: column; gap: 0; margin-top: 1.5rem; }
+.faq-item { border-bottom: 1px solid rgba(107,18,0,0.12); }
+.faq-q {
+  width: 100%;
+  background: none;
+  border: none;
+  text-align: left;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--dark);
+  padding: 1.2rem 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.faq-q::after { content: '+'; font-size: 1.3rem; font-weight: 400; flex-shrink: 0; }
+.faq-q[aria-expanded="true"]::after { content: '−'; }
+.faq-a {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  opacity: 0.75;
+  padding-bottom: 1.2rem;
+  display: none;
+}
+.faq-a.open { display: block; }
+
+/* CTA FINAL */
+.cta-section {
+  background: var(--lust);
+  color: var(--cream);
+  padding: 4rem 1.5rem;
+  text-align: center;
+}
+.cta-section h2 { color: var(--cream); max-width: 500px; margin: 0 auto 1rem; }
+.cta-section p { opacity: 0.8; font-size: 0.95rem; margin-bottom: 2rem; line-height: 1.6; max-width: 420px; margin-left: auto; margin-right: auto; }
+.cta-buttons { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+
+/* DIVIDER */
+.divider { border: none; border-top: 1px solid rgba(107,18,0,0.1); margin: 0; }
+
+@media (max-width: 480px) {
+  .temas-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/">
+    <img src="logo.svg" alt="Festival da Educação" class="nav-logo">
+  </a>
+  <a href="https://forms.gle/EdxyNhv4k7qgLFpBA" target="_blank" rel="noopener" class="nav-cta">Garantir lugar →</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <p class="hero-eyebrow">Para encarregados de educação</p>
+  <h1>O verão mais útil que o seu filho já teve.</h1>
+  <p class="hero-sub">O seu filho ainda não sabe o que quer fazer do futuro. Passa o dia no telemóvel e a escola não o está a preparar para nada do que realmente importa. <strong>Isso preocupa-o. E faz sentido preocupar.</strong></p>
+  <a href="https://forms.gle/EdxyNhv4k7qgLFpBA" target="_blank" rel="noopener" class="btn-primary">Garantir lugar agora →</a><br>
+  <a href="https://wa.link/cw8seg" target="_blank" rel="noopener" class="btn-secondary">Tem dúvidas? Fale connosco →</a>
+</div>
+
+<!-- DORES -->
+<section>
+  <p class="eyebrow">Reconhece isto?</p>
+  <h2>As preocupações que os pais nos partilham.</h2>
+  <p class="lead">Antes de inscrever o seu filho, muitos pais chegam-nos com as mesmas dúvidas. Aqui estão as mais comuns — e o que fazemos em relação a cada uma delas.</p>
+  <div class="dores-list">
+    <div class="dor-card">
+      <h3>"O meu filho não sabe o que quer fazer da vida — e isso assusta-me."</h3>
+      <p>No Festival, o seu filho vai ter contacto com áreas que a escola nunca lhe mostrou — finanças, empreendedorismo, comunicação, inteligência emocional. Muitos jovens saem com uma direção mais clara, ou pelo menos com mais ferramentas para explorar.</p>
+    </div>
+    <div class="dor-card">
+      <h3>"A escola não o está a preparar para o mundo real."</h3>
+      <p>Concordamos. O Festival existe precisamente para isso: ensinar o que os manuais ignoram. Cada talk é dado por um profissional real, sobre situações reais. Não é mais teoria — é prática.</p>
+    </div>
+    <div class="dor-card">
+      <h3>"O meu filho é tímido. Vai conseguir participar?"</h3>
+      <p>Os grupos têm no máximo 15 alunos, o que torna tudo muito mais próximo e acolhedor do que uma sala de aula normal. Não há exposição forçada — cada um participa ao seu ritmo.</p>
+    </div>
+    <div class="dor-card">
+      <h3>"Vale mesmo a pena o investimento?"</h3>
+      <p>Uma semana de festival custa a partir de 99€. Comparado com explicações, campos de verão ou atividades extracurriculares, é um dos investimentos mais focados que pode fazer no desenvolvimento do seu filho. E os conteúdos ficam com ele para a vida.</p>
+    </div>
+    <div class="dor-card">
+      <h3>"É seguro? Quem acompanha os jovens?"</h3>
+      <p>O Festival é 100% online via Zoom. O seu filho participa de casa, com supervisão de um facilitador em cada sessão. Não há deslocações, não há alojamento — está sempre em casa.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- COMO FUNCIONA -->
+<section>
+  <p class="eyebrow">Logística</p>
+  <h2>Como funciona, na prática.</h2>
+  <p class="lead">Uma semana intensiva, mas com 4 datas à escolha. Escolhe a que encaixa melhor nas férias do seu filho.</p>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-text">
+        <h3>Escolhe a semana</h3>
+        <p>4 datas disponíveis: 20 jul · 27 jul · 3 ago · 10 ago. Inscreve-se na que encaixa melhor nas férias.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-text">
+        <h3>O seu filho entra no Zoom</h3>
+        <p>De segunda a sexta, 1 talk por dia com um especialista diferente. Manhã (10h–13h) para o ensino básico, tarde (14h–17h) para o secundário.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-text">
+        <h3>Grupos de máximo 15 alunos</h3>
+        <p>Não é uma aula online anónima. É um grupo pequeno onde há espaço para perguntas, discussão e interação real com o convidado.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-text">
+        <h3>A partir de 99€</h3>
+        <p>Pulseira Geral ou VIP. Sem custos escondidos, sem deslocações, sem material adicional necessário.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- TEMAS -->
+<section>
+  <p class="eyebrow">O programa</p>
+  <h2>6 temas que a escola ignora.</h2>
+  <p class="lead">Cada dia da semana tem um tema diferente, apresentado por um especialista real da área.</p>
+  <div class="temas-grid">
+    <div class="tema-card">
+      <h3>Inteligência Financeira</h3>
+      <p>Poupar, investir e perceber como o dinheiro funciona de verdade.</p>
+    </div>
+    <div class="tema-card">
+      <h3>Mundo Digital</h3>
+      <p>Criar, empreender e navegar o mundo online com inteligência.</p>
+    </div>
+    <div class="tema-card">
+      <h3>Inteligência Emocional</h3>
+      <p>Gerir emoções, lidar com a pressão e conhecer-se melhor.</p>
+    </div>
+    <div class="tema-card">
+      <h3>Relações Saudáveis</h3>
+      <p>Comunicar, resolver conflitos e construir relações que valem a pena.</p>
+    </div>
+    <div class="tema-card">
+      <h3>Inglês para o Mundo Real</h3>
+      <p>Falar, não só escrever. O inglês que realmente abre portas.</p>
+    </div>
+    <div class="tema-card">
+      <h3>Preparação para o Futuro</h3>
+      <p>Explorar caminhos, perceber o mercado de trabalho e definir direção.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- FAQ -->
+<section>
+  <p class="eyebrow">Perguntas frequentes</p>
+  <h2>Ainda tem dúvidas?</h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">Que idades podem participar?</button>
+      <div class="faq-a">O Festival é para jovens do 7.º ao 12.º ano (12 a 18 anos). As sessões da manhã são para o ensino básico (7.º ao 9.º ano) e as da tarde para o secundário (10.º ao 12.º ano).</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">O meu filho precisa de instalar alguma coisa?</button>
+      <div class="faq-a">Só o Zoom, que é gratuito. Recomendamos computador ou tablet para uma melhor experiência. Não é necessário qualquer material adicional.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">O que acontece se o meu filho faltar a um dia?</button>
+      <div class="faq-a">Cada dia é independente, por isso não há problema em faltar a um. Dito isso, cada talk é único e ao vivo — recomendamos presença em todos os dias para aproveitar ao máximo.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">Posso cancelar a inscrição?</button>
+      <div class="faq-a">Sim. Pode cancelar até 7 dias antes do início da semana escolhida com reembolso total. Para mais informações, fale connosco pelo WhatsApp.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" aria-expanded="false">Quem são os convidados?</button>
+      <div class="faq-a">Profissionais reais das suas áreas — empreendedores, especialistas em finanças, psicólogos, criadores de conteúdo, entre outros. Pode ver o programa completo na página principal.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<div class="cta-section">
+  <h2>Pronto para garantir o lugar do seu filho?</h2>
+  <p>120 lugares no total. Grupos de máximo 15 alunos. Quando esgotarem, esgotaram.</p>
+  <div class="cta-buttons">
+    <a href="https://forms.gle/EdxyNhv4k7qgLFpBA" target="_blank" rel="noopener" class="btn-primary">Garantir lugar agora →</a>
+    <a href="https://wa.link/cw8seg" target="_blank" rel="noopener" class="btn-secondary">Prefere falar primeiro? WhatsApp →</a>
+  </div>
+</div>
+
+<script>
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const expanded = btn.getAttribute('aria-expanded') === 'true';
+    document.querySelectorAll('.faq-q').forEach(b => {
+      b.setAttribute('aria-expanded', 'false');
+      b.nextElementSibling.classList.remove('open');
+    });
+    if (!expanded) {
+      btn.setAttribute('aria-expanded', 'true');
+      btn.nextElementSibling.classList.add('open');
+    }
+  });
+});
+</script>
+
+</body>
+</html>
