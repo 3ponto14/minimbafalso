@@ -316,22 +316,57 @@ h2 {
   right:-8px;
   background:var(--lust);
   color:var(--cream);
-  padding:0.75rem 1rem;
-  border-radius:8px;
+  padding:1rem;
+  border-radius:10px;
   font-size:0.78rem;
   font-weight:400;
   font-style:normal;
   font-family:'Bricolage Grotesque',sans-serif;
   line-height:1.5;
-  width:300px;
+  width:320px;
   max-width:calc(100vw - 2rem);
   opacity:0;
   pointer-events:none;
   transition:opacity 0.2s ease;
   z-index:100;
-  box-shadow:0 8px 24px rgba(0,0,0,0.18);
+  box-shadow:0 8px 24px rgba(0,0,0,0.25);
   text-align:left;
   letter-spacing:0;
+}
+.info-speaker {
+  display:flex;
+  align-items:center;
+  gap:0.65rem;
+  padding-bottom:0.75rem;
+  margin-bottom:0.75rem;
+  border-bottom:1px solid rgba(255,232,204,0.18);
+}
+.info-speaker-photo {
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  object-fit:cover;
+  background:rgba(255,232,204,0.12);
+  flex-shrink:0;
+}
+.info-speaker-text {
+  display:flex;
+  flex-direction:column;
+  gap:0.1rem;
+  min-width:0;
+}
+.info-speaker-name {
+  font-weight:700;
+  font-size:0.82rem;
+  color:var(--cream);
+  letter-spacing:0.01em;
+}
+.info-speaker-role {
+  font-size:0.7rem;
+  opacity:0.7;
+  text-transform:uppercase;
+  letter-spacing:0.08em;
+  font-weight:600;
 }
 .info-tip .info-bubble::after {
   content:'';
@@ -459,7 +494,7 @@ h2 {
               <div style="background:var(--lust);color:var(--cream);padding:0.5rem 1.2rem;font-size:0.72rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;">Dia 1</div>
               <div style="padding:0.8rem 1.2rem;display:flex;flex-direction:column;gap:0.4rem;">
                 <div style="display:flex;gap:0.75rem;align-items:baseline;"><span style="font-size:0.75rem;font-weight:700;color:var(--burnt);min-width:105px;">10h00–11h00</span><span style="font-size:0.88rem;opacity:0.7;">5 Minutos que Mudam o Dia · English Every Day · Estudar com Cabeça, Não com Sorte</span></div>
-                <div style="display:flex;gap:0.75rem;align-items:baseline;"><span style="font-size:0.75rem;font-weight:700;color:var(--burnt);min-width:105px;">11h00–13h00</span><span style="font-size:0.88rem;font-weight:700;">Online com Cabeça <span style="font-weight:400;opacity:0.6;">· Literacia Digital para Jovens</span><span class="info-tip" tabindex="0">i<span class="info-bubble">Uma sessão de 2 horas onde os jovens exploram quem são no mundo digital e o que isso significa. Analisam a sua própria pegada online, percebem como os algoritmos moldam o que veem, aprendem a identificar fake news e publicidade disfarçada, e refletem sobre o impacto das redes na sua autoestima e bem-estar. Saem com ferramentas práticas para usar a internet com mais consciência e menos impulsividade.</span></span></span></div>
+                <div style="display:flex;gap:0.75rem;align-items:baseline;"><span style="font-size:0.75rem;font-weight:700;color:var(--burnt);min-width:105px;">11h00–13h00</span><span style="font-size:0.88rem;font-weight:700;">Online com Cabeça <span style="font-weight:400;opacity:0.6;">· Literacia Digital para Jovens</span><span class="info-tip" tabindex="0">i<span class="info-bubble"><span class="info-speaker"><img src="" alt="" class="info-speaker-photo" onerror="this.style.display='none'"><span class="info-speaker-text"><span class="info-speaker-name">Convidado a anunciar</span><span class="info-speaker-role">Especialista em Literacia Digital</span></span></span>Uma sessão de 2 horas onde os jovens exploram quem são no mundo digital e o que isso significa. Analisam a sua própria pegada online, percebem como os algoritmos moldam o que veem, aprendem a identificar fake news e publicidade disfarçada, e refletem sobre o impacto das redes na sua autoestima e bem-estar. Saem com ferramentas práticas para usar a internet com mais consciência e menos impulsividade.</span></span></span></div>
               </div>
             </div>
             <!-- DIA 2 -->
@@ -483,7 +518,7 @@ h2 {
               <div style="background:var(--lust);color:var(--cream);padding:0.5rem 1.2rem;font-size:0.72rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;">Dia 4</div>
               <div style="padding:0.8rem 1.2rem;display:flex;flex-direction:column;gap:0.4rem;">
                 <div style="display:flex;gap:0.75rem;align-items:baseline;"><span style="font-size:0.75rem;font-weight:700;color:var(--burnt);min-width:105px;">10h00–11h00</span><span style="font-size:0.88rem;opacity:0.7;">5 Minutos que Mudam o Dia · English Every Day · Estudar com Cabeça, Não com Sorte</span></div>
-                <div style="display:flex;gap:0.75rem;align-items:baseline;"><span style="font-size:0.75rem;font-weight:700;color:var(--burnt);min-width:105px;">11h00–13h00</span><span style="font-size:0.88rem;font-weight:700;">As Minhas Primeiras Moedas<span class="info-tip" tabindex="0">i<span class="info-bubble">Uma sessão de 2 horas onde os jovens aprendem a gerir dinheiro através da experiência direta. Sem tabelas aborrecidas, sem PowerPoints. Com simuladores online, cenários reais e dinâmicas de grupo, percebem como o dinheiro funciona na prática: o que é a inflação, como funciona um salário, o que são juros e porque poupar cedo faz toda a diferença. Saem com ferramentas concretas e uma visão diferente sobre o dinheiro que já têm e o que vem a seguir.</span></span></span></div>
+                <div style="display:flex;gap:0.75rem;align-items:baseline;"><span style="font-size:0.75rem;font-weight:700;color:var(--burnt);min-width:105px;">11h00–13h00</span><span style="font-size:0.88rem;font-weight:700;">As Minhas Primeiras Moedas<span class="info-tip" tabindex="0">i<span class="info-bubble"><span class="info-speaker"><img src="Sílvia Martins.jpeg" alt="Sílvia Martins" class="info-speaker-photo" onerror="this.style.display='none'"><span class="info-speaker-text"><span class="info-speaker-name">Sílvia Martins</span><span class="info-speaker-role">Economista</span></span></span>Uma sessão de 2 horas onde os jovens aprendem a gerir dinheiro através da experiência direta. Sem tabelas aborrecidas, sem PowerPoints. Com simuladores online, cenários reais e dinâmicas de grupo, percebem como o dinheiro funciona na prática: o que é a inflação, como funciona um salário, o que são juros e porque poupar cedo faz toda a diferença. Saem com ferramentas concretas e uma visão diferente sobre o dinheiro que já têm e o que vem a seguir.</span></span></span></div>
               </div>
             </div>
             <!-- DIA 5 -->
@@ -521,7 +556,7 @@ h2 {
               <div style="background:var(--lust);color:var(--cream);padding:0.5rem 1.2rem;font-size:0.72rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;">Dia 2</div>
               <div style="padding:0.8rem 1.2rem;display:flex;flex-direction:column;gap:0.4rem;">
                 <div style="display:flex;gap:0.75rem;align-items:baseline;"><span style="font-size:0.75rem;font-weight:700;color:var(--burnt);min-width:105px;">14h00–15h00</span><span style="font-size:0.88rem;opacity:0.7;">Começar Devagar, Ir Longe · Speak Up! Real English · Estudar Melhor, Não Mais</span></div>
-                <div style="display:flex;gap:0.75rem;align-items:baseline;"><span style="font-size:0.75rem;font-weight:700;color:var(--burnt);min-width:105px;">15h00–17h00</span><span style="font-size:0.88rem;font-weight:700;">Dinheiro Real: Impostos, Poupança e Plano<span class="info-tip" tabindex="0">i<span class="info-bubble">Uma sessão de 2 horas onde os jovens aprendem a gerir dinheiro através da experiência direta. Sem tabelas aborrecidas, sem PowerPoints. Percebem o que significa receber um salário, como funcionam os impostos, o que é um juro composto e porque começar a poupar cedo faz toda a diferença. Com simuladores, dinâmicas de grupo e cenários reais, saem com ferramentas concretas para tomar melhores decisões financeiras desde já.</span></span></span></div>
+                <div style="display:flex;gap:0.75rem;align-items:baseline;"><span style="font-size:0.75rem;font-weight:700;color:var(--burnt);min-width:105px;">15h00–17h00</span><span style="font-size:0.88rem;font-weight:700;">Dinheiro Real: Impostos, Poupança e Plano<span class="info-tip" tabindex="0">i<span class="info-bubble"><span class="info-speaker"><img src="Sílvia Martins.jpeg" alt="Sílvia Martins" class="info-speaker-photo" onerror="this.style.display='none'"><span class="info-speaker-text"><span class="info-speaker-name">Sílvia Martins</span><span class="info-speaker-role">Economista</span></span></span>Uma sessão de 2 horas onde os jovens aprendem a gerir dinheiro através da experiência direta. Sem tabelas aborrecidas, sem PowerPoints. Percebem o que significa receber um salário, como funcionam os impostos, o que é um juro composto e porque começar a poupar cedo faz toda a diferença. Com simuladores, dinâmicas de grupo e cenários reais, saem com ferramentas concretas para tomar melhores decisões financeiras desde já.</span></span></span></div>
               </div>
             </div>
             <!-- DIA 3 -->
