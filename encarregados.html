@@ -245,6 +245,9 @@ h2 {
   border-radius: 14px;
   overflow: hidden;
 }
+.toggle-block:has(.toggle-content.open) {
+  overflow: visible;
+}
 .toggle-btn {
   width: 100%;
   background: #fff;
@@ -277,7 +280,9 @@ h2 {
   padding: 0 1rem;
 }
 .toggle-content.open {
-  max-height: 1000px;
+  max-height: 3000px;
+  overflow: visible;
+  transition: max-height 0.4s ease, overflow 0s linear 0.4s;
 }
 .info-tip {
   display:inline-flex;
@@ -490,7 +495,7 @@ h2 {
           <div style="display:flex;flex-direction:column;gap:0.5rem;padding:1rem 0 0.5rem;">
 
             <!-- DIA 1 -->
-            <div style="background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(107,18,0,0.06);">
+            <div style="background:#fff;border-radius:12px;box-shadow:0 2px 8px rgba(107,18,0,0.06);position:relative;">
               <div style="background:var(--lust);color:var(--cream);padding:0.5rem 1.2rem;font-size:0.72rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;">Dia 1</div>
               <div style="padding:0.8rem 1.2rem;display:flex;flex-direction:column;gap:0.4rem;">
                 <div style="display:flex;gap:0.75rem;align-items:baseline;"><span style="font-size:0.75rem;font-weight:700;color:var(--burnt);min-width:105px;">10h00–11h00</span><span style="font-size:0.88rem;opacity:0.7;">5 Minutos que Mudam o Dia · English Every Day · Estudar com Cabeça, Não com Sorte</span></div>
@@ -498,7 +503,7 @@ h2 {
               </div>
             </div>
             <!-- DIA 2 -->
-            <div style="background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(107,18,0,0.06);">
+            <div style="background:#fff;border-radius:12px;box-shadow:0 2px 8px rgba(107,18,0,0.06);position:relative;">
               <div style="background:var(--lust);color:var(--cream);padding:0.5rem 1.2rem;font-size:0.72rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;">Dia 2</div>
               <div style="padding:0.8rem 1.2rem;display:flex;flex-direction:column;gap:0.4rem;">
                 <div style="display:flex;gap:0.75rem;align-items:baseline;"><span style="font-size:0.75rem;font-weight:700;color:var(--burnt);min-width:105px;">10h00–11h00</span><span style="font-size:0.88rem;opacity:0.7;">5 Minutos que Mudam o Dia · English Every Day · Estudar com Cabeça, Não com Sorte</span></div>
@@ -506,7 +511,7 @@ h2 {
               </div>
             </div>
             <!-- DIA 3 -->
-            <div style="background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(107,18,0,0.06);">
+            <div style="background:#fff;border-radius:12px;box-shadow:0 2px 8px rgba(107,18,0,0.06);position:relative;">
               <div style="background:var(--lust);color:var(--cream);padding:0.5rem 1.2rem;font-size:0.72rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;">Dia 3</div>
               <div style="padding:0.8rem 1.2rem;display:flex;flex-direction:column;gap:0.4rem;">
                 <div style="display:flex;gap:0.75rem;align-items:baseline;"><span style="font-size:0.75rem;font-weight:700;color:var(--burnt);min-width:105px;">10h00–11h00</span><span style="font-size:0.88rem;opacity:0.7;">5 Minutos que Mudam o Dia · English Every Day · Estudar com Cabeça, Não com Sorte</span></div>
@@ -514,7 +519,7 @@ h2 {
               </div>
             </div>
             <!-- DIA 4 -->
-            <div style="background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(107,18,0,0.06);">
+            <div style="background:#fff;border-radius:12px;box-shadow:0 2px 8px rgba(107,18,0,0.06);position:relative;">
               <div style="background:var(--lust);color:var(--cream);padding:0.5rem 1.2rem;font-size:0.72rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;">Dia 4</div>
               <div style="padding:0.8rem 1.2rem;display:flex;flex-direction:column;gap:0.4rem;">
                 <div style="display:flex;gap:0.75rem;align-items:baseline;"><span style="font-size:0.75rem;font-weight:700;color:var(--burnt);min-width:105px;">10h00–11h00</span><span style="font-size:0.88rem;opacity:0.7;">5 Minutos que Mudam o Dia · English Every Day · Estudar com Cabeça, Não com Sorte</span></div>
@@ -522,7 +527,7 @@ h2 {
               </div>
             </div>
             <!-- DIA 5 -->
-            <div style="background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(107,18,0,0.06);">
+            <div style="background:#fff;border-radius:12px;box-shadow:0 2px 8px rgba(107,18,0,0.06);position:relative;">
               <div style="background:var(--lust);color:var(--cream);padding:0.5rem 1.2rem;font-size:0.72rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;">Dia 5</div>
               <div style="padding:0.8rem 1.2rem;display:flex;flex-direction:column;gap:0.4rem;">
                 <div style="display:flex;gap:0.75rem;align-items:baseline;"><span style="font-size:0.75rem;font-weight:700;color:var(--burnt);min-width:105px;">10h00–11h00</span><span style="font-size:0.88rem;opacity:0.7;">5 Minutos que Mudam o Dia · English Every Day · Estudar com Cabeça, Não com Sorte</span></div>
@@ -544,7 +549,7 @@ h2 {
           <div style="display:flex;flex-direction:column;gap:0.5rem;padding:1rem 0 0.5rem;">
 
             <!-- DIA 1 -->
-            <div style="background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(107,18,0,0.06);">
+            <div style="background:#fff;border-radius:12px;box-shadow:0 2px 8px rgba(107,18,0,0.06);position:relative;">
               <div style="background:var(--lust);color:var(--cream);padding:0.5rem 1.2rem;font-size:0.72rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;">Dia 1</div>
               <div style="padding:0.8rem 1.2rem;display:flex;flex-direction:column;gap:0.4rem;">
                 <div style="display:flex;gap:0.75rem;align-items:baseline;"><span style="font-size:0.75rem;font-weight:700;color:var(--burnt);min-width:105px;">14h00–15h00</span><span style="font-size:0.88rem;opacity:0.7;">Começar Devagar, Ir Longe · Speak Up! Real English · Estudar Melhor, Não Mais</span></div>
@@ -552,7 +557,7 @@ h2 {
               </div>
             </div>
             <!-- DIA 2 -->
-            <div style="background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(107,18,0,0.06);">
+            <div style="background:#fff;border-radius:12px;box-shadow:0 2px 8px rgba(107,18,0,0.06);position:relative;">
               <div style="background:var(--lust);color:var(--cream);padding:0.5rem 1.2rem;font-size:0.72rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;">Dia 2</div>
               <div style="padding:0.8rem 1.2rem;display:flex;flex-direction:column;gap:0.4rem;">
                 <div style="display:flex;gap:0.75rem;align-items:baseline;"><span style="font-size:0.75rem;font-weight:700;color:var(--burnt);min-width:105px;">14h00–15h00</span><span style="font-size:0.88rem;opacity:0.7;">Começar Devagar, Ir Longe · Speak Up! Real English · Estudar Melhor, Não Mais</span></div>
@@ -560,7 +565,7 @@ h2 {
               </div>
             </div>
             <!-- DIA 3 -->
-            <div style="background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(107,18,0,0.06);">
+            <div style="background:#fff;border-radius:12px;box-shadow:0 2px 8px rgba(107,18,0,0.06);position:relative;">
               <div style="background:var(--lust);color:var(--cream);padding:0.5rem 1.2rem;font-size:0.72rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;">Dia 3</div>
               <div style="padding:0.8rem 1.2rem;display:flex;flex-direction:column;gap:0.4rem;">
                 <div style="display:flex;gap:0.75rem;align-items:baseline;"><span style="font-size:0.75rem;font-weight:700;color:var(--burnt);min-width:105px;">14h00–15h00</span><span style="font-size:0.88rem;opacity:0.7;">Começar Devagar, Ir Longe · Speak Up! Real English · Estudar Melhor, Não Mais</span></div>
@@ -568,7 +573,7 @@ h2 {
               </div>
             </div>
             <!-- DIA 4 -->
-            <div style="background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(107,18,0,0.06);">
+            <div style="background:#fff;border-radius:12px;box-shadow:0 2px 8px rgba(107,18,0,0.06);position:relative;">
               <div style="background:var(--lust);color:var(--cream);padding:0.5rem 1.2rem;font-size:0.72rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;">Dia 4</div>
               <div style="padding:0.8rem 1.2rem;display:flex;flex-direction:column;gap:0.4rem;">
                 <div style="display:flex;gap:0.75rem;align-items:baseline;"><span style="font-size:0.75rem;font-weight:700;color:var(--burnt);min-width:105px;">14h00–15h00</span><span style="font-size:0.88rem;opacity:0.7;">Começar Devagar, Ir Longe · Speak Up! Real English · Estudar Melhor, Não Mais</span></div>
@@ -576,7 +581,7 @@ h2 {
               </div>
             </div>
             <!-- DIA 5 -->
-            <div style="background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(107,18,0,0.06);">
+            <div style="background:#fff;border-radius:12px;box-shadow:0 2px 8px rgba(107,18,0,0.06);position:relative;">
               <div style="background:var(--lust);color:var(--cream);padding:0.5rem 1.2rem;font-size:0.72rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;">Dia 5</div>
               <div style="padding:0.8rem 1.2rem;display:flex;flex-direction:column;gap:0.4rem;">
                 <div style="display:flex;gap:0.75rem;align-items:baseline;"><span style="font-size:0.75rem;font-weight:700;color:var(--burnt);min-width:105px;">14h00–15h00</span><span style="font-size:0.88rem;opacity:0.7;">Começar Devagar, Ir Longe · Speak Up! Real English · Estudar Melhor, Não Mais</span></div>
