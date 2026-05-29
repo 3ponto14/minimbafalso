@@ -1223,8 +1223,68 @@ html{
   padding:0;
 }
 .faq-a.open{
-  max-height:1200px;
+  max-height:3000px;
   padding-bottom:1.25rem;
+}
+.faq-cron{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1rem;
+  margin-top:0.5rem;
+}
+.faq-cron-tier{
+  background:rgba(255,232,204,0.05);
+  border:1px solid rgba(255,232,204,0.12);
+  border-radius:12px;
+  padding:1rem 1.1rem;
+}
+.faq-cron-tier-title{
+  font-size:0.8rem;
+  font-weight:800;
+  color:var(--cream);
+  letter-spacing:0.03em;
+  margin-bottom:0.7rem;
+  padding-bottom:0.6rem;
+  border-bottom:1px solid rgba(255,232,204,0.12);
+}
+.faq-cron-tier-title span{
+  font-weight:400;
+  opacity:0.6;
+}
+.faq-cron-days{
+  display:flex;
+  flex-direction:column;
+  gap:0.5rem;
+}
+.faq-cron-day{
+  display:flex;
+  align-items:baseline;
+  gap:0.6rem;
+}
+.faq-cron-day-tag{
+  flex-shrink:0;
+  font-size:0.62rem;
+  font-weight:800;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:var(--burnt);
+  background:rgba(255,87,34,0.12);
+  border:1px solid rgba(255,87,34,0.3);
+  padding:0.18rem 0.5rem;
+  border-radius:100px;
+  min-width:48px;
+  text-align:center;
+}
+.faq-cron-day-name{
+  font-size:0.85rem;
+  color:var(--cream);
+  opacity:0.85;
+  line-height:1.4;
+}
+@media(max-width:768px){
+  .faq-cron{
+    grid-template-columns:1fr;
+  }
 }
 @media(max-width:768px){
   .section-faq{padding:2.5rem 1.2rem;}
@@ -2227,24 +2287,38 @@ body nav#mainNav, nav#mainNav, #mainNav{
 
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">Como é um dia típico no Festival?</button>
-        <div class="faq-a">Cada dia tem duas partes:<br><br>
-          <strong>10h00–11h00</strong> (Ensino Básico) / <strong>14h00–15h00</strong> (Secundário)<br>
-          Atividade de abertura, inglês e métodos de estudo — os mesmos todos os dias.<br><br>
-          <strong>11h00–13h00</strong> (Ensino Básico) / <strong>15h00–17h00</strong> (Secundário)<br>
-          Sessão do dia com o tema específico dessa jornada.<br><br>
-          <strong>Ensino Básico · 7.º ao 9.º ano</strong><br>
-          Dia 1 · Online com Cabeça<br>
-          Dia 2 · O Meu Corpo, As Minhas Regras<br>
-          Dia 3 · O Que Quero Ser Quando Crescer?<br>
-          Dia 4 · As Minhas Primeiras Moedas<br>
-          Dia 5 · Emoções com Superpoderes<br><br>
-          <strong>Ensino Secundário · 10.º ao 12.º ano</strong><br>
-          Dia 1 · IA para aprender, não para copiar<br>
-          Dia 2 · Dinheiro Real: Impostos, Poupança e Plano<br>
-          Dia 3 · O Meu Caminho Depois do 12.º<br>
-          Dia 4 · Mente Forte: Gerir Stress e Ansiedade<br>
-          Dia 5 · Relações, Limites e Consentimento<br><br>
-          A ordem das sessões por dia ainda não está definida.
+        <div class="faq-a">
+          Cada dia tem duas partes:
+          <ul style="list-style:none;padding:0;margin:0.6rem 0 1.2rem;display:flex;flex-direction:column;gap:0.4rem;">
+            <li><strong>10h00–11h00</strong> (Básico) / <strong>14h00–15h00</strong> (Secundário) — Atividade de abertura, inglês e métodos de estudo. Os mesmos todos os dias.</li>
+            <li><strong>11h00–13h00</strong> (Básico) / <strong>15h00–17h00</strong> (Secundário) — Sessão do dia com o tema específico dessa jornada.</li>
+          </ul>
+
+          <div class="faq-cron">
+            <div class="faq-cron-tier">
+              <div class="faq-cron-tier-title">Ensino Básico · 7.º ao 9.º ano <span>· 10h–13h</span></div>
+              <div class="faq-cron-days">
+                <div class="faq-cron-day"><span class="faq-cron-day-tag">Dia 1</span><span class="faq-cron-day-name">Online com Cabeça</span></div>
+                <div class="faq-cron-day"><span class="faq-cron-day-tag">Dia 2</span><span class="faq-cron-day-name">O Meu Corpo, As Minhas Regras</span></div>
+                <div class="faq-cron-day"><span class="faq-cron-day-tag">Dia 3</span><span class="faq-cron-day-name">O Que Quero Ser Quando Crescer?</span></div>
+                <div class="faq-cron-day"><span class="faq-cron-day-tag">Dia 4</span><span class="faq-cron-day-name">As Minhas Primeiras Moedas</span></div>
+                <div class="faq-cron-day"><span class="faq-cron-day-tag">Dia 5</span><span class="faq-cron-day-name">Emoções com Superpoderes</span></div>
+              </div>
+            </div>
+
+            <div class="faq-cron-tier">
+              <div class="faq-cron-tier-title">Ensino Secundário · 10.º ao 12.º ano <span>· 14h–17h</span></div>
+              <div class="faq-cron-days">
+                <div class="faq-cron-day"><span class="faq-cron-day-tag">Dia 1</span><span class="faq-cron-day-name">IA para aprender, não para copiar</span></div>
+                <div class="faq-cron-day"><span class="faq-cron-day-tag">Dia 2</span><span class="faq-cron-day-name">Dinheiro Real: Impostos, Poupança e Plano</span></div>
+                <div class="faq-cron-day"><span class="faq-cron-day-tag">Dia 3</span><span class="faq-cron-day-name">O Meu Caminho Depois do 12.º</span></div>
+                <div class="faq-cron-day"><span class="faq-cron-day-tag">Dia 4</span><span class="faq-cron-day-name">Mente Forte: Gerir Stress e Ansiedade</span></div>
+                <div class="faq-cron-day"><span class="faq-cron-day-tag">Dia 5</span><span class="faq-cron-day-name">Relações, Limites e Consentimento</span></div>
+              </div>
+            </div>
+          </div>
+
+          <p style="margin-top:1rem;font-size:0.85rem;opacity:0.7;">A ordem das sessões por dia ainda não está definida.</p>
         </div>
       </div>
 
