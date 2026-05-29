@@ -1225,6 +1225,8 @@ html{
 .faq-a.open{
   max-height:3000px;
   padding-bottom:1.25rem;
+  overflow:visible;
+  transition:max-height 0.4s ease, padding 0.3s ease, overflow 0s linear 0.4s;
 }
 .faq-cron{
   display:grid;
@@ -1386,15 +1388,12 @@ html{
   .faq-cron{
     grid-template-columns:1fr;
   }
-  .faq-info-tip{
-    position:static;
-  }
   .faq-info-tip .faq-info-bubble{
     position:fixed;
+    top:50%;
     left:1rem;
     right:1rem;
     bottom:auto;
-    top:50%;
     transform:translateY(-50%);
     width:auto;
     max-width:none;
