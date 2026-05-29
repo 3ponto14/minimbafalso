@@ -1282,6 +1282,11 @@ html{
   color:var(--cream);
   opacity:0.85;
   line-height:1.4;
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:0.3rem;
+  min-width:0;
 }
 .faq-info-tip{
   display:inline-flex;
@@ -1389,27 +1394,87 @@ html{
     grid-template-columns:1fr;
   }
   .faq-info-tip .faq-info-bubble{
-    position:fixed !important;
-    top:auto !important;
-    bottom:1rem !important;
-    left:1rem !important;
-    right:1rem !important;
-    transform:none !important;
-    width:calc(100vw - 2rem) !important;
-    max-width:calc(100vw - 2rem) !important;
-    box-sizing:border-box;
-    max-height:60vh;
-    overflow-y:auto;
-    white-space:normal;
-    word-wrap:break-word;
-  }
-  .faq-info-tip .faq-info-bubble::after{
     display:none;
   }
-  .faq-info-tip:hover .faq-info-bubble,
-  .faq-info-tip:focus .faq-info-bubble{
-    box-shadow:0 0 0 100vmax rgba(0,0,0,0.55), 0 10px 32px rgba(0,0,0,0.45);
-  }
+}
+.info-modal-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.65);
+  z-index:9998;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:1rem;
+  animation:infoModalFade 0.2s ease;
+}
+.info-modal-overlay.open{display:flex;}
+@keyframes infoModalFade{
+  from{opacity:0;}
+  to{opacity:1;}
+}
+.info-modal{
+  background:var(--cream);
+  color:var(--dark);
+  border-radius:14px;
+  padding:1.25rem;
+  max-width:380px;
+  width:100%;
+  max-height:80vh;
+  overflow-y:auto;
+  position:relative;
+  box-shadow:0 20px 60px rgba(0,0,0,0.5);
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-size:0.88rem;
+  line-height:1.55;
+}
+.info-modal-close{
+  position:absolute;
+  top:0.6rem;
+  right:0.6rem;
+  width:32px;
+  height:32px;
+  border-radius:50%;
+  background:rgba(107,18,0,0.1);
+  border:none;
+  cursor:pointer;
+  font-size:1.2rem;
+  color:var(--dark);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  line-height:1;
+}
+.info-modal-close:hover{background:rgba(107,18,0,0.2);}
+.info-modal-speaker{
+  display:flex;
+  align-items:center;
+  gap:0.75rem;
+  padding-bottom:0.8rem;
+  margin-bottom:0.8rem;
+  border-bottom:1px solid rgba(107,18,0,0.18);
+  padding-right:2.5rem;
+}
+.info-modal-photo{
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  object-fit:cover;
+  background:rgba(107,18,0,0.1);
+  flex-shrink:0;
+}
+.info-modal-name{
+  font-weight:800;
+  font-size:0.95rem;
+  color:var(--dark);
+}
+.info-modal-role{
+  font-size:0.7rem;
+  text-transform:uppercase;
+  letter-spacing:0.08em;
+  font-weight:600;
+  opacity:0.7;
+  margin-top:0.1rem;
 }
 @media(max-width:768px){
   .section-faq{padding:2.5rem 1.2rem;}
@@ -2711,6 +2776,51 @@ body nav#mainNav, nav#mainNav, #mainNav{
 </section>
 
 
+<!-- INFO MODAL (mobile tooltips) -->
+<div class="info-modal-overlay" id="infoModal" role="dialog" aria-modal="true" aria-labelledby="infoModalName">
+  <div class="info-modal">
+    <button type="button" class="info-modal-close" aria-label="Fechar" onclick="closeInfoModal()">×</button>
+    <div class="info-modal-speaker">
+      <img src="" alt="" class="info-modal-photo" id="infoModalPhoto" onerror="this.style.display='none'">
+      <div>
+        <div class="info-modal-name" id="infoModalName"></div>
+        <div class="info-modal-role" id="infoModalRole"></div>
+      </div>
+    </div>
+    <div id="infoModalBody"></div>
+  </div>
+</div>
+<script>
+function closeInfoModal(){document.getElementById('infoModal').classList.remove('open');document.body.style.overflow='';}
+(function(){
+  if(window.innerWidth>768) return;
+  document.querySelectorAll('.faq-info-tip').forEach(function(tip){
+    tip.addEventListener('click',function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      var bubble=tip.querySelector('.faq-info-bubble');
+      if(!bubble) return;
+      var photo=bubble.querySelector('.faq-info-speaker-photo');
+      var name=bubble.querySelector('.faq-info-speaker-name');
+      var role=bubble.querySelector('.faq-info-speaker-role');
+      var clone=bubble.cloneNode(true);
+      var speaker=clone.querySelector('.faq-info-speaker');
+      if(speaker) speaker.remove();
+      document.getElementById('infoModalPhoto').src=photo?photo.src:'';
+      document.getElementById('infoModalPhoto').alt=photo?photo.alt:'';
+      document.getElementById('infoModalPhoto').style.display=photo&&photo.src?'block':'none';
+      document.getElementById('infoModalName').textContent=name?name.textContent:'';
+      document.getElementById('infoModalRole').textContent=role?role.textContent:'';
+      document.getElementById('infoModalBody').textContent=clone.textContent.trim();
+      document.getElementById('infoModal').classList.add('open');
+      document.body.style.overflow='hidden';
+    });
+  });
+  document.getElementById('infoModal').addEventListener('click',function(e){
+    if(e.target===this) closeInfoModal();
+  });
+})();
+</script>
 <!-- FOOTER -->
 </main>
 <footer class="footer-new">
