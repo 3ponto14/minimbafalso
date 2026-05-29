@@ -1530,10 +1530,13 @@ a.wb-panel-btn:hover{
 .parceiros-marquee-track{
   display:flex;
   align-items:center;
-  gap:2rem;
+  gap:3rem;
   white-space:nowrap;
-  animation:marqueeReverse 18s linear infinite;
+  animation:marqueeReverse 35s linear infinite;
   width:max-content;
+}
+.parceiros-marquee-wrap:hover .parceiros-marquee-track{
+  animation-play-state:paused;
 }
 .parceiros-marquee-label{
   font-family:'Bricolage Grotesque',sans-serif;
@@ -1559,7 +1562,7 @@ a.wb-panel-btn:hover{
   cursor:pointer;
 }
 .parceiros-marquee-logo img{
-  height:28px;
+  height:56px;
   width:auto;
   transition:opacity 0.2s;
   pointer-events:none;
