@@ -1393,8 +1393,13 @@ html{
   .faq-cron{
     grid-template-columns:1fr;
   }
-  .faq-info-tip .faq-info-bubble{
-    display:none;
+  .faq-info-tip .faq-info-bubble,
+  .faq-info-tip:hover .faq-info-bubble,
+  .faq-info-tip:focus .faq-info-bubble,
+  .faq-info-tip:active .faq-info-bubble{
+    display:none !important;
+    opacity:0 !important;
+    pointer-events:none !important;
   }
 }
 .info-modal-overlay{
@@ -2793,9 +2798,10 @@ body nav#mainNav, nav#mainNav, #mainNav{
 <script>
 function closeInfoModal(){document.getElementById('infoModal').classList.remove('open');document.body.style.overflow='';}
 (function(){
-  if(window.innerWidth>768) return;
+  function isMobile(){return window.matchMedia('(max-width:768px)').matches;}
   document.querySelectorAll('.faq-info-tip').forEach(function(tip){
     tip.addEventListener('click',function(e){
+      if(!isMobile()) return;
       e.preventDefault();
       e.stopPropagation();
       var bubble=tip.querySelector('.faq-info-bubble');
@@ -2814,6 +2820,7 @@ function closeInfoModal(){document.getElementById('infoModal').classList.remove(
       document.getElementById('infoModalBody').textContent=clone.textContent.trim();
       document.getElementById('infoModal').classList.add('open');
       document.body.style.overflow='hidden';
+      tip.blur();
     });
   });
   document.getElementById('infoModal').addEventListener('click',function(e){
