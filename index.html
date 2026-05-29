@@ -965,6 +965,101 @@ html{
 .section-lineup .fl-footer-line{
   margin-top:2rem!important;
 }
+.fl-act{
+  display:flex;
+  align-items:center;
+  gap:1.2rem;
+  margin:0.5rem 0 0.5rem;
+  text-align:left;
+}
+.fl-photo{
+  width:72px;
+  height:72px;
+  border-radius:50%;
+  object-fit:cover;
+  flex-shrink:0;
+  border:2px solid rgba(255,232,204,0.18);
+  background:rgba(255,232,204,0.06);
+  box-shadow:0 4px 16px rgba(0,0,0,0.25);
+}
+.fl-photo--placeholder{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:rgba(255,232,204,0.45);
+}
+.fl-photo--placeholder svg{
+  width:36px;
+  height:36px;
+}
+.fl-act-text{
+  flex:1;
+  min-width:0;
+}
+.fl-role{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-size:0.72rem;
+  font-weight:600;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  opacity:0.55;
+  margin-top:0.15rem;
+  margin-bottom:0.5rem;
+}
+.fl-desc{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-size:0.85rem;
+  font-weight:400;
+  line-height:1.5;
+  opacity:0.78;
+  max-width:520px;
+}
+.fl-cronograma-cta{
+  text-align:center;
+  margin-top:2.5rem;
+  margin-bottom:0.5rem;
+}
+.fl-cronograma-link{
+  display:inline-flex;
+  align-items:center;
+  gap:0.5rem;
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-size:0.85rem;
+  font-weight:700;
+  letter-spacing:0.03em;
+  color:var(--cream);
+  text-decoration:none;
+  padding:0.85rem 1.5rem;
+  border:1.5px solid rgba(255,232,204,0.3);
+  border-radius:100px;
+  transition:background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+.fl-cronograma-link:hover{
+  background:rgba(255,232,204,0.08);
+  border-color:rgba(255,232,204,0.6);
+  transform:translateY(-1px);
+}
+@media (max-width:600px){
+  .fl-act{
+    gap:0.9rem;
+    margin:0.4rem 0 0.4rem;
+  }
+  .fl-photo{
+    width:56px;
+    height:56px;
+  }
+  .fl-photo--placeholder svg{
+    width:28px;
+    height:28px;
+  }
+  .fl-role{
+    font-size:0.65rem;
+    margin-bottom:0.35rem;
+  }
+  .fl-desc{
+    font-size:0.8rem;
+  }
+}
 
 @keyframes sectionGlowPulse{
   0%,100%{ opacity:0.7; transform:translate(-50%,-50%) scale(1); }
@@ -2143,57 +2238,110 @@ body nav#mainNav, nav#mainNav, #mainNav{
     <div class="fl-header">
       <div class="fl-eyebrow">Festival da Educação · Verão 2026 · 100% Online</div>
       <div class="fl-title"><span class="fire">LINE</span><span class="teal">UP</span></div>
-      <div class="fl-sub">Os convidados ainda estão a ser confirmados. Fica atento.</div>
+      <div class="fl-sub">6 palcos. 6 convidados. 5 dias. Uma semana que muda tudo.</div>
     </div>
 
-    <!-- CARTAZ — DIA 1 -->
+    <!-- PALCO DA INTELIGÊNCIA ARTIFICIAL -->
     <div class="fl-week-label">
-      <span class="fl-week-tag">DIA 1</span>
-      PALCO DA INTELIGÊNCIA ARTIFICIAL · PALCO DAS FINANÇAS
+      <span class="fl-week-tag">Palco 01</span>
+      PALCO DA INTELIGÊNCIA ARTIFICIAL
     </div>
-    <div class="fl-tier fl-tier--1"><span class="fl-artist">GABRIEL ANDRADE</span></div>
-    <div class="fl-tier fl-tier--2"><span class="fl-artist">SÍLVIA MARTINS</span></div>
+    <div class="fl-act">
+      <img src="Gabriel Andrade.jpeg" alt="Gabriel Andrade" class="fl-photo" style="object-position:center 5%;">
+      <div class="fl-act-text">
+        <div class="fl-tier fl-tier--1"><span class="fl-artist">GABRIEL ANDRADE</span></div>
+        <div class="fl-role">Especialista em IA</div>
+        <div class="fl-desc">Como usar a Inteligência Artificial como ferramenta para pensar melhor, não só para copiar.</div>
+        <div class="fl-when">Secundário · Dia 1</div>
+      </div>
+    </div>
 
     <div class="fl-sep"></div>
 
-    <!-- CARTAZ — DIA 2 -->
+    <!-- PALCO DAS FINANÇAS E DO MUNDO DIGITAL -->
     <div class="fl-week-label">
-      <span class="fl-week-tag">DIA 2</span>
-      PALCO DAS EMOÇÕES · PALCO DAS RELAÇÕES
+      <span class="fl-week-tag">Palco 02</span>
+      PALCO DAS FINANÇAS · PALCO DO MUNDO DIGITAL
     </div>
-    <div class="fl-tier fl-tier--1"><span class="fl-artist">INÊS GALVÃO</span></div>
-    <div class="fl-tier fl-tier--2"><span class="fl-artist">BIANCA BORGES</span></div>
+    <div class="fl-act">
+      <img src="silvia martins.jpeg" alt="Sílvia Martins" class="fl-photo" style="object-position:center 45%;">
+      <div class="fl-act-text">
+        <div class="fl-tier fl-tier--1"><span class="fl-artist">SÍLVIA MARTINS</span></div>
+        <div class="fl-role">Economista e Professora</div>
+        <div class="fl-desc">Como o dinheiro funciona na vida real e como navegar o mundo digital com cabeça.</div>
+      </div>
+    </div>
 
     <div class="fl-sep"></div>
 
-    <!-- CARTAZ — DIA 3 -->
+    <!-- PALCO DAS EMOÇÕES -->
     <div class="fl-week-label">
-      <span class="fl-week-tag">DIA 3</span>
-      PALCO DO FUTURO · PALCO DO INGLÊS
+      <span class="fl-week-tag">Palco 03</span>
+      PALCO DAS EMOÇÕES
     </div>
-    <div class="fl-tier fl-tier--1"><span class="fl-artist">ALEXANDRE CARREIRA</span></div>
-    <div class="fl-tier fl-tier--2"><span class="fl-artist">GABRIELA VEIGA</span></div>
+    <div class="fl-act">
+      <img src="Inês Galvao.png" alt="Inês Galvão" class="fl-photo" style="object-position:center 30%;">
+      <div class="fl-act-text">
+        <div class="fl-tier fl-tier--1"><span class="fl-artist">INÊS GALVÃO</span></div>
+        <div class="fl-role">Convidada a anunciar</div>
+        <div class="fl-desc">Ferramentas para gerir stress, ansiedade e emoções. O que a escola não te ensina.</div>
+      </div>
+    </div>
 
     <div class="fl-sep"></div>
 
-    <!-- CARTAZ — DIA 4 -->
+    <!-- PALCO DAS RELAÇÕES -->
     <div class="fl-week-label">
-      <span class="fl-week-tag">DIA 4</span>
-      CONVIDADO SURPRESA
+      <span class="fl-week-tag">Palco 04</span>
+      PALCO DAS RELAÇÕES
     </div>
-    <div class="fl-tier fl-tier--1"><span class="fl-artist">EM BREVE</span></div>
-    <div class="fl-tier fl-tier--2"><span class="fl-artist">A REVELAR</span></div>
+    <div class="fl-act">
+      <div class="fl-photo fl-photo--placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+      <div class="fl-act-text">
+        <div class="fl-tier fl-tier--1"><span class="fl-artist">BIANCA BORGES</span></div>
+        <div class="fl-role">Convidada a anunciar</div>
+        <div class="fl-desc">As conversas que importam sobre sexualidade, limites, relações e respeito.</div>
+      </div>
+    </div>
 
     <div class="fl-sep"></div>
 
-    <!-- CARTAZ — DIA 5 -->
+    <!-- PALCO DO FUTURO -->
     <div class="fl-week-label">
-      <span class="fl-week-tag">DIA 5</span>
-      TODOS OS PALCOS
+      <span class="fl-week-tag">Palco 05</span>
+      PALCO DO FUTURO
     </div>
-    <div class="fl-tier fl-tier--1"><span class="fl-artist">CONVIDADO A ANUNCIAR</span></div>
-    <div class="fl-tier fl-tier--2"><span class="fl-artist">SÍLVIA MARTINS</span> <span class="fl-dot">·</span> <span class="fl-artist">INÊS GALVÃO</span></div>
+    <div class="fl-act">
+      <img src="alexandre carreira.jpeg" alt="Alexandre Carreira" class="fl-photo" style="object-position:55% 8%;">
+      <div class="fl-act-text">
+        <div class="fl-tier fl-tier--1"><span class="fl-artist">ALEXANDRE CARREIRA</span></div>
+        <div class="fl-role">Convidado a anunciar</div>
+        <div class="fl-desc">Caminhos, universidades e oportunidades para construir a tua vida depois da escola.</div>
+      </div>
+    </div>
 
+    <div class="fl-sep"></div>
+
+    <!-- PALCO DO INGLÊS -->
+    <div class="fl-week-label">
+      <span class="fl-week-tag">Palco 06</span>
+      PALCO DO INGLÊS
+    </div>
+    <div class="fl-act">
+      <img src="WhatsApp Image 2026-04-16 at 17.45.02.jpeg" alt="Gabriela Veiga" class="fl-photo" style="object-position:center 35%;">
+      <div class="fl-act-text">
+        <div class="fl-tier fl-tier--1"><span class="fl-artist">GABRIELA VEIGA</span></div>
+        <div class="fl-role">Professora de Inglês</div>
+        <div class="fl-desc">Aprender a falar inglês a sério, do real, todos os dias.</div>
+      </div>
+    </div>
+
+    <div class="fl-cronograma-cta">
+      <a href="/encarregados.html#cronograma" class="fl-cronograma-link">
+        Ver cronograma completo da semana
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="9 6 15 12 9 18"/></svg>
+      </a>
+    </div>
 
     <div class="fl-footer-line">
       Festival da Educação 2026 &nbsp;·&nbsp; VERÃO 2026 &nbsp;·&nbsp; PORTUGAL &nbsp;·&nbsp; #FestivaldaEducação
