@@ -412,34 +412,100 @@ h2 {
   border:6px solid transparent;
   border-top-color:var(--lust);
 }
-.info-tip:hover .info-bubble,
-.info-tip:focus .info-bubble {
-  opacity:1;
-  pointer-events:auto;
-}
-@media (max-width:600px) {
-  .info-tip {
-    position:static;
-  }
-  .info-tip .info-bubble {
-    position:fixed;
-    left:1rem;
-    right:1rem;
-    bottom:auto;
-    top:50%;
-    transform:translateY(-50%);
-    width:auto;
-    max-width:none;
-    max-height:70vh;
-    overflow-y:auto;
-  }
-  .info-tip .info-bubble::after {
-    display:none;
-  }
+@media (hover:hover) {
   .info-tip:hover .info-bubble,
   .info-tip:focus .info-bubble {
-    box-shadow:0 0 0 100vmax rgba(0,0,0,0.4), 0 8px 24px rgba(0,0,0,0.25);
+    opacity:1;
+    pointer-events:auto;
   }
+}
+@media (max-width:768px) {
+  .info-tip .info-bubble,
+  .info-tip:hover .info-bubble,
+  .info-tip:focus .info-bubble,
+  .info-tip:active .info-bubble {
+    display:none !important;
+    opacity:0 !important;
+    pointer-events:none !important;
+  }
+}
+.info-modal-overlay {
+  position:fixed !important;
+  top:0 !important;
+  left:0 !important;
+  right:0 !important;
+  bottom:0 !important;
+  width:100vw !important;
+  height:100vh !important;
+  background:rgba(0,0,0,0.7) !important;
+  z-index:99999 !important;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:1rem;
+}
+.info-modal-overlay.open { display:flex !important; }
+.info-modal {
+  background:var(--cream);
+  color:var(--dark);
+  border-radius:14px;
+  padding:1.25rem;
+  max-width:380px;
+  width:100%;
+  max-height:80vh;
+  overflow-y:auto;
+  position:relative;
+  box-shadow:0 20px 60px rgba(0,0,0,0.5);
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-size:0.88rem;
+  line-height:1.55;
+}
+.info-modal-close {
+  position:absolute;
+  top:0.6rem;
+  right:0.6rem;
+  width:32px;
+  height:32px;
+  border-radius:50%;
+  background:rgba(107,18,0,0.1);
+  border:none;
+  cursor:pointer;
+  font-size:1.2rem;
+  color:var(--dark);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  line-height:1;
+}
+.info-modal-speaker {
+  display:flex;
+  align-items:center;
+  gap:0.75rem;
+  padding-bottom:0.8rem;
+  margin-bottom:0.8rem;
+  border-bottom:1px solid rgba(107,18,0,0.18);
+  padding-right:2.5rem;
+}
+.info-modal-photo {
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  object-fit:cover;
+  background:rgba(107,18,0,0.1);
+  flex-shrink:0;
+}
+.info-modal-name {
+  font-weight:800;
+  font-size:0.95rem;
+  color:var(--dark);
+}
+.info-modal-role {
+  font-size:0.7rem;
+  text-transform:uppercase;
+  letter-spacing:0.08em;
+  font-weight:600;
+  opacity:0.7;
+  margin-top:0.1rem;
 }
 </style>
 </head>
@@ -696,6 +762,57 @@ document.querySelectorAll('.faq-q').forEach(btn => {
     }
   });
 });
+</script>
+
+<!-- INFO MODAL (mobile tooltips) -->
+<div class="info-modal-overlay" id="infoModal" role="dialog" aria-modal="true">
+  <div class="info-modal">
+    <button type="button" class="info-modal-close" aria-label="Fechar" onclick="closeInfoModal()">×</button>
+    <div class="info-modal-speaker">
+      <img src="" alt="" class="info-modal-photo" id="infoModalPhoto" onerror="this.style.display='none'">
+      <div>
+        <div class="info-modal-name" id="infoModalName"></div>
+        <div class="info-modal-role" id="infoModalRole"></div>
+      </div>
+    </div>
+    <div id="infoModalBody"></div>
+  </div>
+</div>
+<script>
+function closeInfoModal(){document.getElementById('infoModal').classList.remove('open');document.body.style.overflow='';}
+(function(){
+  function isMobile(){return window.matchMedia('(max-width:768px)').matches;}
+  document.querySelectorAll('.info-tip').forEach(function(tip){
+    tip.addEventListener('click',function(e){
+      if(!isMobile()) return;
+      e.preventDefault();
+      e.stopPropagation();
+      var bubble=tip.querySelector('.info-bubble');
+      if(!bubble) return;
+      var photo=bubble.querySelector('.info-speaker-photo');
+      var name=bubble.querySelector('.info-speaker-name');
+      var role=bubble.querySelector('.info-speaker-role');
+      var clone=bubble.cloneNode(true);
+      var speaker=clone.querySelector('.info-speaker');
+      if(speaker) speaker.remove();
+      document.getElementById('infoModalPhoto').src=photo&&photo.src?photo.src:'';
+      document.getElementById('infoModalPhoto').alt=photo?photo.alt:'';
+      document.getElementById('infoModalPhoto').style.display=photo&&photo.src?'block':'none';
+      document.getElementById('infoModalName').textContent=name?name.textContent:'';
+      document.getElementById('infoModalRole').textContent=role?role.textContent:'';
+      document.getElementById('infoModalBody').textContent=clone.textContent.trim();
+      document.getElementById('infoModal').classList.add('open');
+      document.body.style.overflow='hidden';
+      tip.blur();
+    });
+  });
+  var modal=document.getElementById('infoModal');
+  if(modal){
+    modal.addEventListener('click',function(e){
+      if(e.target===this) closeInfoModal();
+    });
+  }
+})();
 </script>
 
 </body>
