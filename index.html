@@ -965,68 +965,88 @@ html{
 .section-lineup .fl-footer-line{
   margin-top:2rem!important;
 }
-.fl-act{
+.fl-meta{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-size:0.72rem;
+  font-weight:600;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:var(--cream);
+  opacity:0.65;
+  margin-top:0.3rem;
+  margin-bottom:0.3rem;
+  text-align:center;
+}
+.fl-desc-line{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-size:0.88rem;
+  font-weight:400;
+  line-height:1.55;
+  color:var(--cream);
+  opacity:0.85;
+  margin-top:0.6rem;
+  margin-bottom:0.3rem;
+  text-align:center;
+  max-width:560px;
+  margin-left:auto;
+  margin-right:auto;
+}
+.fl-theme{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-weight:500;
+  font-size:0.82rem;
+  letter-spacing:0.02em;
+  color:var(--cream);
+  opacity:0.65;
+  text-align:center;
+  margin:0.2rem auto 0.5rem;
+  max-width:640px;
+}
+.fl-name-row{
   display:flex;
   align-items:center;
+  justify-content:center;
   gap:1.2rem;
-  margin:0.5rem 0 0.5rem;
-  text-align:left;
+  margin:0.25rem 0;
 }
-.fl-photo{
-  width:72px;
-  height:72px;
+.fl-headshot{
+  flex-shrink:0;
+  width:64px;
+  height:64px;
   border-radius:50%;
   object-fit:cover;
-  flex-shrink:0;
-  border:2px solid rgba(255,232,204,0.18);
+  border:2px solid rgba(255,232,204,0.25);
   background:rgba(255,232,204,0.06);
-  box-shadow:0 4px 16px rgba(0,0,0,0.25);
+  box-shadow:0 4px 14px rgba(0,0,0,0.3);
 }
-.fl-photo--placeholder{
+.fl-headshot--placeholder{
   display:flex;
   align-items:center;
   justify-content:center;
   color:rgba(255,232,204,0.45);
 }
-.fl-photo--placeholder svg{
-  width:36px;
-  height:36px;
+.fl-headshot--placeholder svg{
+  width:32px;
+  height:32px;
 }
-.fl-act-text{
-  flex:1;
-  min-width:0;
+.fl-name-row .fl-tier{
+  margin:0!important;
 }
-.fl-role{
-  font-family:'Bricolage Grotesque',sans-serif;
-  font-size:0.72rem;
-  font-weight:600;
-  letter-spacing:0.14em;
-  text-transform:uppercase;
-  opacity:0.55;
-  margin-top:0.15rem;
-  margin-bottom:0.5rem;
-}
-.fl-desc{
-  font-family:'Bricolage Grotesque',sans-serif;
-  font-size:0.85rem;
-  font-weight:400;
-  line-height:1.5;
-  opacity:0.78;
-  max-width:520px;
-}
-.fl-when{
-  display:inline-block;
-  font-family:'Bricolage Grotesque',sans-serif;
-  font-size:0.68rem;
-  font-weight:700;
-  letter-spacing:0.12em;
-  text-transform:uppercase;
-  color:var(--burnt);
-  margin-top:0.6rem;
-  padding:0.3rem 0.7rem;
-  border:1px solid rgba(255,87,34,0.35);
-  border-radius:100px;
-  background:rgba(255,87,34,0.06);
+@media (max-width:600px){
+  .fl-name-row{
+    gap:0.7rem;
+  }
+  .fl-headshot{
+    width:44px;
+    height:44px;
+  }
+  .fl-headshot--placeholder svg{
+    width:22px;
+    height:22px;
+  }
+  .fl-desc-line{
+    font-size:0.8rem;
+  }
 }
 .fl-cronograma-cta{
   text-align:center;
@@ -1038,20 +1058,27 @@ html{
   align-items:center;
   gap:0.5rem;
   font-family:'Bricolage Grotesque',sans-serif;
-  font-size:0.85rem;
-  font-weight:700;
-  letter-spacing:0.03em;
+  font-size:0.92rem;
+  font-weight:800;
+  letter-spacing:0.04em;
   color:var(--cream);
   text-decoration:none;
-  padding:0.85rem 1.5rem;
-  border:1.5px solid rgba(255,232,204,0.3);
+  padding:1rem 1.8rem;
+  background:var(--burnt);
+  border:2px solid var(--burnt);
   border-radius:100px;
-  transition:background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  box-shadow:0 0 0 0 rgba(255,87,34,0.55), 0 8px 24px rgba(255,87,34,0.35);
+  animation:cronogramaPulse 2.2s ease-in-out infinite;
+  transition:transform 0.2s ease, box-shadow 0.2s ease;
 }
 .fl-cronograma-link:hover{
-  background:rgba(255,232,204,0.08);
-  border-color:rgba(255,232,204,0.6);
-  transform:translateY(-1px);
+  transform:translateY(-2px);
+  box-shadow:0 0 0 8px rgba(255,87,34,0), 0 12px 30px rgba(255,87,34,0.55);
+  animation:none;
+}
+@keyframes cronogramaPulse{
+  0%,100%{ box-shadow:0 0 0 0 rgba(255,87,34,0.55), 0 8px 24px rgba(255,87,34,0.35); }
+  50%{ box-shadow:0 0 0 12px rgba(255,87,34,0), 0 8px 24px rgba(255,87,34,0.35); }
 }
 @media (max-width:600px){
   .fl-act{
@@ -1344,8 +1371,8 @@ a.wb-panel-btn:hover{
 @media(min-width:900px){
   .section-lineup{padding-left:5rem!important;padding-right:5rem!important;}
   .fl-wrap{max-width:100%!important;width:100%!important;}
-  .fl-tier{font-size:clamp(2rem,4vw,4rem)!important;}
-  .fl-tier--1{font-size:clamp(2.8rem,5.5vw,5.5rem)!important;}
+  .fl-tier{font-size:clamp(1.5rem,3vw,2.8rem)!important;}
+  .fl-tier--1{font-size:clamp(2rem,4vw,3.8rem)!important;}
   .fl-title{font-size:clamp(5rem,12vw,11rem)!important;}
 }
 
@@ -1823,7 +1850,6 @@ body nav#mainNav, nav#mainNav, #mainNav{
     <a href="#lineup" class="mobile-menu-link">Line-up</a>
     <a href="#bilhetes" class="mobile-menu-link">Bilhetes</a>
     <a href="#faq" class="mobile-menu-link">FAQ</a>
-    <a href="#modules" class="mobile-menu-link">Palcos</a>
     <div class="mobile-menu-socials">
       <a href="https://www.instagram.com/ofestival.pt/" target="_blank" rel="noopener" aria-label="Instagram">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
@@ -2260,15 +2286,12 @@ body nav#mainNav, nav#mainNav, #mainNav{
       <span class="fl-week-tag">Palco 01</span>
       PALCO DA INTELIGÊNCIA ARTIFICIAL
     </div>
-    <div class="fl-act">
-      <img src="Gabriel Andrade.jpeg" alt="Gabriel Andrade" class="fl-photo" style="object-position:center 5%;">
-      <div class="fl-act-text">
-        <div class="fl-tier fl-tier--1"><span class="fl-artist">GABRIEL ANDRADE</span></div>
-        <div class="fl-role">Especialista em IA</div>
-        <div class="fl-desc">Como usar a Inteligência Artificial como ferramenta para pensar melhor, não só para copiar.</div>
-        <div class="fl-when">Secundário · Dia 1</div>
-      </div>
+    <div class="fl-name-row">
+      <img src="Gabriel Andrade.jpeg" alt="Gabriel Andrade" class="fl-headshot" style="object-position:center 5%;">
+      <div class="fl-tier fl-tier--1"><span class="fl-artist">GABRIEL ANDRADE</span></div>
     </div>
+    <div class="fl-meta">Especialista em IA</div>
+    <div class="fl-desc-line">Como usar a Inteligência Artificial como ferramenta para pensar melhor, não só para copiar.</div>
 
     <div class="fl-sep"></div>
 
@@ -2277,15 +2300,12 @@ body nav#mainNav, nav#mainNav, #mainNav{
       <span class="fl-week-tag">Palco 02</span>
       PALCO DAS FINANÇAS · PALCO DO MUNDO DIGITAL
     </div>
-    <div class="fl-act">
-      <img src="silvia martins.jpeg" alt="Sílvia Martins" class="fl-photo" style="object-position:center 45%;">
-      <div class="fl-act-text">
-        <div class="fl-tier fl-tier--1"><span class="fl-artist">SÍLVIA MARTINS</span></div>
-        <div class="fl-role">Economista e Professora</div>
-        <div class="fl-desc">Como o dinheiro funciona na vida real e como navegar o mundo digital com cabeça.</div>
-        <div class="fl-when">Básico · Dia 1 e Dia 4 &nbsp;·&nbsp; Secundário · Dia 2</div>
-      </div>
+    <div class="fl-name-row">
+      <img src="silvia martins.jpeg" alt="Sílvia Martins" class="fl-headshot" style="object-position:center 45%;">
+      <div class="fl-tier fl-tier--1"><span class="fl-artist">SÍLVIA MARTINS</span></div>
     </div>
+    <div class="fl-meta">Economista e Professora</div>
+    <div class="fl-desc-line">O dinheiro não é só números, é escolhas, liberdade e poder. E o mundo digital? Vem perceber como tudo funciona antes que te controle.</div>
 
     <div class="fl-sep"></div>
 
@@ -2294,15 +2314,12 @@ body nav#mainNav, nav#mainNav, #mainNav{
       <span class="fl-week-tag">Palco 03</span>
       PALCO DAS EMOÇÕES
     </div>
-    <div class="fl-act">
-      <img src="Inês Galvao.png" alt="Inês Galvão" class="fl-photo" style="object-position:center 30%;">
-      <div class="fl-act-text">
-        <div class="fl-tier fl-tier--1"><span class="fl-artist">INÊS GALVÃO</span></div>
-        <div class="fl-role">Convidada a anunciar</div>
-        <div class="fl-desc">Ferramentas para gerir stress, ansiedade e emoções. O que a escola não te ensina.</div>
-        <div class="fl-when">Básico · Dia 5 &nbsp;·&nbsp; Secundário · Dia 4</div>
-      </div>
+    <div class="fl-name-row">
+      <img src="Inês Galvao.png" alt="Inês Galvão" class="fl-headshot" style="object-position:center 30%;">
+      <div class="fl-tier fl-tier--1"><span class="fl-artist">INÊS GALVÃO</span></div>
     </div>
+    <div class="fl-meta">Psicóloga</div>
+    <div class="fl-desc-line">Ferramentas para gerir stress, ansiedade e emoções. O que a escola não te ensina.</div>
 
     <div class="fl-sep"></div>
 
@@ -2311,15 +2328,12 @@ body nav#mainNav, nav#mainNav, #mainNav{
       <span class="fl-week-tag">Palco 04</span>
       PALCO DAS RELAÇÕES
     </div>
-    <div class="fl-act">
-      <div class="fl-photo fl-photo--placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
-      <div class="fl-act-text">
-        <div class="fl-tier fl-tier--1"><span class="fl-artist">BIANCA BORGES</span></div>
-        <div class="fl-role">Convidada a anunciar</div>
-        <div class="fl-desc">As conversas que importam sobre sexualidade, limites, relações e respeito.</div>
-        <div class="fl-when">Básico · Dia 2 &nbsp;·&nbsp; Secundário · Dia 5</div>
-      </div>
+    <div class="fl-name-row">
+      <div class="fl-headshot fl-headshot--placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+      <div class="fl-tier fl-tier--1"><span class="fl-artist">BIANCA BORGES</span></div>
     </div>
+    <div class="fl-meta">Psicóloga</div>
+    <div class="fl-desc-line">As conversas que importam sobre sexualidade, limites, relações e respeito.</div>
 
     <div class="fl-sep"></div>
 
@@ -2328,15 +2342,12 @@ body nav#mainNav, nav#mainNav, #mainNav{
       <span class="fl-week-tag">Palco 05</span>
       PALCO DO FUTURO
     </div>
-    <div class="fl-act">
-      <img src="alexandre carreira.jpeg" alt="Alexandre Carreira" class="fl-photo" style="object-position:55% 8%;">
-      <div class="fl-act-text">
-        <div class="fl-tier fl-tier--1"><span class="fl-artist">ALEXANDRE CARREIRA</span></div>
-        <div class="fl-role">Convidado a anunciar</div>
-        <div class="fl-desc">Caminhos, universidades e oportunidades para construir a tua vida depois da escola.</div>
-        <div class="fl-when">Básico · Dia 3 &nbsp;·&nbsp; Secundário · Dia 3</div>
-      </div>
+    <div class="fl-name-row">
+      <img src="alexandre carreira.jpeg" alt="Alexandre Carreira" class="fl-headshot" style="object-position:55% 8%;">
+      <div class="fl-tier fl-tier--1"><span class="fl-artist">ALEXANDRE CARREIRA</span></div>
     </div>
+    <div class="fl-meta">Convidado a anunciar</div>
+    <div class="fl-desc-line">Caminhos, universidades e oportunidades para construir a tua vida depois da escola.</div>
 
     <div class="fl-sep"></div>
 
@@ -2345,15 +2356,12 @@ body nav#mainNav, nav#mainNav, #mainNav{
       <span class="fl-week-tag">Palco 06</span>
       PALCO DO INGLÊS
     </div>
-    <div class="fl-act">
-      <img src="WhatsApp Image 2026-04-16 at 17.45.02.jpeg" alt="Gabriela Veiga" class="fl-photo" style="object-position:center 35%;">
-      <div class="fl-act-text">
-        <div class="fl-tier fl-tier--1"><span class="fl-artist">GABRIELA VEIGA</span></div>
-        <div class="fl-role">Professora de Inglês</div>
-        <div class="fl-desc">Aprender a falar inglês a sério, do real, todos os dias.</div>
-        <div class="fl-when">Básico e Secundário · Todos os dias</div>
-      </div>
+    <div class="fl-name-row">
+      <img src="WhatsApp Image 2026-04-16 at 17.45.02.jpeg" alt="Gabriela Veiga" class="fl-headshot" style="object-position:center 35%;">
+      <div class="fl-tier fl-tier--1"><span class="fl-artist">GABRIELA VEIGA</span></div>
     </div>
+    <div class="fl-meta">Professora de Inglês</div>
+    <div class="fl-desc-line">Aprender a falar inglês a sério, do real, todos os dias.</div>
 
     <div class="fl-cronograma-cta">
       <a href="/encarregados.html#cronograma" class="fl-cronograma-link">
@@ -2371,105 +2379,6 @@ body nav#mainNav, nav#mainNav, #mainNav{
 
 </section>
 
-<!-- MODULES -->
-<section class="section-modules" id="modules" style="position:relative;">
-  <div class="mods-header reveal">
-    <div class="mods-eyebrow">6 palcos · Julho e Agosto 2026</div>
-    <h2 class="mods-title">O CARTAZ<br>DESTE<br><em>festival.</em></h2>
-    <p class="mods-desc">Cada palco tem um tema e um convidado especial. Pessoas reais com histórias reais.</p>
-  </div>
-
-  <div class="carousel-wrapper">
-  <div class="modules-grid" id="palcosCarousel">
-    <div class="mod-card mod-card--orange reveal">
-      <div class="mod-card-inner">
-        <div class="mod-accent"></div>
-        <div class="mod-speaker">
-          <div class="mod-speaker-avatar" style="overflow:hidden;padding:0;"><img src="Gabriel Andrade.jpeg" alt="Gabriel Andrade" style="width:100%;height:100%;object-fit:cover;border-radius:50%;object-position:center 5%;"/></div>
-          <div class="mod-speaker-name">Gabriel Andrade</div>
-        </div>
-        <div class="mod-desc">Com o Gabriel vais perceber como usar a Inteligência Artificial como ferramenta para pensar melhor, não só para copiar.</div>
-        <span class="mod-num">01</span>
-      </div>
-    </div>
-    <div class="mod-card mod-card--teal reveal">
-      <div class="mod-card-inner">
-        <div class="mod-accent"></div>
-        <div class="mod-speaker">
-          <div class="mod-speaker-avatar" style="overflow:hidden;padding:0;"><img src="silvia martins.jpeg" alt="Sílvia Martins" style="width:100%;height:100%;object-fit:cover;border-radius:50%;object-position:center 45%;"/></div>
-          <div>
-            <div class="mod-speaker-name">Sílvia Martins</div>
-            <div style="font-size:0.7rem;opacity:0.55;letter-spacing:0.02em;margin-top:0.1rem;">Economista e Professora</div>
-          </div>
-        </div>
-        <div class="mod-desc">Com a Sílvia vais perceber como o dinheiro funciona na vida real e como navegar o mundo digital com cabeça.</div>
-        <span class="mod-num">02</span>
-      </div>
-    </div>
-    <div class="mod-card mod-card--yellow reveal">
-      <div class="mod-card-inner">
-        <div class="mod-accent"></div>
-        <div class="mod-speaker">
-          <div class="mod-speaker-avatar" style="overflow:hidden;padding:0;"><img src="alexandre carreira.jpeg" alt="Alexandre Carreira" style="width:100%;height:100%;object-fit:cover;border-radius:50%;object-position:55% 8%;"/></div>
-          <div class="mod-speaker-name">Alexandre Carreira</div>
-        </div>
-        <div class="mod-desc">Com o Alexandre vais explorar caminhos, universidades e oportunidades para construir a tua vida depois da escola.</div>
-        <span class="mod-num">03</span>
-      </div>
-    </div>
-    <div class="mod-card mod-card--red reveal">
-      <div class="mod-card-inner">
-        <div class="mod-accent"></div>
-        <div class="mod-speaker">
-          <div class="mod-speaker-avatar" style="overflow:hidden;padding:0;"><img src="Inês Galvao.png" alt="Inês Galvão" style="width:100%;height:100%;object-fit:cover;border-radius:50%;object-position:center 30%;"/></div>
-          <div class="mod-speaker-name">Inês Galvão</div>
-        </div>
-        <div class="mod-desc">Com a Inês vais ganhar ferramentas para gerir stress, ansiedade e emoções, aquilo que a escola não te ensina.</div>
-        <span class="mod-num">04</span>
-      </div>
-    </div>
-    <div class="mod-card mod-card--purple reveal">
-      <div class="mod-card-inner">
-        <div class="mod-accent"></div>
-        <div class="mod-speaker">
-          <div class="mod-speaker-avatar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
-          <div class="mod-speaker-name">Bianca Borges</div>
-        </div>
-        <div class="mod-desc">Com a Bianca vais ter as conversas que importam sobre sexualidade, limites, relações e respeito.</div>
-        <span class="mod-num">05</span>
-      </div>
-    </div>
-    <div class="mod-card mod-card--green reveal">
-      <div class="mod-card-inner">
-        <div class="mod-accent"></div>
-        <div class="mod-speaker">
-          <div class="mod-speaker-avatar" style="overflow:hidden;padding:0;"><img src="WhatsApp Image 2026-04-16 at 17.45.02.jpeg" alt="Gabriela Veiga" style="width:100%;height:100%;object-fit:cover;border-radius:50%;object-position:center 35%;"/></div>
-          <div class="mod-speaker-name">Gabriela Veiga</div>
-        </div>
-        <div class="mod-desc">Com a Gabriela vais aprender a falar inglês a sério, do real, todos os dias, com sessões dinâmicas.</div>
-        <span class="mod-num">06</span>
-      </div>
-    </div>
-  </div>
-  </div><!-- /.carousel-wrapper -->
-  <!-- Dots do carrossel — só visíveis em mobile -->
-  <div class="carousel-dots" id="carouselDots" aria-hidden="true">
-    <span class="carousel-dot active"></span>
-    <span class="carousel-dot"></span>
-    <span class="carousel-dot"></span>
-    <span class="carousel-dot"></span>
-    <span class="carousel-dot"></span>
-    <span class="carousel-dot"></span>
-  </div>
-
-  <div class="mods-more-note reveal">
-    <span class="mods-dot"></span>
-    Queres ver como está estruturada a semana?
-    <span class="mods-more-links">
-      <a href="/encarregados.html#cronograma">Ver cronograma completo</a>
-    </span>
-  </div>
-</section>
 
 <!-- GALERIA -->
 <section class="section-gallery">
