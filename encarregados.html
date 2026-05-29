@@ -283,23 +283,32 @@ h2 {
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  width:16px;
-  height:16px;
+  width:20px;
+  height:20px;
   border-radius:50%;
   background:var(--burnt);
   color:#fff;
-  font-size:0.65rem;
+  font-size:0.78rem;
   font-weight:700;
   font-family:Georgia,serif;
   font-style:italic;
   cursor:help;
-  margin-left:0.4rem;
+  margin-left:0.5rem;
   position:relative;
   flex-shrink:0;
   transition:transform 0.15s ease;
+  box-shadow:0 0 0 0 rgba(255,87,34,0.55);
+  animation:infoPulse 2s ease-in-out infinite;
+  vertical-align:middle;
 }
 .info-tip:hover {
   transform:scale(1.15);
+  animation:none;
+  box-shadow:0 4px 12px rgba(255,87,34,0.4);
+}
+@keyframes infoPulse {
+  0%,100% { box-shadow:0 0 0 0 rgba(255,87,34,0.55); }
+  50% { box-shadow:0 0 0 6px rgba(255,87,34,0); }
 }
 .info-tip .info-bubble {
   position:absolute;
@@ -440,7 +449,8 @@ h2 {
   </div>
 
   <div style="margin-top:2.5rem;">
-    <p id="cronograma" style="font-size:0.8rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--burnt);margin-bottom:1rem;">Cronograma da semana</p>
+    <p id="cronograma" style="font-size:0.8rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--burnt);margin-bottom:0.75rem;">Cronograma da semana</p>
+    <p style="font-size:0.82rem;opacity:0.7;margin-bottom:1rem;display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;">Passe o rato sobre o <span class="info-tip" style="animation:none;cursor:default;">i</span> ao lado das sessões para ver a descrição completa.</p>
     <div style="display:flex;flex-direction:column;gap:0.6rem;">
 
       <!-- TOGGLE ENSINO BÁSICO -->
