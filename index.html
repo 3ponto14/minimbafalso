@@ -1330,7 +1330,8 @@ html{
 .faq-info-tip .faq-info-bubble{
   position:absolute;
   bottom:calc(100% + 10px);
-  right:-8px;
+  left:50%;
+  transform:translateX(-50%);
   background:#FFE8CC;
   color:var(--dark);
   border:1.5px solid var(--burnt);
@@ -1341,8 +1342,9 @@ html{
   font-style:normal;
   font-family:'Bricolage Grotesque',sans-serif;
   line-height:1.5;
-  width:300px;
-  max-width:calc(100vw - 2rem);
+  width:min(280px, calc(100vw - 2rem));
+  max-height:min(60vh, 420px);
+  overflow-y:auto;
   opacity:0;
   pointer-events:none;
   transition:opacity 0.2s ease;
@@ -1355,17 +1357,10 @@ html{
   content:'';
   position:absolute;
   top:100%;
-  right:14px;
+  left:50%;
+  transform:translateX(-50%);
   border:6px solid transparent;
   border-top-color:var(--cream);
-}
-.faq-info-tip.faq-info-tip--left .faq-info-bubble{
-  right:auto;
-  left:-8px;
-}
-.faq-info-tip.faq-info-tip--left .faq-info-bubble::after{
-  right:auto;
-  left:14px;
 }
 .faq-info-tip:hover .faq-info-bubble,
 .faq-info-tip:focus .faq-info-bubble,
@@ -2500,7 +2495,7 @@ body nav#mainNav, nav#mainNav, #mainNav{
         <div class="faq-a">
           Cada dia tem duas partes:
           <ul style="list-style:none;padding:0;margin:0.6rem 0 1.2rem;display:flex;flex-direction:column;gap:0.4rem;">
-            <li><strong>10h00–11h00</strong> (Básico) / <strong>14h30–15h30</strong> (Secundário) — Atividade de abertura, inglês e métodos de estudo.<span class="faq-info-tip faq-info-tip--left" tabindex="0">i<span class="faq-info-bubble"><span class="faq-info-speaker"><img src="alexandre carreira.jpeg" alt="Alexandre Carreira" class="faq-info-speaker-photo" onerror="this.style.display='none'"><span class="faq-info-speaker-text"><span class="faq-info-speaker-name">Alexandre Carreira</span><span class="faq-info-speaker-role">Mestre em Ciências da Linguagem, Ciência Política e Relações Internacionais e Doutorando em Linguística</span></span></span><span class="faq-info-speaker"><img src="WhatsApp Image 2026-04-16 at 17.45.02.jpeg" alt="Gabriela Veiga" class="faq-info-speaker-photo" onerror="this.style.display='none'"><span class="faq-info-speaker-text"><span class="faq-info-speaker-name">Gabriela Veiga</span><span class="faq-info-speaker-role">Professora de Inglês</span></span></span>A primeira hora de cada dia é uma "never ending summer party" cheia de diversão, jogos e conversas em inglês. É sempre a mesma sessão: o Alexandre Carreira dá nas duas primeiras semanas e a Gabriela Veiga nas duas últimas, conforme a semana que escolheres.</span></span> Os mesmos todos os dias.</li>
+            <li><strong>10h00–11h00</strong> (Básico) / <strong>14h30–15h30</strong> (Secundário) — Atividade de abertura, inglês e métodos de estudo.<span class="faq-info-tip" tabindex="0">i<span class="faq-info-bubble"><span class="faq-info-speaker"><img src="alexandre carreira.jpeg" alt="Alexandre Carreira" class="faq-info-speaker-photo" onerror="this.style.display='none'"><span class="faq-info-speaker-text"><span class="faq-info-speaker-name">Alexandre Carreira</span><span class="faq-info-speaker-role">Mestre em Ciências da Linguagem, Ciência Política e Relações Internacionais e Doutorando em Linguística</span></span></span><span class="faq-info-speaker"><img src="WhatsApp Image 2026-04-16 at 17.45.02.jpeg" alt="Gabriela Veiga" class="faq-info-speaker-photo" onerror="this.style.display='none'"><span class="faq-info-speaker-text"><span class="faq-info-speaker-name">Gabriela Veiga</span><span class="faq-info-speaker-role">Professora de Inglês</span></span></span>A primeira hora de cada dia é uma "never ending summer party" cheia de diversão, jogos e conversas em inglês. É sempre a mesma sessão: o Alexandre Carreira dá nas duas primeiras semanas e a Gabriela Veiga nas duas últimas, conforme a semana que escolheres.</span></span> Os mesmos todos os dias.</li>
             <li><strong>11h00–13h00</strong> (Básico) / <strong>15h30–17h30</strong> (Secundário) — Sessão do dia com o tema específico dessa jornada.</li>
           </ul>
 
@@ -3442,6 +3437,22 @@ document.addEventListener('DOMContentLoaded',function(){
   </div>
 </div>
 <script>
+// Mantem as bolhas de info dentro das margens do ecra
+(function(){
+  function clamp(tip){
+    var b=tip.querySelector('.faq-info-bubble');
+    if(!b) return;
+    b.style.transform='translateX(-50%)';
+    var r=b.getBoundingClientRect(), m=8, shift=0;
+    if(r.left<m) shift=m-r.left;
+    else if(r.right>window.innerWidth-m) shift=(window.innerWidth-m)-r.right;
+    if(shift) b.style.transform='translateX(calc(-50% + '+Math.round(shift)+'px))';
+  }
+  document.querySelectorAll('.faq-info-tip').forEach(function(tip){
+    tip.addEventListener('mouseenter',function(){clamp(tip);});
+    tip.addEventListener('focus',function(){clamp(tip);});
+  });
+})();
 function openOpenDayModal(){document.getElementById('openDayModal').classList.add('open');document.body.style.overflow='hidden';}
 function closeOpenDayModal(){
   document.getElementById('openDayModal').classList.remove('open');
