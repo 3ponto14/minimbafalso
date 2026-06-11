@@ -1332,8 +1332,9 @@ html{
   position:absolute;
   bottom:calc(100% + 10px);
   right:-8px;
-  background:var(--cream);
+  background:#FFE8CC;
   color:var(--dark);
+  border:1.5px solid var(--burnt);
   padding:1rem;
   border-radius:10px;
   font-size:0.78rem;
@@ -1367,12 +1368,11 @@ html{
   right:auto;
   left:14px;
 }
-@media(hover:hover){
-  .faq-info-tip:hover .faq-info-bubble,
-  .faq-info-tip:focus .faq-info-bubble{
-    opacity:1;
-    pointer-events:auto;
-  }
+.faq-info-tip:hover .faq-info-bubble,
+.faq-info-tip:focus .faq-info-bubble,
+.faq-info-tip:focus-within .faq-info-bubble{
+  opacity:1 !important;
+  pointer-events:auto;
 }
 .faq-info-speaker{
   display:flex;
