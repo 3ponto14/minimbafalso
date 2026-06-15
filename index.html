@@ -2823,7 +2823,7 @@ body nav#mainNav, nav#mainNav, #mainNav{
 <div class="info-modal-overlay" id="infoModal" role="dialog" aria-modal="true" aria-labelledby="infoModalName">
   <div class="info-modal">
     <button type="button" class="info-modal-close" aria-label="Fechar" onclick="closeInfoModal()">×</button>
-    <div class="info-modal-speaker">
+    <div class="info-modal-speaker" id="infoModalSpeaker">
       <img src="" alt="" class="info-modal-photo" id="infoModalPhoto" onerror="this.style.display='none'">
       <div>
         <div class="info-modal-name" id="infoModalName"></div>
@@ -2844,18 +2844,8 @@ function closeInfoModal(){document.getElementById('infoModal').classList.remove(
       e.stopPropagation();
       var bubble=tip.querySelector('.faq-info-bubble');
       if(!bubble) return;
-      var photo=bubble.querySelector('.faq-info-speaker-photo');
-      var name=bubble.querySelector('.faq-info-speaker-name');
-      var role=bubble.querySelector('.faq-info-speaker-role');
-      var clone=bubble.cloneNode(true);
-      var speaker=clone.querySelector('.faq-info-speaker');
-      if(speaker) speaker.remove();
-      document.getElementById('infoModalPhoto').src=photo?photo.src:'';
-      document.getElementById('infoModalPhoto').alt=photo?photo.alt:'';
-      document.getElementById('infoModalPhoto').style.display=photo&&photo.src?'block':'none';
-      document.getElementById('infoModalName').textContent=name?name.textContent:'';
-      document.getElementById('infoModalRole').textContent=role?role.textContent:'';
-      document.getElementById('infoModalBody').textContent=clone.textContent.trim();
+      document.getElementById('infoModalSpeaker').style.display='none';
+      document.getElementById('infoModalBody').innerHTML=bubble.innerHTML;
       document.getElementById('infoModal').classList.add('open');
       document.body.style.overflow='hidden';
       tip.blur();
