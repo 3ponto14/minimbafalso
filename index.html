@@ -1533,12 +1533,17 @@ html{
 .special-guest-role{font-size:0.68rem;text-transform:uppercase;letter-spacing:0.06em;font-weight:700;color:var(--burnt);margin:0.15rem 0 0.4rem;}
 .special-guest-theme{font-size:0.82rem;line-height:1.4;color:var(--dark);opacity:0.85;}
 .special-guest-date{display:inline-block;margin-top:0.45rem;font-size:0.68rem;font-weight:800;letter-spacing:0.04em;text-transform:uppercase;color:#fff;background:var(--burnt);padding:0.25em 0.7em;border-radius:100px;}
+.special-guest-link{display:inline-flex;align-items:center;margin-top:0.45rem;margin-left:0.5rem;font-size:0.72rem;font-weight:700;color:var(--burnt);text-decoration:none;border-bottom:1px solid rgba(255,87,34,0.4);line-height:1;padding-bottom:1px;}
+.special-guest-link:hover{border-bottom-color:var(--burnt);}
 .special-modal-foot{margin-top:1rem;font-family:'Anton',sans-serif;font-weight:800;font-size:0.62rem;letter-spacing:0.16em;text-transform:uppercase;text-align:center;opacity:0.5;}
 .special-modal-link{display:flex;align-items:center;justify-content:center;gap:0.4rem;margin-top:0.9rem;color:var(--burnt);font-weight:800;font-size:0.82rem;text-decoration:none;transition:gap 0.2s;}
 .special-modal-link:hover{gap:0.65rem;}
 @media(max-width:480px){
-  .special-guest-photo{width:54px;height:54px;}
+  .special-modal{padding:1rem;}
+  .special-guest{padding:0.7rem;gap:0.6rem;}
+  .special-guest-photo{width:50px;height:50px;}
   .special-modal-title{font-size:1.3rem;}
+  .special-guest-link{margin-left:0;display:block;}
 }
 @media(max-width:768px){
   .section-faq{padding:2.5rem 1.2rem;}
@@ -2971,10 +2976,11 @@ body nav#mainNav, nav#mainNav, #mainNav{
       <div class="special-guest">
         <img src="rodrigo.png" alt="Rodrigo" class="special-guest-photo" onerror="this.style.display='none'">
         <div class="special-guest-info">
-          <div class="special-guest-name">Rodrigo</div>
+          <div class="special-guest-name">Rodrigo Santos</div>
           <div class="special-guest-role">Student Plus</div>
           <div class="special-guest-theme">Inteligência artificial: riscos e vantagens</div>
           <span class="special-guest-date">22 jul · 13h00</span>
+          <a href="https://studentplusedu.com/" target="_blank" rel="noopener" class="special-guest-link">studentplusedu.com</a>
         </div>
       </div>
 
@@ -2985,6 +2991,7 @@ body nav#mainNav, nav#mainNav, #mainNav{
           <div class="special-guest-role">atelier_ritarovisco</div>
           <div class="special-guest-theme">Errar é aprender: como transformar falhas em melhoria na escola e na vida</div>
           <span class="special-guest-date">27 jul · 13h00</span>
+          <a href="https://instagram.com/atelier_ritarovisco/" target="_blank" rel="noopener" class="special-guest-link">@atelier_ritarovisco</a>
         </div>
       </div>
 
@@ -2995,6 +3002,7 @@ body nav#mainNav, nav#mainNav, #mainNav{
           <div class="special-guest-role">Meia Dúzia de Erros</div>
           <div class="special-guest-theme">Português sem dramas: erros mais comuns e métodos de estudo que funcionam</div>
           <span class="special-guest-date">4 ago · 13h00</span>
+          <a href="https://instagram.com/meia_duzia_de_erros/" target="_blank" rel="noopener" class="special-guest-link">@meia_duzia_de_erros</a>
         </div>
       </div>
 
